@@ -19,6 +19,12 @@ class CfgFunctions {
             class defaultDeactivateDoubleTap {
                 file = "\BettIR_Attachments\functions\fnc_defaultDeactivateDoubleTap.sqf";
             };
+            class defaultActivateCombo {
+                file = "\BettIR_Attachments\functions\fnc_defaultActivateCombo.sqf";
+            };
+            class defaultDeactivateCombo {
+                file = "\BettIR_Attachments\functions\fnc_defaultDeactivateCombo.sqf";
+            };
 
             class onModeToggle {
                 file = "\BettIR_Attachments\functions\fnc_onModeToggle.sqf";
@@ -51,6 +57,8 @@ class CfgFunctions {
             class removeInteractions {
                 file = "\BettIR_Attachments\functions\fnc_removeInteractions.sqf";
             };
+
+            
             class postInit {
                 file = "\BettIR_Attachments\functions\fnc_postInit.sqf";
                 postInit=1;

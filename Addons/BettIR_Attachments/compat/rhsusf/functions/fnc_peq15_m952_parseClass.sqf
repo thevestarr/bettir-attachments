@@ -8,7 +8,7 @@ _map = nil;
 // the phrase "light" doesnt exist in the other variants
 if (_lightInClassNameIndex == -1) then {
     _map = [_className] call BettIR_Compat_RHSUSF_peq15_fnc_parseClass; 
-    _map set ["Device", "PEQ"];
+    _map set ["Device", "Laser"];
 } else {
     _map = createHashMap;
     _map set ["Device", "Flashlight"];

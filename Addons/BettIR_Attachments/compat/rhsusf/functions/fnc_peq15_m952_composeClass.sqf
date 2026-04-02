@@ -2,8 +2,8 @@ params ["_composableMap"];
 
 _device = _composableMap get "Device";
 
-if (_device == "PEQ") exitWith {
-    _composableMap set ["Device", "PEQ"];
+if (_device == "Laser") exitWith {
+    _composableMap set ["Device", "Laser"];
     [_composableMap] call BettIR_Compat_RHSUSF_peq15_fnc_composeClass;
 };
 

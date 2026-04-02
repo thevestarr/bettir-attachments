@@ -29,9 +29,9 @@ class BettIR_Config {
             classComposer="";
 
             // BettIR activate button or default key (L)
-            onActivate="";
+            onActivate="BettIR_Attachments_fnc_defaultActivateDoubleTap";
             // same as above, but when it's released
-            onDeactivate="";
+            onDeactivate="BettIR_Attachments_fnc_defaultDeactivateDoubleTap";
 
             // primary mode toggle (Shift + L)
             onToggleModePrimary="[_this select 0, 'MasterMode'] spawn BettIR_Attachments_fnc_defaultToggleMode";
@@ -130,6 +130,79 @@ class BettIR_Config {
                     };
                 };
             };  
+        };
+
+        class BettIR_Base_PEQ15_GenericFlashlightCombo: BettIR_Base_PEQ15 {
+            onToggleModeSecondary="[_this select 0, 'Device'] spawn BettIR_Attachments_fnc_defaultToggleMode";
+
+            class Configurable: Configurable {
+                class Device {
+                    displayName="Device";
+                    defaultValue="Laser";
+                    class Laser {
+                        displayName="Laser";
+                    };
+                    class Flashlight {
+                        displayName="Flashlight";
+                    };
+                };
+            };
+        };
+
+        class BettIR_Base_NGAL: BettIR_Base_DBALA2 {
+            onToggleModeSecondary="";
+            
+            class Configurable {
+                class Focus {
+                    defaultValue="105MRAD";
+                    displayName="Focus";
+
+                    class 105MRAD {
+                        displayName="105 MRAD";
+                    };
+
+                    class 50MRAD {
+                        displayName="50 MRAD";
+                    };
+
+                    class 25MRAD {
+                        displayName="25 MRAD";
+                    };
+                };
+
+                class MasterMode {
+                    defaultValue="AH";
+                    displayName="Master Mode";
+
+                    class VisAH {
+                        displayName="VIS Laser HI";
+                    };
+
+                    class VisAL {
+                        displayName="VIS Laser LO";
+                    };
+
+                    class AL {
+                        displayName="Aim Low";
+                    };   
+
+                    class DL {
+                        displayName="Dual Low";
+                    };
+
+                    class AH {
+                        displayName="Aim High";
+                    };
+
+                    class IH {
+                        displayName="Illuminator High";
+                    };
+
+                    class DH {
+                        displayName="Dual High";
+                    };
+                };
+            };
         };
     };    
 };

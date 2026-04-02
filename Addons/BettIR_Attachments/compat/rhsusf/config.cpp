@@ -104,25 +104,33 @@ class BettIR_Config {
         // // PEQ-15 combo 
         // class rhsusf_acc_anpeq15;
         // class rhsusf_acc_anpeq15_light; - light variant
-        class rhsusf_acc_anpeq15: BettIR_Base_PEQ15 {
+        class BettIR_Base_PEQ15_GenericFlashlightCombo: BettIR_Base_PEQ15 {
+            class Configurable {
+                class MasterMode;
+                class Focus;
+                class Device {
+                    class Laser;
+                    class Flashlight;
+                };
+            };
+        };
+
+        class rhsusf_acc_anpeq15: BettIR_Base_PEQ15_GenericFlashlightCombo {
             macroClass = "rhsusf_acc_anpeq15";
 
             classParser="BettIR_Compat_RHSUSF_peq15_m952_fnc_parseClass";
             classComposer="BettIR_Compat_RHSUSF_peq15_m952_fnc_composeClass";
 
-            onActivate="BettIR_Compat_RHSUSF_peq15_m952_fnc_onActivate";
-            onDeactivate="BettIR_Compat_RHSUSF_peq15_m952_fnc_onDeactivate";
-
-            onToggleModeSecondary="[_this select 0, 'Device'] spawn BettIR_Attachments_fnc_defaultToggleMode";
+            onActivate="BettIR_Attachments_fnc_defaultActivateCombo";
+            onDeactivate="BettIR_Attachments_fnc_defaultDeactivateCombo";
 
             class Configurable: Configurable {
-                class Device {
-                    displayName="Device";
-                    defaultValue="PEQ";
-                    class PEQ {
+                // rename the display names, but keep classnames the same to keep using the generic handler
+                class Device: Device {
+                    class Laser: Laser {
                         displayName="AN/PEQ-15";
                     };
-                    class Flashlight {
+                    class Flashlight: Flashlight {
                         displayName="M952V";
                     };
                 };
@@ -140,6 +148,7 @@ class BettIR_Config {
                 };
             };
         };
+
         class rhsusf_acc_anpeq15_al: rhsusf_acc_anpeq15 {};
         class rhsusf_acc_anpeq15_vis: rhsusf_acc_anpeq15 {};
         class rhsusf_acc_anpeq15_ih_25MRAD: rhsusf_acc_anpeq15 {};

@@ -24,9 +24,6 @@ class BettIR_Config {
             macroClass = "acc_pointer_IR";
             classParser="BettIR_DBALA2_fnc_parseClass";
             classComposer="BettIR_DBALA2_fnc_composeClass";
-
-            onActivate="BettIR_Attachments_fnc_defaultActivateDoubleTap";
-            onDeactivate="BettIR_Attachments_fnc_defaultDeactivateDoubleTap";
         };
 
         class acc_pointer_IR_LO: acc_pointer_IR {};

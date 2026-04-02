@@ -8,14 +8,16 @@ if (_unit isIRLaserOn (currentWeapon _unit) || _unit isFlashlightOn (currentWeap
 
 [_unit, _variant, _wasOn, _reenable] spawn {
     params ["_unit", "_variant","_wasOn", "_reenable"];
+
     if (currentWeapon _unit == primaryWeapon _unit) then {
         _unit addPrimaryWeaponItem _variant;
     };
     if (currentWeapon _unit == secondaryWeapon _unit) then {
         _unit addSecondaryWeaponItem _variant;
     };
+
     // necessary: laser parameters don't update if changed in the same frame
-    sleep 0.01;
+    sleep 0.05;
 
     if (_wasOn && _reenable) then {
         _unit action ["IRLaserOn", _unit];
