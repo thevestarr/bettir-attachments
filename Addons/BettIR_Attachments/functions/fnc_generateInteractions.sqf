@@ -11,7 +11,7 @@ _primaryAttachmentInteraction = ["BettIR_Primary", "Primary", "", {1}, {true}] c
 _primaryAttachmentArray = (_unit getVariable ["BettIR_primaryWeaponAttachment", [[], []]]);
 _currentPrimaryAttachment = (_primaryAttachmentArray # 0) createHashMapFromArray (_primaryAttachmentArray # 1);
 _macro = _currentPrimaryAttachment get "__BETTIR_MACRO";
-_configurables = [(configFile >> "BettIR_Config" >> "CompatibleLightAttachments" >> _macro >> "Configurable"), 0, true] call BIS_fnc_returnChildren;
+_configurables = [(configFile >> "BettIR_Config" >> "CompatibleAttachments" >> _macro >> "Configurable"), 0, true] call BIS_fnc_returnChildren;
 {
     _groupClass = _x;
     _key = configName _groupClass;

@@ -18,11 +18,11 @@ class CfgPatches
 #include "include\CfgUserActions.hpp"
 
 class BettIR_Config {
-    class CompatibleLightAttachments {
+    class CompatibleAttachments {
         class BettIR_Base_DBALA2 {
             // macroClass must be shared between devices of the same "kind"
             macroClass = "";
-            slot = 0; // 0 for laser slot, 1 for optic; not supported yet
+            // slot = 0; // 0 for laser slot, 1 for optic; to be removed as most likely it's redundant, to be tested
             // parse name and pass it to parameters
             classParser="";
             // compose a class based on the parameters

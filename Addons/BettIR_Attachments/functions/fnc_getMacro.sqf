@@ -1,3 +1,3 @@
 params ["_className"];
 
-getText (configFile >> "BettIR_Config" >> "CompatibleLightAttachments" >> _className >> "macroClass");
+getText (configFile >> "BettIR_Config" >> "CompatibleAttachments" >> _className >> "macroClass");

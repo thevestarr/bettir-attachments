@@ -64,7 +64,7 @@ if ((_currentCompatibleAttachment != "") && ((_currentCompatibleAttachment != _p
 	 _oldMacro = _currentPrimaryAttachment getOrDefault ["__BETTIR_MACRO", ""];
 
 
-	 _parser = getText (configFile >> "BettIR_Config" >> "CompatibleLightAttachments" >> _currentCompatibleAttachment >> "classParser");
+	 _parser = getText (configFile >> "BettIR_Config" >> "CompatibleAttachments" >> _currentCompatibleAttachment >> "classParser");
 	_parsedPrimaryAttachment = [_currentCompatibleAttachment] call (call compile _parser);
 	_currentPrimaryAttachment merge [_parsedPrimaryAttachment, true];
 	("parsed current attachment" + (str _currentPrimaryAttachment)) call BettIR_Attachments_fnc_printDebug;
@@ -74,8 +74,8 @@ if ((_currentCompatibleAttachment != "") && ((_currentCompatibleAttachment != _p
 
 	if (_oldMacro != _macro) then {
 		("Macros are different, old: " + _oldMacro + ", new: " + _macro) call BettIR_Attachments_fnc_printDebug;
-		_activateFunctionName = (getText (configFile >> "BettIR_Config" >> "CompatibleLightAttachments" >> _currentCompatibleAttachment >> "onActivate"));
-		_deactivateFunctionName = (getText (configFile >> "BettIR_Config" >> "CompatibleLightAttachments" >> _currentCompatibleAttachment >> "onDeactivate"));
+		_activateFunctionName = (getText (configFile >> "BettIR_Config" >> "CompatibleAttachments" >> _currentCompatibleAttachment >> "onActivate"));
+		_deactivateFunctionName = (getText (configFile >> "BettIR_Config" >> "CompatibleAttachments" >> _currentCompatibleAttachment >> "onDeactivate"));
 
 		("Device activation functions passed, activate: " + _activateFunctionName + ", deactivate: " + _deactivateFunctionName) call BettIR_Attachments_fnc_printDebug;
 

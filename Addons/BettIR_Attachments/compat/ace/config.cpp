@@ -15,7 +15,7 @@ class CfgPatches {
 #include "CfgFunctions.hpp"
 
 class BettIR_Config {
-    class CompatibleLightAttachments {
+    class CompatibleAttachments {
         class acc_pointer_IR;
         class ACE_SPIR {
             macroClass="ACE_SPIR";

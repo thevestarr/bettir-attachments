@@ -15,7 +15,7 @@ class CfgPatches {
 #include "rails.hpp"
 
 class BettIR_Config {
-    class CompatibleLightAttachments {
+    class CompatibleAttachments {
         class BettIR_Base_DBALA2 {};
         class BettIR_Base_PEQ15: BettIR_Base_DBALA2 {
             class Configurable;

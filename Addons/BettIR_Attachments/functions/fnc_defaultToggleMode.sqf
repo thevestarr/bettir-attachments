@@ -17,7 +17,7 @@ if (_currentMode == "") exitWith {
 
 // TODO: Extract the above to a separate function 
 
-_modes = (configFile >> "BettIR_Config" >> "CompatibleLightAttachments" >> _macro >> "Configurable" >> _modeName)  call BIS_fnc_getCfgSubClasses;
+_modes = (configFile >> "BettIR_Config" >> "CompatibleAttachments" >> _macro >> "Configurable" >> _modeName)  call BIS_fnc_getCfgSubClasses;
 if ((count _modes) == 0) exitWith {
     "No modes detected" call BettIR_Attachments_fnc_printDebug;
 };

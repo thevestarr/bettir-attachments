@@ -16,7 +16,7 @@ if (_macro == "") exitWith {
 
 // TODO: Extract the above to a separate function 
 
-_handler = getText (configFile >> "BettIR_Config" >> "CompatibleLightAttachments" >> _macro >> (["onToggleModePrimary", "onToggleModeSecondary"] select _modeIndex));
+_handler = getText (configFile >> "BettIR_Config" >> "CompatibleAttachments" >> _macro >> (["onToggleModePrimary", "onToggleModeSecondary"] select _modeIndex));
 
 if (_handler != "") then {
     [_unit] call (compile _handler);

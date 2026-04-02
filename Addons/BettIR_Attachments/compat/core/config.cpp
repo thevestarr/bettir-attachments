@@ -17,7 +17,7 @@ class CfgPatches {
 #include "CfgWeapons.hpp"
 
 class BettIR_Config {
-    class CompatibleLightAttachments {
+    class CompatibleAttachments {
         class BettIR_Base_DBALA2;
 
         class acc_pointer_IR: BettIR_Base_DBALA2 {

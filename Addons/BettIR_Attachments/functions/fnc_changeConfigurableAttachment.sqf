@@ -8,7 +8,7 @@ if ((count (keys _currentPrimaryAttachment)) == 0) exitWith {
 };
 
 _macro = _currentPrimaryAttachment get "__BETTIR_MACRO";
-_composer = getText (configFile >> "BettIR_Config" >> "CompatibleLightAttachments" >> _macro >> "classComposer");
+_composer = getText (configFile >> "BettIR_Config" >> "CompatibleAttachments" >> _macro >> "classComposer");
 
 _currentPrimaryAttachment set [_key, _value];
 // todo: consider caching composers by macro
