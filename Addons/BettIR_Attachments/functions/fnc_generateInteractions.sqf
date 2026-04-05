@@ -11,7 +11,7 @@ _primaryAttachmentInteraction = ["BettIR_Primary", "Primary", "", {1}, {true}] c
 _primaryAttachmentArray = (_unit getVariable ["BettIR_primaryWeaponAttachment", [[], []]]);
 _currentPrimaryAttachment = (_primaryAttachmentArray # 0) createHashMapFromArray (_primaryAttachmentArray # 1);
 _macro = _currentPrimaryAttachment get "__BETTIR_MACRO";
-_configurables = [(configFile >> "BettIR_Config" >> "CompatibleAttachments" >> _macro >> "Configurable"), 0, true] call BIS_fnc_returnChildren;
+_configurables = [_macro] call BettIR_Attachments_fnc_getConfigurableClasses;
 {
     _groupClass = _x;
     _key = configName _groupClass;
@@ -30,5 +30,5 @@ _configurables = [(configFile >> "BettIR_Config" >> "CompatibleAttachments" >> _
             {true} // todo: add condition
         ] call ace_interact_menu_fnc_createAction;
         [_unit, 1, ["ACE_SelfActions", "BettIR", "BettIR_Primary", format ["BettIR_Primary_%1", _key]], _variantInteraction] call ace_interact_menu_fnc_addActionToObject;
-    } forEach ("true" configClasses _groupClass);
+    } forEach ([_groupClass] call BettIR_Attachments_fnc_getConfigurableValues);
 } forEach _configurables;

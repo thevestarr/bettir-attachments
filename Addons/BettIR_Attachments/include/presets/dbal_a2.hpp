@@ -1,4 +1,4 @@
-#include "\bettir_Attachments\include\core.hpp"
+#include "..\core.hpp"
 
 
 // Intensity in low mode, 50 MRAD

@@ -51,13 +51,21 @@ class CfgFunctions {
             class canUnitUseLaserDevice {
                 file = "\BettIR_Attachments\functions\fnc_canUnitUseLaserDevice.sqf";
             };
+            class getConfigurableClasses {
+                file = "\BettIR_Attachments\functions\fnc_getConfigurableClasses.sqf";
+            };
+            class getConfigurableValues {
+                file = "\BettIR_Attachments\functions\fnc_getConfigurableValues.sqf";
+            };
+            class generateCombinations {
+                file = "\BettIR_Attachments\functions\fnc_generateCombinations.sqf";
+            };
             class generateInteractions {
                 file = "\BettIR_Attachments\functions\fnc_generateInteractions.sqf";
             };
             class removeInteractions {
                 file = "\BettIR_Attachments\functions\fnc_removeInteractions.sqf";
             };
-
             
             class postInit {
                 file = "\BettIR_Attachments\functions\fnc_postInit.sqf";

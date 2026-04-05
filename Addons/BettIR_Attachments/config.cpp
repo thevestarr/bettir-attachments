@@ -122,7 +122,7 @@ class BettIR_Config {
                     };
 
                     class IH {
-                        displayName="ILLUM HIGH"
+                        displayName="ILLUM HIGH";
                     };
 
                     class DH {

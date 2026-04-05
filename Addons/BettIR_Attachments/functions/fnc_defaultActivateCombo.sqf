@@ -16,7 +16,7 @@ if (_buttonIndex == 0) then {
         [_unit] spawn BettIR_Attachments_fnc_defaultDeviceActivate;
     };
 } else {
-    if (_device == "PEQ") then {
+    if (_device == "Laser") then {
         [_unit, "Device", "Flashlight"] call BettIR_Attachments_fnc_changeConfigurableAttachment;
         // can't update in the same frame
         sleep 0.05;

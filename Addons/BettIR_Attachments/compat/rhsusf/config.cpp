@@ -105,13 +105,8 @@ class BettIR_Config {
         // class rhsusf_acc_anpeq15;
         // class rhsusf_acc_anpeq15_light; - light variant
         class BettIR_Base_PEQ15_GenericFlashlightCombo: BettIR_Base_PEQ15 {
-            class Configurable {
-                class MasterMode;
-                class Focus;
-                class Device {
-                    class Laser;
-                    class Flashlight;
-                };
+            class Configurable: Configurable {
+                class Device;
             };
         };
 
@@ -127,10 +122,10 @@ class BettIR_Config {
             class Configurable: Configurable {
                 // rename the display names, but keep classnames the same to keep using the generic handler
                 class Device: Device {
-                    class Laser: Laser {
+                    class Laser {
                         displayName="AN/PEQ-15";
                     };
-                    class Flashlight: Flashlight {
+                    class Flashlight {
                         displayName="M952V";
                     };
                 };

@@ -1,4 +1,4 @@
-#include "\bettir_Attachments\include\core.hpp"
+#include "..\core.hpp"
 
 // Intensity in low mode, 50 MRAD
 #define PEQ15_ILLUMINATOR_BASE_INTENSITY 300
