@@ -1,5 +1,9 @@
 params ["_unit", "_buttonIndex"];
 
+if (is3DEN) exitWith {};
+if (isNull _unit) exitWith {};
+
+
 if (!([_unit] call BettIR_Attachments_fnc_canUnitUseLaserDevice)) exitWith {};
 _currentWeapon = currentWeapon _unit;
 

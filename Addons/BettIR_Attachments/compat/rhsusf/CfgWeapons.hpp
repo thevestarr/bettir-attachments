@@ -20,12 +20,11 @@ class CfgWeapons {
         scope=1;
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
-                // TODO: this will not work for now: T175507 in Feedback Tracker
-                isIR=0;
-                irDotSize=0.015;
+                isIR=1;
+                irDotSize=0.03;
                 beamThickness=0;
                 beamColor[]={0,0,0};
-                dotColor[]={1,0,0};
+                dotColor[]={1,1,1};
             };
         };
     };
@@ -126,12 +125,11 @@ class CfgWeapons {
         scope=1;
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
-                // TODO: this will not work for now: T175507 in Feedback Tracker
-                isIR=0;
-                irDotSize=0.015;
+                isIR=1;
+                irDotSize=0.03;
                 beamThickness=0;
                 beamColor[]={0,0,0};
-                dotColor[]={1,0,0};
+                dotColor[]={1,1,1};
             };
             class Flashlight: Flashlight {
                 BETTIR_ILLUMINATOR_PRESET_PEQ15(25,"laser pos","laser dir",0)
@@ -142,12 +140,11 @@ class CfgWeapons {
     class rhsusf_acc_anpeq15side_dl_50MRAD: rhsusf_acc_anpeq15side_dl_25MRAD {
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
-                // TODO: this will not work for now: T175507 in Feedback Tracker
-                isIR=0;
-                irDotSize=0.015;
+                isIR=1;
+                irDotSize=0.03;
                 beamThickness=0;
                 beamColor[]={0,0,0};
-                dotColor[]={1,0,0};
+                dotColor[]={1,1,1};
             };
             class Flashlight: Flashlight {
                 BETTIR_ILLUMINATOR_PRESET_PEQ15(50,"laser pos","laser dir",0)
@@ -158,12 +155,11 @@ class CfgWeapons {
     class rhsusf_acc_anpeq15side_dl_75MRAD: rhsusf_acc_anpeq15side_dl_25MRAD {
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
-                // TODO: this will not work for now: T175507 in Feedback Tracker
-                isIR=0;
-                irDotSize=0.015;
+                isIR=1;
+                irDotSize=0.03;
                 beamThickness=0;
                 beamColor[]={0,0,0};
-                dotColor[]={1,0,0};
+                dotColor[]={1,1,1};
             };
             class Flashlight: Flashlight {
                 BETTIR_ILLUMINATOR_PRESET_PEQ15(75,"laser pos","laser dir",0)
@@ -174,12 +170,11 @@ class CfgWeapons {
     class rhsusf_acc_anpeq15side_dl_100MRAD: rhsusf_acc_anpeq15side_dl_25MRAD {
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
-                // TODO: this will not work for now: T175507 in Feedback Tracker
-                isIR=0;
-                irDotSize=0.015;
+                isIR=1;
+                irDotSize=0.03;
                 beamThickness=0;
                 beamColor[]={0,0,0};
-                dotColor[]={1,0,0};
+                dotColor[]={1,1,1};
             };
             class Flashlight: Flashlight {
                 BETTIR_ILLUMINATOR_PRESET_PEQ15(100,"laser pos","laser dir",0)
@@ -195,12 +190,11 @@ class CfgWeapons {
         scope=1;
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
-                // TODO: this will not work for now: T175507 in Feedback Tracker
-                isIR=0;
-                irDotSize=0.015;
+                isIR=1;
+                irDotSize=0.03;
                 beamThickness=0;
                 beamColor[]={0,0,0};
-                dotColor[]={1,0,0};
+                dotColor[]={1,1,1};
             };
         };
     };
@@ -301,12 +295,11 @@ class CfgWeapons {
         scope=1;
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
-                // TODO: this will not work for now: T175507 in Feedback Tracker
-                isIR=0;
-                irDotSize=0.015;
+                isIR=1;
+                irDotSize=0.03;
                 beamThickness=0;
                 beamColor[]={0,0,0};
-                dotColor[]={1,0,0};
+                dotColor[]={1,1,1};
             };
             class Flashlight: Flashlight {
                 BETTIR_ILLUMINATOR_PRESET_PEQ15(25,"laser pos","laser dir",0)
@@ -317,12 +310,11 @@ class CfgWeapons {
     class rhsusf_acc_anpeq15side_bk_dl_50MRAD: rhsusf_acc_anpeq15side_bk_dl_25MRAD {
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
-                // TODO: this will not work for now: T175507 in Feedback Tracker
-                isIR=0;
-                irDotSize=0.015;
+                isIR=1;
+                irDotSize=0.03;
                 beamThickness=0;
                 beamColor[]={0,0,0};
-                dotColor[]={1,0,0};
+                dotColor[]={1,1,1};
             };
             class Flashlight: Flashlight {
                 BETTIR_ILLUMINATOR_PRESET_PEQ15(50,"laser pos","laser dir",0)
@@ -333,12 +325,11 @@ class CfgWeapons {
     class rhsusf_acc_anpeq15side_bk_dl_75MRAD: rhsusf_acc_anpeq15side_bk_dl_25MRAD {
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
-                // TODO: this will not work for now: T175507 in Feedback Tracker
-                isIR=0;
-                irDotSize=0.015;
+                isIR=1;
+                irDotSize=0.03;
                 beamThickness=0;
                 beamColor[]={0,0,0};
-                dotColor[]={1,0,0};
+                dotColor[]={1,1,1};
             };
             class Flashlight: Flashlight {
                 BETTIR_ILLUMINATOR_PRESET_PEQ15(75,"laser pos","laser dir",0)
@@ -349,12 +340,11 @@ class CfgWeapons {
     class rhsusf_acc_anpeq15side_bk_dl_100MRAD: rhsusf_acc_anpeq15side_bk_dl_25MRAD {
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
-                // TODO: this will not work for now: T175507 in Feedback Tracker
-                isIR=0;
-                irDotSize=0.015;
+                isIR=1;
+                irDotSize=0.03;
                 beamThickness=0;
                 beamColor[]={0,0,0};
-                dotColor[]={1,0,0};
+                dotColor[]={1,1,1};
             };
             class Flashlight: Flashlight {
                 BETTIR_ILLUMINATOR_PRESET_PEQ15(100,"laser pos","laser dir",0)
@@ -381,12 +371,11 @@ class CfgWeapons {
         scope=1;
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
-                // TODO: this will not work for now: T175507 in Feedback Tracker
-                isIR=0;
-                irDotSize=0.015;
+                isIR=1;
+                irDotSize=0.03;
                 beamThickness=0;
                 beamColor[]={0,0,0};
-                dotColor[]={1,0,0};
+                dotColor[]={1,1,1};
             };
         };
     };
@@ -487,12 +476,11 @@ class CfgWeapons {
         scope=1;
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
-                // TODO: this will not work for now: T175507 in Feedback Tracker
-                isIR=0;
-                irDotSize=0.015;
+                isIR=1;
+                irDotSize=0.03;
                 beamThickness=0;
                 beamColor[]={0,0,0};
-                dotColor[]={1,0,0};
+                dotColor[]={1,1,1};
             };
             class Flashlight: Flashlight {
                 BETTIR_ILLUMINATOR_PRESET_PEQ15(25,"laser pos","laser dir",0)
@@ -503,12 +491,11 @@ class CfgWeapons {
     class rhsusf_acc_anpeq15_top_dl_50MRAD: rhsusf_acc_anpeq15_top_dl_25MRAD {
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
-                // TODO: this will not work for now: T175507 in Feedback Tracker
-                isIR=0;
-                irDotSize=0.015;
+                isIR=1;
+                irDotSize=0.03;
                 beamThickness=0;
                 beamColor[]={0,0,0};
-                dotColor[]={1,0,0};
+                dotColor[]={1,1,1};
             };
             class Flashlight: Flashlight {
                 BETTIR_ILLUMINATOR_PRESET_PEQ15(50,"laser pos","laser dir",0)
@@ -519,12 +506,11 @@ class CfgWeapons {
     class rhsusf_acc_anpeq15_top_dl_75MRAD: rhsusf_acc_anpeq15_top_dl_25MRAD {
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
-                // TODO: this will not work for now: T175507 in Feedback Tracker
-                isIR=0;
-                irDotSize=0.015;
+                isIR=1;
+                irDotSize=0.03;
                 beamThickness=0;
                 beamColor[]={0,0,0};
-                dotColor[]={1,0,0};
+                dotColor[]={1,1,1};
             };
             class Flashlight: Flashlight {
                 BETTIR_ILLUMINATOR_PRESET_PEQ15(75,"laser pos","laser dir",0)
@@ -535,12 +521,11 @@ class CfgWeapons {
     class rhsusf_acc_anpeq15_top_dl_100MRAD: rhsusf_acc_anpeq15_top_dl_25MRAD {
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
-                // TODO: this will not work for now: T175507 in Feedback Tracker
-                isIR=0;
-                irDotSize=0.015;
+                isIR=1;
+                irDotSize=0.03;
                 beamThickness=0;
                 beamColor[]={0,0,0};
-                dotColor[]={1,0,0};
+                dotColor[]={1,1,1};
             };
             class Flashlight: Flashlight {
                 BETTIR_ILLUMINATOR_PRESET_PEQ15(100,"laser pos","laser dir",0)
@@ -559,12 +544,11 @@ class CfgWeapons {
         scope=1;
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
-                // TODO: this will not work for now: T175507 in Feedback Tracker
-                isIR=0;
-                irDotSize=0.015;
+                isIR=1;
+                irDotSize=0.03;
                 beamThickness=0;
                 beamColor[]={0,0,0};
-                dotColor[]={1,0,0};
+                dotColor[]={1,1,1};
             };
         };
     };
@@ -665,12 +649,11 @@ class CfgWeapons {
         scope=1;
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
-                // TODO: this will not work for now: T175507 in Feedback Tracker
-                isIR=0;
-                irDotSize=0.015;
+                isIR=1;
+                irDotSize=0.03;
                 beamThickness=0;
                 beamColor[]={0,0,0};
-                dotColor[]={1,0,0};
+                dotColor[]={1,1,1};
             };
             class Flashlight: Flashlight {
                 BETTIR_ILLUMINATOR_PRESET_PEQ15(25,"laser pos","laser dir",0)
@@ -681,12 +664,11 @@ class CfgWeapons {
     class rhsusf_acc_anpeq15_bk_top_dl_50MRAD: rhsusf_acc_anpeq15_bk_top_dl_25MRAD {
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
-                // TODO: this will not work for now: T175507 in Feedback Tracker
-                isIR=0;
-                irDotSize=0.015;
+                isIR=1;
+                irDotSize=0.03;
                 beamThickness=0;
                 beamColor[]={0,0,0};
-                dotColor[]={1,0,0};
+                dotColor[]={1,1,1};
             };
             class Flashlight: Flashlight {
                 BETTIR_ILLUMINATOR_PRESET_PEQ15(50,"laser pos","laser dir",0)
@@ -697,12 +679,11 @@ class CfgWeapons {
     class rhsusf_acc_anpeq15_bk_top_dl_75MRAD: rhsusf_acc_anpeq15_bk_top_dl_25MRAD {
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
-                // TODO: this will not work for now: T175507 in Feedback Tracker
-                isIR=0;
-                irDotSize=0.015;
+                isIR=1;
+                irDotSize=0.03;
                 beamThickness=0;
                 beamColor[]={0,0,0};
-                dotColor[]={1,0,0};
+                dotColor[]={1,1,1};
             };
             class Flashlight: Flashlight {
                 BETTIR_ILLUMINATOR_PRESET_PEQ15(75,"laser pos","laser dir",0)
@@ -713,12 +694,11 @@ class CfgWeapons {
     class rhsusf_acc_anpeq15_bk_top_dl_100MRAD: rhsusf_acc_anpeq15_bk_top_dl_25MRAD {
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
-                // TODO: this will not work for now: T175507 in Feedback Tracker
-                isIR=0;
-                irDotSize=0.015;
+                isIR=1;
+                irDotSize=0.03;
                 beamThickness=0;
                 beamColor[]={0,0,0};
-                dotColor[]={1,0,0};
+                dotColor[]={1,1,1};
             };
             class Flashlight: Flashlight {
                 BETTIR_ILLUMINATOR_PRESET_PEQ15(100,"laser pos","laser dir",0)
@@ -738,12 +718,11 @@ class CfgWeapons {
         scope=1;
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
-                // TODO: this will not work for now: T175507 in Feedback Tracker
-                isIR=0;
-                irDotSize=0.015;
+                isIR=1;
+                irDotSize=0.03;
                 beamThickness=0;
                 beamColor[]={0,0,0};
-                dotColor[]={1,0,0};
+                dotColor[]={1,1,1};
             };
         };
     };
@@ -844,12 +823,11 @@ class CfgWeapons {
         scope=1;
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
-                // TODO: this will not work for now: T175507 in Feedback Tracker
-                isIR=0;
-                irDotSize=0.015;
+                isIR=1;
+                irDotSize=0.03;
                 beamThickness=0;
                 beamColor[]={0,0,0};
-                dotColor[]={1,0,0};
+                dotColor[]={1,1,1};
             };
             class Flashlight: Flashlight {
                 BETTIR_ILLUMINATOR_PRESET_PEQ15(25,"laser pos","laser dir",0)
@@ -860,12 +838,11 @@ class CfgWeapons {
     class rhsusf_acc_anpeq15_dl_50MRAD: rhsusf_acc_anpeq15_dl_25MRAD {
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
-                // TODO: this will not work for now: T175507 in Feedback Tracker
-                isIR=0;
-                irDotSize=0.015;
+                isIR=1;
+                irDotSize=0.03;
                 beamThickness=0;
                 beamColor[]={0,0,0};
-                dotColor[]={1,0,0};
+                dotColor[]={1,1,1};
             };
             class Flashlight: Flashlight {
                 BETTIR_ILLUMINATOR_PRESET_PEQ15(50,"laser pos","laser dir",0)
@@ -876,12 +853,11 @@ class CfgWeapons {
     class rhsusf_acc_anpeq15_dl_75MRAD: rhsusf_acc_anpeq15_dl_25MRAD {
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
-                // TODO: this will not work for now: T175507 in Feedback Tracker
-                isIR=0;
-                irDotSize=0.015;
+                isIR=1;
+                irDotSize=0.03;
                 beamThickness=0;
                 beamColor[]={0,0,0};
-                dotColor[]={1,0,0};
+                dotColor[]={1,1,1};
             };
             class Flashlight: Flashlight {
                 BETTIR_ILLUMINATOR_PRESET_PEQ15(75,"laser pos","laser dir",0)
@@ -892,12 +868,11 @@ class CfgWeapons {
     class rhsusf_acc_anpeq15_dl_100MRAD: rhsusf_acc_anpeq15_dl_25MRAD {
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
-                // TODO: this will not work for now: T175507 in Feedback Tracker
-                isIR=0;
-                irDotSize=0.015;
+                isIR=1;
+                irDotSize=0.03;
                 beamThickness=0;
                 beamColor[]={0,0,0};
-                dotColor[]={1,0,0};
+                dotColor[]={1,1,1};
             };
             class Flashlight: Flashlight {
                 BETTIR_ILLUMINATOR_PRESET_PEQ15(100,"laser pos","laser dir",0)
@@ -930,12 +905,11 @@ class CfgWeapons {
         scope=1;
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
-                // TODO: this will not work for now: T175507 in Feedback Tracker
-                isIR=0;
-                irDotSize=0.015;
+                isIR=1;
+                irDotSize=0.03;
                 beamThickness=0;
                 beamColor[]={0,0,0};
-                dotColor[]={1,0,0};
+                dotColor[]={1,1,1};
             };
         };
     };
@@ -1036,12 +1010,11 @@ class CfgWeapons {
         scope=1;
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
-                // TODO: this will not work for now: T175507 in Feedback Tracker
-                isIR=0;
-                irDotSize=0.015;
+                isIR=1;
+                irDotSize=0.03;
                 beamThickness=0;
                 beamColor[]={0,0,0};
-                dotColor[]={1,0,0};
+                dotColor[]={1,1,1};
             };
             class Flashlight: Flashlight {
                 BETTIR_ILLUMINATOR_PRESET_PEQ15(25,"laser pos","laser dir",0)
@@ -1052,12 +1025,11 @@ class CfgWeapons {
     class rhsusf_acc_anpeq15_bk_dl_50MRAD: rhsusf_acc_anpeq15_bk_dl_25MRAD {
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
-                // TODO: this will not work for now: T175507 in Feedback Tracker
-                isIR=0;
-                irDotSize=0.015;
+                isIR=1;
+                irDotSize=0.03;
                 beamThickness=0;
                 beamColor[]={0,0,0};
-                dotColor[]={1,0,0};
+                dotColor[]={1,1,1};
             };
             class Flashlight: Flashlight {
                 BETTIR_ILLUMINATOR_PRESET_PEQ15(50,"laser pos","laser dir",0)
@@ -1068,12 +1040,11 @@ class CfgWeapons {
     class rhsusf_acc_anpeq15_bk_dl_75MRAD: rhsusf_acc_anpeq15_bk_dl_25MRAD {
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
-                // TODO: this will not work for now: T175507 in Feedback Tracker
-                isIR=0;
-                irDotSize=0.015;
+                isIR=1;
+                irDotSize=0.03;
                 beamThickness=0;
                 beamColor[]={0,0,0};
-                dotColor[]={1,0,0};
+                dotColor[]={1,1,1};
             };
             class Flashlight: Flashlight {
                 BETTIR_ILLUMINATOR_PRESET_PEQ15(75,"laser pos","laser dir",0)
@@ -1084,12 +1055,11 @@ class CfgWeapons {
     class rhsusf_acc_anpeq15_bk_dl_100MRAD: rhsusf_acc_anpeq15_bk_dl_25MRAD {
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
-                // TODO: this will not work for now: T175507 in Feedback Tracker
-                isIR=0;
-                irDotSize=0.015;
+                isIR=1;
+                irDotSize=0.03;
                 beamThickness=0;
                 beamColor[]={0,0,0};
-                dotColor[]={1,0,0};
+                dotColor[]={1,1,1};
             };
             class Flashlight: Flashlight {
                 BETTIR_ILLUMINATOR_PRESET_PEQ15(100,"laser pos","laser dir",0)

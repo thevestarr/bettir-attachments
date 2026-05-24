@@ -1,5 +1,8 @@
 params ["_unit", "_modeIndex"];
 
+if (is3DEN) exitWith {};
+if (isNull _unit) exitWith {};
+
 
 _primaryAttachmentArray = (_unit getVariable ["BettIR_primaryWeaponAttachment", [[], []]]);
 _currentPrimaryAttachment = (_primaryAttachmentArray # 0) createHashMapFromArray (_primaryAttachmentArray # 1);

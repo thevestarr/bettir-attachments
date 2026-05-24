@@ -12,7 +12,10 @@ class CfgWeapons {
 
         class ItemInfo: InventoryFlashLightItem_Base_F {
             class Pointer: Pointer {
-                irDotSize=0.03;
+                irDotSize=0.025;
+                beamThickness=0.015;
+                beamColor[]={50000000,50000000,50000000};
+                dotColor[]={1000,1000,1000};
             };
         };
     };
@@ -24,12 +27,11 @@ class CfgWeapons {
 
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
-                // TODO: this will not work for now: T175507 in Feedback Tracker
-                isIR=0;
-                irDotSize=0.015;
-                beamThickness=0;
+                isIR=1;
+                irDotSize=0.005;
+                beamThickness=0.0;
                 beamColor[]={0,0,0};
-                dotColor[]={1,0,0};
+                dotColor[]={100,100,100};
             };
         };
     };
@@ -41,10 +43,10 @@ class CfgWeapons {
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
                 isIR=0;
-                irDotSize=0.015;
+                irDotSize=0.005;
                 beamThickness=0.00005;
-                beamColor[]={50000000,0,0};
-                dotColor[]={5000,0,0};
+                beamColor[]={5000000,0,0};
+                dotColor[]={3000,0,0};
             };
         };
     };
@@ -58,7 +60,7 @@ class CfgWeapons {
                 irDotSize=0.003;
                 beamThickness=0;
                 beamColor[]={0,0,0};
-                dotColor[]={3000,0,0};
+                dotColor[]={1000,0,0};
             };
         };
     };

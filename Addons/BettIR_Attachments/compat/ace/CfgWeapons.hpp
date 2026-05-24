@@ -48,7 +48,7 @@ class CfgWeapons {
                 irDotSize=0.015;
                 beamThickness=0.00015;
                 beamColor[]={0,50000000,0};
-                dotColor[]={0,5000,0};
+                dotColor[]={0,3000,0};
             };
         };
     };
@@ -66,7 +66,7 @@ class CfgWeapons {
                 irDotSize=0.003;
                 beamThickness=0;
                 beamColor[]={0,0,0};
-                dotColor[]={0,3000,0};
+                dotColor[]={0,1000,0};
             };
         };
     };

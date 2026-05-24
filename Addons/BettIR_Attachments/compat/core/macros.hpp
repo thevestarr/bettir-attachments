@@ -36,7 +36,11 @@
                 irLaserEnd = "laser dir"; \
                 irLaserPos = "laser pos"; \
                 irDistance=-1; \
-                irDotSize=0.1; \
+                isIR=1; \
+                irDotSize=0.025;\
+                beamThickness=0.015;\
+                beamColor[]={50000000,50000000,50000000};\
+                dotColor[]={1000,1000,1000};\
             }; \
             class Flashlight: Flashlight { \
                 BETTIR_ILLUMINATOR_PRESET_DBAL_A2((MRAD),"illum pos","illum dir",1) \
@@ -51,12 +55,14 @@
         displayName=Steiner DBAL A2 (Illuminator & Laser, LO, ##MRAD## mrad); \
         class ItemInfo: ItemInfo { \
             class Pointer: Pointer { \
-                isIR=0; \
-                beamThickness=0; \
-                irDotSize=0; \
+                irLaserEnd = "laser dir"; \
+                irLaserPos = "laser pos"; \
+                isIR=1; \
+                beamThickness=0.0; \
+                irDotSize=0.005; \
                 irDistance=0; \
                 beamColor[] = {0,0,0}; \
-                dotColor[] = {0,0,0}; \
+                dotColor[] = {100,100,100}; \
             }; \
             class Flashlight: Flashlight { \
                 BETTIR_ILLUMINATOR_PRESET_DBAL_A2((MRAD),"illum pos","illum dir",0) \
