@@ -1,6 +1,10 @@
 class asdg_SlotInfo;
 class asdg_FrontSideRail: asdg_SlotInfo {
     class compatibleItems {
+        rhsusf_acc_wmx_ir = 1;
+        rhsusf_acc_wmx_bk_ir = 1;
+        rhsusf_acc_M952V_IR = 1;
+
         rhsusf_acc_anpeq15side_al = 1;
         rhsusf_acc_anpeq15side_vis = 1;
         rhsusf_acc_anpeq15side_ih_25MRAD = 1;
@@ -92,12 +96,44 @@ class asdg_FrontSideRail: asdg_SlotInfo {
         rhsusf_acc_anpeq15_bk_dl_75MRAD = 1;
         rhsusf_acc_anpeq15_bk_dl_100MRAD = 1;
         rhsusf_acc_anpeq15_bk_light_ir = 1;
+
+        rhsusf_acc_anpeq16a_vis = 1;
+        rhsusf_acc_anpeq16a_light = 1;
+        rhsusf_acc_anpeq16a_dvis = 1;
+        rhsusf_acc_anpeq16a_al = 1;
+        rhsusf_acc_anpeq16a_dl_25MRAD = 1;
+        rhsusf_acc_anpeq16a_dl_50MRAD = 1;
+        rhsusf_acc_anpeq16a_dl_75MRAD = 1;
+        rhsusf_acc_anpeq16a_dl_105MRAD = 1;
+        rhsusf_acc_anpeq16a_dh_25MRAD = 1;
+        rhsusf_acc_anpeq16a_dh_50MRAD = 1;
+        rhsusf_acc_anpeq16a_dh_75MRAD = 1;
+        rhsusf_acc_anpeq16a_dh_105MRAD = 1;
+
+        rhsusf_acc_anpeq15_wmx_vis = 1;
+        rhsusf_acc_anpeq15_wmx_al = 1;
+        rhsusf_acc_anpeq15_wmx_ih_25MRAD = 1;
+        rhsusf_acc_anpeq15_wmx_ih_50MRAD = 1;
+        rhsusf_acc_anpeq15_wmx_ih_75MRAD = 1;
+        rhsusf_acc_anpeq15_wmx_ih_100MRAD = 1;
+        rhsusf_acc_anpeq15_wmx_dh_25MRAD = 1;
+        rhsusf_acc_anpeq15_wmx_dh_50MRAD = 1;
+        rhsusf_acc_anpeq15_wmx_dh_75MRAD = 1;
+        rhsusf_acc_anpeq15_wmx_dh_100MRAD = 1;
+        rhsusf_acc_anpeq15_wmx_dl_25MRAD = 1;
+        rhsusf_acc_anpeq15_wmx_dl_50MRAD = 1;
+        rhsusf_acc_anpeq15_wmx_dl_75MRAD = 1;
+        rhsusf_acc_anpeq15_wmx_dl_100MRAD = 1;
     };
 };
 
 class PointerSlot;
 class PointerSlot_Rail: PointerSlot {
     class compatibleItems {
+        rhsusf_acc_wmx_ir = 1;
+        rhsusf_acc_wmx_bk_ir = 1;
+        rhsusf_acc_M952V_IR = 1;
+
         rhsusf_acc_anpeq15side_al = 1;
         rhsusf_acc_anpeq15side_vis = 1;
         rhsusf_acc_anpeq15side_ih_25MRAD = 1;
@@ -189,5 +225,33 @@ class PointerSlot_Rail: PointerSlot {
         rhsusf_acc_anpeq15_bk_dl_75MRAD = 1;
         rhsusf_acc_anpeq15_bk_dl_100MRAD = 1;
         rhsusf_acc_anpeq15_bk_light_ir = 1;
+
+        rhsusf_acc_anpeq16a_vis = 1;
+        rhsusf_acc_anpeq16a_light = 1;
+        rhsusf_acc_anpeq16a_dvis = 1;
+        rhsusf_acc_anpeq16a_al = 1;
+        rhsusf_acc_anpeq16a_dl_25MRAD = 1;
+        rhsusf_acc_anpeq16a_dl_50MRAD = 1;
+        rhsusf_acc_anpeq16a_dl_75MRAD = 1;
+        rhsusf_acc_anpeq16a_dl_105MRAD = 1;
+        rhsusf_acc_anpeq16a_dh_25MRAD = 1;
+        rhsusf_acc_anpeq16a_dh_50MRAD = 1;
+        rhsusf_acc_anpeq16a_dh_75MRAD = 1;
+        rhsusf_acc_anpeq16a_dh_105MRAD = 1;
+
+        rhsusf_acc_anpeq15_wmx_vis = 1;
+        rhsusf_acc_anpeq15_wmx_al = 1;
+        rhsusf_acc_anpeq15_wmx_ih_25MRAD = 1;
+        rhsusf_acc_anpeq15_wmx_ih_50MRAD = 1;
+        rhsusf_acc_anpeq15_wmx_ih_75MRAD = 1;
+        rhsusf_acc_anpeq15_wmx_ih_100MRAD = 1;
+        rhsusf_acc_anpeq15_wmx_dh_25MRAD = 1;
+        rhsusf_acc_anpeq15_wmx_dh_50MRAD = 1;
+        rhsusf_acc_anpeq15_wmx_dh_75MRAD = 1;
+        rhsusf_acc_anpeq15_wmx_dh_100MRAD = 1;
+        rhsusf_acc_anpeq15_wmx_dl_25MRAD = 1;
+        rhsusf_acc_anpeq15_wmx_dl_50MRAD = 1;
+        rhsusf_acc_anpeq15_wmx_dl_75MRAD = 1;
+        rhsusf_acc_anpeq15_wmx_dl_100MRAD = 1;
     };
 };

@@ -29,9 +29,9 @@ class BettIR_Config {
             classComposer="";
 
             // BettIR activate button or default key (L)
-            onActivate="BettIR_Attachments_fnc_defaultActivateDoubleTap";
+            onActivate="_this spawn BettIR_Attachments_fnc_defaultActivateDoubleTap";
             // same as above, but when it's released
-            onDeactivate="BettIR_Attachments_fnc_defaultDeactivateDoubleTap";
+            onDeactivate="_this spawn BettIR_Attachments_fnc_defaultDeactivateDoubleTap";
 
             // primary mode toggle (Shift + L)
             onToggleModePrimary="[_this select 0, 'MasterMode'] spawn BettIR_Attachments_fnc_defaultToggleMode";
@@ -134,6 +134,9 @@ class BettIR_Config {
 
         class BettIR_Base_PEQ15_GenericFlashlightCombo: BettIR_Base_PEQ15 {
             onToggleModeSecondary="[_this select 0, 'Device'] spawn BettIR_Attachments_fnc_defaultToggleMode";
+
+            onActivate="_this spawn BettIR_Attachments_fnc_defaultActivateCombo";
+            onDeactivate="_this spawn BettIR_Attachments_fnc_defaultDeactivateCombo";
 
             class Configurable: Configurable {
                 class Device {

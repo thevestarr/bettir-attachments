@@ -2,7 +2,7 @@ if (!hasInterface) exitWith { systemChat "[BettIR Attachments] no interface, exi
 if (allDisplays isEqualTo [findDisplay 0]) exitWith { systemChat "[BettIR Attachments] menu, exiting" };
 if (is3DEN) exitWith { systemChat "[BettIR Attachments] is 3DEN, exiting" };
 
-localNamespace setVariable ['BETTIR_PRIMARY_POWER_ACTIVATE_SCRIPT', {_this spawn BettIR_Attachments_fnc_defaultDeviceActivate; }];
+localNamespace setVariable ['BETTIR_PRIMARY_POWER_ACTIVATE_SCRIPT', {_this spawn BettIR_Attachments_fnc_defaultDeviceActivate}];
 localNamespace setVariable ['BETTIR_PRIMARY_POWER_DEACTIVATE_SCRIPT', {}];
 
 BETTIR_ATTACHMENTS_PERFRAME_HANDLER = -1;

@@ -51,6 +51,10 @@ if (_prevPrimarySideAttachment != "") then {
 if ((_currentCompatibleAttachment == "") && ((_previousCompatibleAttachment != ""))) exitWith {
 	"No more compatible device, resetting to normal" call BettIR_Attachments_fnc_printDebug;
 	_unit setVariable ["BettIR_primaryWeaponAttachment", [[], []]];
+	_unit setVariable ["BettIR_keepPrimaryDeviceOn", false];
+	_unit setVariable ["BettIR_lastPrimaryDeviceActivate", 0];
+    _unit setVariable ["BettIR_primaryDeviceActivationHeldOn", false];
+
 	[_unit] call BettIR_Attachments_fnc_removeInteractions;
 
 	localNamespace setVariable ['BETTIR_PRIMARY_POWER_ACTIVATE_SCRIPT', {_this spawn BettIR_Attachments_fnc_defaultDeviceActivate}];
@@ -63,6 +67,10 @@ if ((_currentCompatibleAttachment != "") && ((_currentCompatibleAttachment != _p
 	 _currentPrimaryAttachment = (_currentPrimaryAttachmentArray # 0) createHashMapFromArray (_currentPrimaryAttachmentArray # 1);
 	 _oldMacro = _currentPrimaryAttachment getOrDefault ["__BETTIR_MACRO", ""];
 
+	// reset variables
+	_unit setVariable ["BettIR_keepPrimaryDeviceOn", false];
+	_unit setVariable ["BettIR_lastPrimaryDeviceActivate", 0];
+    _unit setVariable ["BettIR_primaryDeviceActivationHeldOn", false];
 
 	 _parser = getText (configFile >> "BettIR_Config" >> "CompatibleAttachments" >> _currentCompatibleAttachment >> "classParser");
 	_parsedPrimaryAttachment = [_currentCompatibleAttachment] call (call compile _parser);
@@ -74,17 +82,17 @@ if ((_currentCompatibleAttachment != "") && ((_currentCompatibleAttachment != _p
 
 	if (_oldMacro != _macro) then {
 		("Macros are different, old: " + _oldMacro + ", new: " + _macro) call BettIR_Attachments_fnc_printDebug;
-		_activateFunctionName = (getText (configFile >> "BettIR_Config" >> "CompatibleAttachments" >> _currentCompatibleAttachment >> "onActivate"));
-		_deactivateFunctionName = (getText (configFile >> "BettIR_Config" >> "CompatibleAttachments" >> _currentCompatibleAttachment >> "onDeactivate"));
+		_activationScript = (getText (configFile >> "BettIR_Config" >> "CompatibleAttachments" >> _currentCompatibleAttachment >> "onActivate"));
+		_deactivationScript = (getText (configFile >> "BettIR_Config" >> "CompatibleAttachments" >> _currentCompatibleAttachment >> "onDeactivate"));
 
-		("Device activation functions passed, activate: " + _activateFunctionName + ", deactivate: " + _deactivateFunctionName) call BettIR_Attachments_fnc_printDebug;
+		("Device activation functions passed, activate: " + _activationScript + ", deactivate: " + _deactivationScript) call BettIR_Attachments_fnc_printDebug;
 
-		if (_activateFunctionName != "") then {
-			localNamespace setVariable ['BETTIR_PRIMARY_POWER_ACTIVATE_SCRIPT', (compile ("_this spawn " + _activateFunctionName))];
+		if (_activationScript != "") then {
+			localNamespace setVariable ['BETTIR_PRIMARY_POWER_ACTIVATE_SCRIPT', compile  _activationScript];
 		};
 
-		if (_deactivateFunctionName != "") then {
-			localNamespace setVariable ['BETTIR_PRIMARY_POWER_DEACTIVATE_SCRIPT', (compile ("_this spawn " + _deactivateFunctionName))];
+		if (_deactivationScript != "") then {
+			localNamespace setVariable ['BETTIR_PRIMARY_POWER_DEACTIVATE_SCRIPT', compile _deactivationScript];
 		};
 
 		[_unit] call BettIR_Attachments_fnc_removeInteractions;

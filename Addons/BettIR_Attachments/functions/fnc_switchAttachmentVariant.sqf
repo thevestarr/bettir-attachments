@@ -17,7 +17,9 @@ if (_unit isIRLaserOn (currentWeapon _unit) || _unit isFlashlightOn (currentWeap
     };
 
     // necessary: laser parameters don't update if changed in the same frame
-    sleep 0.05;
+    // additionally, laser pos is not updated when switching on the move
+    // hopefully this longer delta will help
+    sleep 0.1;
 
     if (_wasOn && _reenable) then {
         _unit action ["IRLaserOn", _unit];

@@ -11,7 +11,7 @@ if (_unit getVariable ["BettIR_keepPrimaryDeviceOn", false]) exitWith {
 "handle double taps" call BettIR_Attachments_fnc_printDebug;
 _currentTime = time;
 _lastEnable = _unit getVariable ["BettIR_lastPrimaryDeviceActivate", 0];
-if ((time - _lastEnable) <= 0.5) then {
+if ((time - _lastEnable) <= 0.35) then {
     "valid double tap, continue" call BettIR_Attachments_fnc_printDebug;
     _unit setVariable ["BettIR_keepPrimaryDeviceOn", true];  
 };

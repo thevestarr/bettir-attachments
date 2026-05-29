@@ -10,10 +10,16 @@ class CfgWeapons {
     };
 
     class acc_pointer_IR: ItemCore {
-        class ItemInfo: InventoryFlashLightItem_Base_F {};
+        class ItemInfo: InventoryFlashLightItem_Base_F {
+            class Pointer;
+        };
     };
 
-    class rhsusf_acc_anpeq15side: acc_pointer_IR {};
+    class rhsusf_acc_anpeq15side: acc_pointer_IR {
+        class ItemInfo: ItemInfo {
+            class Pointer;
+        };
+    };
 
     // aim low
     class rhsusf_acc_anpeq15side_al: rhsusf_acc_anpeq15side {
@@ -21,10 +27,10 @@ class CfgWeapons {
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
                 isIR=1;
-                irDotSize=0.03;
-                beamThickness=0;
+                irDotSize=0.005;
+                beamThickness=0.0;
                 beamColor[]={0,0,0};
-                dotColor[]={1,1,1};
+                dotColor[]={100,100,100};
             };
         };
     };
@@ -54,7 +60,7 @@ class CfgWeapons {
         };
     };
 
-    class rhsusf_acc_anpeq15side_ih_50MRAD: rhsusf_acc_anpeq15side_ih_25MRAD {
+    class rhsusf_acc_anpeq15side_ih_50MRAD: rhsusf_acc_anpeq15side {
         class ItemInfo: ItemInfo {
             class Pointer {};
             class Flashlight: Flashlight {
@@ -63,7 +69,7 @@ class CfgWeapons {
         };
     };
 
-    class rhsusf_acc_anpeq15side_ih_75MRAD: rhsusf_acc_anpeq15side_ih_25MRAD {
+    class rhsusf_acc_anpeq15side_ih_75MRAD: rhsusf_acc_anpeq15side {
         class ItemInfo: ItemInfo {
             class Pointer {};
             class Flashlight: Flashlight {
@@ -72,7 +78,7 @@ class CfgWeapons {
         };
     };
 
-    class rhsusf_acc_anpeq15side_ih_100MRAD: rhsusf_acc_anpeq15side_ih_25MRAD {
+    class rhsusf_acc_anpeq15side_ih_100MRAD: rhsusf_acc_anpeq15side {
         class ItemInfo: ItemInfo {
             class Pointer {};
             class Flashlight: Flashlight {
@@ -92,7 +98,7 @@ class CfgWeapons {
         };
     };
 
-    class rhsusf_acc_anpeq15side_dh_50MRAD: rhsusf_acc_anpeq15side_dh_25MRAD {
+    class rhsusf_acc_anpeq15side_dh_50MRAD: rhsusf_acc_anpeq15side {
         class ItemInfo: ItemInfo {
             class Pointer;
             class Flashlight: Flashlight {
@@ -101,7 +107,7 @@ class CfgWeapons {
         };
     };
 
-    class rhsusf_acc_anpeq15side_dh_75MRAD: rhsusf_acc_anpeq15side_dh_25MRAD {
+    class rhsusf_acc_anpeq15side_dh_75MRAD: rhsusf_acc_anpeq15side {
         class ItemInfo: ItemInfo {
             class Pointer;
             class Flashlight: Flashlight {
@@ -110,7 +116,7 @@ class CfgWeapons {
         };
     };
 
-    class rhsusf_acc_anpeq15side_dh_100MRAD: rhsusf_acc_anpeq15side_dh_25MRAD {
+    class rhsusf_acc_anpeq15side_dh_100MRAD: rhsusf_acc_anpeq15side {
         class ItemInfo: ItemInfo {
             class Pointer;
             class Flashlight: Flashlight {
@@ -126,10 +132,10 @@ class CfgWeapons {
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
                 isIR=1;
-                irDotSize=0.03;
-                beamThickness=0;
+                irDotSize=0.005;
+                beamThickness=0.0;
                 beamColor[]={0,0,0};
-                dotColor[]={1,1,1};
+                dotColor[]={100,100,100};
             };
             class Flashlight: Flashlight {
                 BETTIR_ILLUMINATOR_PRESET_PEQ15(25,"laser pos","laser dir",0)
@@ -139,13 +145,7 @@ class CfgWeapons {
 
     class rhsusf_acc_anpeq15side_dl_50MRAD: rhsusf_acc_anpeq15side_dl_25MRAD {
         class ItemInfo: ItemInfo {
-            class Pointer: Pointer {
-                isIR=1;
-                irDotSize=0.03;
-                beamThickness=0;
-                beamColor[]={0,0,0};
-                dotColor[]={1,1,1};
-            };
+            class Pointer;
             class Flashlight: Flashlight {
                 BETTIR_ILLUMINATOR_PRESET_PEQ15(50,"laser pos","laser dir",0)
             };
@@ -154,13 +154,7 @@ class CfgWeapons {
 
     class rhsusf_acc_anpeq15side_dl_75MRAD: rhsusf_acc_anpeq15side_dl_25MRAD {
         class ItemInfo: ItemInfo {
-            class Pointer: Pointer {
-                isIR=1;
-                irDotSize=0.03;
-                beamThickness=0;
-                beamColor[]={0,0,0};
-                dotColor[]={1,1,1};
-            };
+            class Pointer;
             class Flashlight: Flashlight {
                 BETTIR_ILLUMINATOR_PRESET_PEQ15(75,"laser pos","laser dir",0)
             };
@@ -169,13 +163,7 @@ class CfgWeapons {
 
     class rhsusf_acc_anpeq15side_dl_100MRAD: rhsusf_acc_anpeq15side_dl_25MRAD {
         class ItemInfo: ItemInfo {
-            class Pointer: Pointer {
-                isIR=1;
-                irDotSize=0.03;
-                beamThickness=0;
-                beamColor[]={0,0,0};
-                dotColor[]={1,1,1};
-            };
+            class Pointer;
             class Flashlight: Flashlight {
                 BETTIR_ILLUMINATOR_PRESET_PEQ15(100,"laser pos","laser dir",0)
             };
@@ -184,17 +172,21 @@ class CfgWeapons {
 
 
 
-    class rhsusf_acc_anpeq15side_bk: rhsusf_acc_anpeq15side {};
+    class rhsusf_acc_anpeq15side_bk: rhsusf_acc_anpeq15side {
+        class ItemInfo: ItemInfo {
+            class Pointer;
+        };
+    };
     // aim low
     class rhsusf_acc_anpeq15side_bk_al: rhsusf_acc_anpeq15side_bk {
         scope=1;
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
                 isIR=1;
-                irDotSize=0.03;
-                beamThickness=0;
+                irDotSize=0.005;
+                beamThickness=0.0;
                 beamColor[]={0,0,0};
-                dotColor[]={1,1,1};
+                dotColor[]={100,100,100};
             };
         };
     };
@@ -224,7 +216,7 @@ class CfgWeapons {
         };
     };
 
-    class rhsusf_acc_anpeq15side_bk_ih_50MRAD: rhsusf_acc_anpeq15side_bk_ih_25MRAD {
+    class rhsusf_acc_anpeq15side_bk_ih_50MRAD: rhsusf_acc_anpeq15side_bk {
         class ItemInfo: ItemInfo {
             class Pointer {};
             class Flashlight: Flashlight {
@@ -233,7 +225,7 @@ class CfgWeapons {
         };
     };
 
-    class rhsusf_acc_anpeq15side_bk_ih_75MRAD: rhsusf_acc_anpeq15side_bk_ih_25MRAD {
+    class rhsusf_acc_anpeq15side_bk_ih_75MRAD: rhsusf_acc_anpeq15side_bk {
         class ItemInfo: ItemInfo {
             class Pointer {};
             class Flashlight: Flashlight {
@@ -242,7 +234,7 @@ class CfgWeapons {
         };
     };
 
-    class rhsusf_acc_anpeq15side_bk_ih_100MRAD: rhsusf_acc_anpeq15side_bk_ih_25MRAD {
+    class rhsusf_acc_anpeq15side_bk_ih_100MRAD: rhsusf_acc_anpeq15side_bk {
         class ItemInfo: ItemInfo {
             class Pointer {};
             class Flashlight: Flashlight {
@@ -262,7 +254,7 @@ class CfgWeapons {
         };
     };
 
-    class rhsusf_acc_anpeq15side_bk_dh_50MRAD: rhsusf_acc_anpeq15side_bk_dh_25MRAD {
+    class rhsusf_acc_anpeq15side_bk_dh_50MRAD: rhsusf_acc_anpeq15side_bk {
         class ItemInfo: ItemInfo {
             class Pointer;
             class Flashlight: Flashlight {
@@ -271,7 +263,7 @@ class CfgWeapons {
         };
     };
 
-    class rhsusf_acc_anpeq15side_bk_dh_75MRAD: rhsusf_acc_anpeq15side_bk_dh_25MRAD {
+    class rhsusf_acc_anpeq15side_bk_dh_75MRAD: rhsusf_acc_anpeq15side_bk {
         class ItemInfo: ItemInfo {
             class Pointer;
             class Flashlight: Flashlight {
@@ -280,7 +272,7 @@ class CfgWeapons {
         };
     };
 
-    class rhsusf_acc_anpeq15side_bk_dh_100MRAD: rhsusf_acc_anpeq15side_bk_dh_25MRAD {
+    class rhsusf_acc_anpeq15side_bk_dh_100MRAD: rhsusf_acc_anpeq15side_bk {
         class ItemInfo: ItemInfo {
             class Pointer;
             class Flashlight: Flashlight {
@@ -296,10 +288,10 @@ class CfgWeapons {
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
                 isIR=1;
-                irDotSize=0.03;
-                beamThickness=0;
+                irDotSize=0.005;
+                beamThickness=0.0;
                 beamColor[]={0,0,0};
-                dotColor[]={1,1,1};
+                dotColor[]={100,100,100};
             };
             class Flashlight: Flashlight {
                 BETTIR_ILLUMINATOR_PRESET_PEQ15(25,"laser pos","laser dir",0)
@@ -309,13 +301,7 @@ class CfgWeapons {
 
     class rhsusf_acc_anpeq15side_bk_dl_50MRAD: rhsusf_acc_anpeq15side_bk_dl_25MRAD {
         class ItemInfo: ItemInfo {
-            class Pointer: Pointer {
-                isIR=1;
-                irDotSize=0.03;
-                beamThickness=0;
-                beamColor[]={0,0,0};
-                dotColor[]={1,1,1};
-            };
+            class Pointer;
             class Flashlight: Flashlight {
                 BETTIR_ILLUMINATOR_PRESET_PEQ15(50,"laser pos","laser dir",0)
             };
@@ -324,13 +310,7 @@ class CfgWeapons {
 
     class rhsusf_acc_anpeq15side_bk_dl_75MRAD: rhsusf_acc_anpeq15side_bk_dl_25MRAD {
         class ItemInfo: ItemInfo {
-            class Pointer: Pointer {
-                isIR=1;
-                irDotSize=0.03;
-                beamThickness=0;
-                beamColor[]={0,0,0};
-                dotColor[]={1,1,1};
-            };
+            class Pointer;
             class Flashlight: Flashlight {
                 BETTIR_ILLUMINATOR_PRESET_PEQ15(75,"laser pos","laser dir",0)
             };
@@ -339,13 +319,7 @@ class CfgWeapons {
 
     class rhsusf_acc_anpeq15side_bk_dl_100MRAD: rhsusf_acc_anpeq15side_bk_dl_25MRAD {
         class ItemInfo: ItemInfo {
-            class Pointer: Pointer {
-                isIR=1;
-                irDotSize=0.03;
-                beamThickness=0;
-                beamColor[]={0,0,0};
-                dotColor[]={1,1,1};
-            };
+            class Pointer;
             class Flashlight: Flashlight {
                 BETTIR_ILLUMINATOR_PRESET_PEQ15(100,"laser pos","laser dir",0)
             };
@@ -360,10 +334,11 @@ class CfgWeapons {
         scope=1;
     };
 
-    // class rhsusf_acc_anpeq15_top: rhsusf_acc_anpeq15side {};
-
     class rhsusf_acc_anpeq15_top: rhsusf_acc_anpeq15a {
         scope=2;
+         class ItemInfo: ItemInfo {
+            class Pointer;
+        };
     };
 
     // aim low
@@ -372,10 +347,10 @@ class CfgWeapons {
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
                 isIR=1;
-                irDotSize=0.03;
-                beamThickness=0;
+                irDotSize=0.005;
+                beamThickness=0.0;
                 beamColor[]={0,0,0};
-                dotColor[]={1,1,1};
+                dotColor[]={100,100,100};
             };
         };
     };
@@ -405,7 +380,7 @@ class CfgWeapons {
         };
     };
 
-    class rhsusf_acc_anpeq15_top_ih_50MRAD: rhsusf_acc_anpeq15_top_ih_25MRAD {
+    class rhsusf_acc_anpeq15_top_ih_50MRAD: rhsusf_acc_anpeq15_top {
         class ItemInfo: ItemInfo {
             class Pointer {};
             class Flashlight: Flashlight {
@@ -414,7 +389,7 @@ class CfgWeapons {
         };
     };
 
-    class rhsusf_acc_anpeq15_top_ih_75MRAD: rhsusf_acc_anpeq15_top_ih_25MRAD {
+    class rhsusf_acc_anpeq15_top_ih_75MRAD: rhsusf_acc_anpeq15_top {
         class ItemInfo: ItemInfo {
             class Pointer {};
             class Flashlight: Flashlight {
@@ -423,7 +398,7 @@ class CfgWeapons {
         };
     };
 
-    class rhsusf_acc_anpeq15_top_ih_100MRAD: rhsusf_acc_anpeq15_top_ih_25MRAD {
+    class rhsusf_acc_anpeq15_top_ih_100MRAD: rhsusf_acc_anpeq15_top {
         class ItemInfo: ItemInfo {
             class Pointer {};
             class Flashlight: Flashlight {
@@ -443,7 +418,7 @@ class CfgWeapons {
         };
     };
 
-    class rhsusf_acc_anpeq15_top_dh_50MRAD: rhsusf_acc_anpeq15_top_dh_25MRAD {
+    class rhsusf_acc_anpeq15_top_dh_50MRAD: rhsusf_acc_anpeq15_top {
         class ItemInfo: ItemInfo {
             class Pointer;
             class Flashlight: Flashlight {
@@ -452,7 +427,7 @@ class CfgWeapons {
         };
     };
 
-    class rhsusf_acc_anpeq15_top_dh_75MRAD: rhsusf_acc_anpeq15_top_dh_25MRAD {
+    class rhsusf_acc_anpeq15_top_dh_75MRAD: rhsusf_acc_anpeq15_top {
         class ItemInfo: ItemInfo {
             class Pointer;
             class Flashlight: Flashlight {
@@ -461,7 +436,7 @@ class CfgWeapons {
         };
     };
 
-    class rhsusf_acc_anpeq15_top_dh_100MRAD: rhsusf_acc_anpeq15_top_dh_25MRAD {
+    class rhsusf_acc_anpeq15_top_dh_100MRAD: rhsusf_acc_anpeq15_top {
         class ItemInfo: ItemInfo {
             class Pointer;
             class Flashlight: Flashlight {
@@ -477,10 +452,10 @@ class CfgWeapons {
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
                 isIR=1;
-                irDotSize=0.03;
-                beamThickness=0;
+                irDotSize=0.005;
+                beamThickness=0.0;
                 beamColor[]={0,0,0};
-                dotColor[]={1,1,1};
+                dotColor[]={100,100,100};
             };
             class Flashlight: Flashlight {
                 BETTIR_ILLUMINATOR_PRESET_PEQ15(25,"laser pos","laser dir",0)
@@ -490,13 +465,7 @@ class CfgWeapons {
 
     class rhsusf_acc_anpeq15_top_dl_50MRAD: rhsusf_acc_anpeq15_top_dl_25MRAD {
         class ItemInfo: ItemInfo {
-            class Pointer: Pointer {
-                isIR=1;
-                irDotSize=0.03;
-                beamThickness=0;
-                beamColor[]={0,0,0};
-                dotColor[]={1,1,1};
-            };
+            class Pointer;
             class Flashlight: Flashlight {
                 BETTIR_ILLUMINATOR_PRESET_PEQ15(50,"laser pos","laser dir",0)
             };
@@ -505,13 +474,7 @@ class CfgWeapons {
 
     class rhsusf_acc_anpeq15_top_dl_75MRAD: rhsusf_acc_anpeq15_top_dl_25MRAD {
         class ItemInfo: ItemInfo {
-            class Pointer: Pointer {
-                isIR=1;
-                irDotSize=0.03;
-                beamThickness=0;
-                beamColor[]={0,0,0};
-                dotColor[]={1,1,1};
-            };
+            class Pointer;
             class Flashlight: Flashlight {
                 BETTIR_ILLUMINATOR_PRESET_PEQ15(75,"laser pos","laser dir",0)
             };
@@ -520,13 +483,7 @@ class CfgWeapons {
 
     class rhsusf_acc_anpeq15_top_dl_100MRAD: rhsusf_acc_anpeq15_top_dl_25MRAD {
         class ItemInfo: ItemInfo {
-            class Pointer: Pointer {
-                isIR=1;
-                irDotSize=0.03;
-                beamThickness=0;
-                beamColor[]={0,0,0};
-                dotColor[]={1,1,1};
-            };
+            class Pointer;
             class Flashlight: Flashlight {
                 BETTIR_ILLUMINATOR_PRESET_PEQ15(100,"laser pos","laser dir",0)
             };
@@ -538,17 +495,21 @@ class CfgWeapons {
 
 
 
-    class rhsusf_acc_anpeq15_bk_top: rhsusf_acc_anpeq15_top {};
+    class rhsusf_acc_anpeq15_bk_top: rhsusf_acc_anpeq15_top {
+        class ItemInfo: ItemInfo {
+            class Pointer;
+        };
+    };
 
     class rhsusf_acc_anpeq15_bk_top_al: rhsusf_acc_anpeq15_bk_top {
         scope=1;
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
                 isIR=1;
-                irDotSize=0.03;
-                beamThickness=0;
+                irDotSize=0.005;
+                beamThickness=0.0;
                 beamColor[]={0,0,0};
-                dotColor[]={1,1,1};
+                dotColor[]={100,100,100};
             };
         };
     };
@@ -578,7 +539,7 @@ class CfgWeapons {
         };
     };
 
-    class rhsusf_acc_anpeq15_bk_top_ih_50MRAD: rhsusf_acc_anpeq15_bk_top_ih_25MRAD {
+    class rhsusf_acc_anpeq15_bk_top_ih_50MRAD: rhsusf_acc_anpeq15_bk_top {
         class ItemInfo: ItemInfo {
             class Pointer {};
             class Flashlight: Flashlight {
@@ -587,7 +548,7 @@ class CfgWeapons {
         };
     };
 
-    class rhsusf_acc_anpeq15_bk_top_ih_75MRAD: rhsusf_acc_anpeq15_bk_top_ih_25MRAD {
+    class rhsusf_acc_anpeq15_bk_top_ih_75MRAD: rhsusf_acc_anpeq15_bk_top {
         class ItemInfo: ItemInfo {
             class Pointer {};
             class Flashlight: Flashlight {
@@ -596,7 +557,7 @@ class CfgWeapons {
         };
     };
 
-    class rhsusf_acc_anpeq15_bk_top_ih_100MRAD: rhsusf_acc_anpeq15_bk_top_ih_25MRAD {
+    class rhsusf_acc_anpeq15_bk_top_ih_100MRAD: rhsusf_acc_anpeq15_bk_top {
         class ItemInfo: ItemInfo {
             class Pointer {};
             class Flashlight: Flashlight {
@@ -616,7 +577,7 @@ class CfgWeapons {
         };
     };
 
-    class rhsusf_acc_anpeq15_bk_top_dh_50MRAD: rhsusf_acc_anpeq15_bk_top_dh_25MRAD {
+    class rhsusf_acc_anpeq15_bk_top_dh_50MRAD: rhsusf_acc_anpeq15_bk_top {
         class ItemInfo: ItemInfo {
             class Pointer;
             class Flashlight: Flashlight {
@@ -625,7 +586,7 @@ class CfgWeapons {
         };
     };
 
-    class rhsusf_acc_anpeq15_bk_top_dh_75MRAD: rhsusf_acc_anpeq15_bk_top_dh_25MRAD {
+    class rhsusf_acc_anpeq15_bk_top_dh_75MRAD: rhsusf_acc_anpeq15_bk_top {
         class ItemInfo: ItemInfo {
             class Pointer;
             class Flashlight: Flashlight {
@@ -634,7 +595,7 @@ class CfgWeapons {
         };
     };
 
-    class rhsusf_acc_anpeq15_bk_top_dh_100MRAD: rhsusf_acc_anpeq15_bk_top_dh_25MRAD {
+    class rhsusf_acc_anpeq15_bk_top_dh_100MRAD: rhsusf_acc_anpeq15_bk_top {
         class ItemInfo: ItemInfo {
             class Pointer;
             class Flashlight: Flashlight {
@@ -650,10 +611,10 @@ class CfgWeapons {
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
                 isIR=1;
-                irDotSize=0.03;
-                beamThickness=0;
+                irDotSize=0.005;
+                beamThickness=0.0;
                 beamColor[]={0,0,0};
-                dotColor[]={1,1,1};
+                dotColor[]={100,100,100};
             };
             class Flashlight: Flashlight {
                 BETTIR_ILLUMINATOR_PRESET_PEQ15(25,"laser pos","laser dir",0)
@@ -663,13 +624,7 @@ class CfgWeapons {
 
     class rhsusf_acc_anpeq15_bk_top_dl_50MRAD: rhsusf_acc_anpeq15_bk_top_dl_25MRAD {
         class ItemInfo: ItemInfo {
-            class Pointer: Pointer {
-                isIR=1;
-                irDotSize=0.03;
-                beamThickness=0;
-                beamColor[]={0,0,0};
-                dotColor[]={1,1,1};
-            };
+            class Pointer;
             class Flashlight: Flashlight {
                 BETTIR_ILLUMINATOR_PRESET_PEQ15(50,"laser pos","laser dir",0)
             };
@@ -678,13 +633,7 @@ class CfgWeapons {
 
     class rhsusf_acc_anpeq15_bk_top_dl_75MRAD: rhsusf_acc_anpeq15_bk_top_dl_25MRAD {
         class ItemInfo: ItemInfo {
-            class Pointer: Pointer {
-                isIR=1;
-                irDotSize=0.03;
-                beamThickness=0;
-                beamColor[]={0,0,0};
-                dotColor[]={1,1,1};
-            };
+            class Pointer;
             class Flashlight: Flashlight {
                 BETTIR_ILLUMINATOR_PRESET_PEQ15(75,"laser pos","laser dir",0)
             };
@@ -693,13 +642,7 @@ class CfgWeapons {
 
     class rhsusf_acc_anpeq15_bk_top_dl_100MRAD: rhsusf_acc_anpeq15_bk_top_dl_25MRAD {
         class ItemInfo: ItemInfo {
-            class Pointer: Pointer {
-                isIR=1;
-                irDotSize=0.03;
-                beamThickness=0;
-                beamColor[]={0,0,0};
-                dotColor[]={1,1,1};
-            };
+            class Pointer;
             class Flashlight: Flashlight {
                 BETTIR_ILLUMINATOR_PRESET_PEQ15(100,"laser pos","laser dir",0)
             };
@@ -719,10 +662,10 @@ class CfgWeapons {
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
                 isIR=1;
-                irDotSize=0.03;
-                beamThickness=0;
+                irDotSize=0.005;
+                beamThickness=0.0;
                 beamColor[]={0,0,0};
-                dotColor[]={1,1,1};
+                dotColor[]={100,100,100};
             };
         };
     };
@@ -752,7 +695,7 @@ class CfgWeapons {
         };
     };
 
-    class rhsusf_acc_anpeq15_ih_50MRAD: rhsusf_acc_anpeq15_ih_25MRAD {
+    class rhsusf_acc_anpeq15_ih_50MRAD: rhsusf_acc_anpeq15 {
         class ItemInfo: ItemInfo {
             class Pointer {};
             class Flashlight: Flashlight {
@@ -761,7 +704,7 @@ class CfgWeapons {
         };
     };
 
-    class rhsusf_acc_anpeq15_ih_75MRAD: rhsusf_acc_anpeq15_ih_25MRAD {
+    class rhsusf_acc_anpeq15_ih_75MRAD: rhsusf_acc_anpeq15 {
         class ItemInfo: ItemInfo {
             class Pointer {};
             class Flashlight: Flashlight {
@@ -770,7 +713,7 @@ class CfgWeapons {
         };
     };
 
-    class rhsusf_acc_anpeq15_ih_100MRAD: rhsusf_acc_anpeq15_ih_25MRAD {
+    class rhsusf_acc_anpeq15_ih_100MRAD: rhsusf_acc_anpeq15 {
         class ItemInfo: ItemInfo {
             class Pointer {};
             class Flashlight: Flashlight {
@@ -790,7 +733,7 @@ class CfgWeapons {
         };
     };
 
-    class rhsusf_acc_anpeq15_dh_50MRAD: rhsusf_acc_anpeq15_dh_25MRAD {
+    class rhsusf_acc_anpeq15_dh_50MRAD: rhsusf_acc_anpeq15 {
         class ItemInfo: ItemInfo {
             class Pointer;
             class Flashlight: Flashlight {
@@ -799,7 +742,7 @@ class CfgWeapons {
         };
     };
 
-    class rhsusf_acc_anpeq15_dh_75MRAD: rhsusf_acc_anpeq15_dh_25MRAD {
+    class rhsusf_acc_anpeq15_dh_75MRAD: rhsusf_acc_anpeq15 {
         class ItemInfo: ItemInfo {
             class Pointer;
             class Flashlight: Flashlight {
@@ -808,7 +751,7 @@ class CfgWeapons {
         };
     };
 
-    class rhsusf_acc_anpeq15_dh_100MRAD: rhsusf_acc_anpeq15_dh_25MRAD {
+    class rhsusf_acc_anpeq15_dh_100MRAD: rhsusf_acc_anpeq15 {
         class ItemInfo: ItemInfo {
             class Pointer;
             class Flashlight: Flashlight {
@@ -824,10 +767,10 @@ class CfgWeapons {
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
                 isIR=1;
-                irDotSize=0.03;
-                beamThickness=0;
+                irDotSize=0.005;
+                beamThickness=0.0;
                 beamColor[]={0,0,0};
-                dotColor[]={1,1,1};
+                dotColor[]={100,100,100};
             };
             class Flashlight: Flashlight {
                 BETTIR_ILLUMINATOR_PRESET_PEQ15(25,"laser pos","laser dir",0)
@@ -837,13 +780,7 @@ class CfgWeapons {
 
     class rhsusf_acc_anpeq15_dl_50MRAD: rhsusf_acc_anpeq15_dl_25MRAD {
         class ItemInfo: ItemInfo {
-            class Pointer: Pointer {
-                isIR=1;
-                irDotSize=0.03;
-                beamThickness=0;
-                beamColor[]={0,0,0};
-                dotColor[]={1,1,1};
-            };
+            class Pointer;
             class Flashlight: Flashlight {
                 BETTIR_ILLUMINATOR_PRESET_PEQ15(50,"laser pos","laser dir",0)
             };
@@ -852,13 +789,7 @@ class CfgWeapons {
 
     class rhsusf_acc_anpeq15_dl_75MRAD: rhsusf_acc_anpeq15_dl_25MRAD {
         class ItemInfo: ItemInfo {
-            class Pointer: Pointer {
-                isIR=1;
-                irDotSize=0.03;
-                beamThickness=0;
-                beamColor[]={0,0,0};
-                dotColor[]={1,1,1};
-            };
+            class Pointer;
             class Flashlight: Flashlight {
                 BETTIR_ILLUMINATOR_PRESET_PEQ15(75,"laser pos","laser dir",0)
             };
@@ -867,13 +798,7 @@ class CfgWeapons {
 
     class rhsusf_acc_anpeq15_dl_100MRAD: rhsusf_acc_anpeq15_dl_25MRAD {
         class ItemInfo: ItemInfo {
-            class Pointer: Pointer {
-                isIR=1;
-                irDotSize=0.03;
-                beamThickness=0;
-                beamColor[]={0,0,0};
-                dotColor[]={1,1,1};
-            };
+            class Pointer;
             class Flashlight: Flashlight {
                 BETTIR_ILLUMINATOR_PRESET_PEQ15(100,"laser pos","laser dir",0)
             };
@@ -906,10 +831,10 @@ class CfgWeapons {
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
                 isIR=1;
-                irDotSize=0.03;
-                beamThickness=0;
+                irDotSize=0.005;
+                beamThickness=0.0;
                 beamColor[]={0,0,0};
-                dotColor[]={1,1,1};
+                dotColor[]={100,100,100};
             };
         };
     };
@@ -939,7 +864,7 @@ class CfgWeapons {
         };
     };
 
-    class rhsusf_acc_anpeq15_bk_ih_50MRAD: rhsusf_acc_anpeq15_bk_ih_25MRAD {
+    class rhsusf_acc_anpeq15_bk_ih_50MRAD: rhsusf_acc_anpeq15_bk {
         class ItemInfo: ItemInfo {
             class Pointer {};
             class Flashlight: Flashlight {
@@ -948,7 +873,7 @@ class CfgWeapons {
         };
     };
 
-    class rhsusf_acc_anpeq15_bk_ih_75MRAD: rhsusf_acc_anpeq15_bk_ih_25MRAD {
+    class rhsusf_acc_anpeq15_bk_ih_75MRAD: rhsusf_acc_anpeq15_bk {
         class ItemInfo: ItemInfo {
             class Pointer {};
             class Flashlight: Flashlight {
@@ -957,7 +882,7 @@ class CfgWeapons {
         };
     };
 
-    class rhsusf_acc_anpeq15_bk_ih_100MRAD: rhsusf_acc_anpeq15_bk_ih_25MRAD {
+    class rhsusf_acc_anpeq15_bk_ih_100MRAD: rhsusf_acc_anpeq15_bk {
         class ItemInfo: ItemInfo {
             class Pointer {};
             class Flashlight: Flashlight {
@@ -977,7 +902,7 @@ class CfgWeapons {
         };
     };
 
-    class rhsusf_acc_anpeq15_bk_dh_50MRAD: rhsusf_acc_anpeq15_bk_dh_25MRAD {
+    class rhsusf_acc_anpeq15_bk_dh_50MRAD: rhsusf_acc_anpeq15_bk {
         class ItemInfo: ItemInfo {
             class Pointer;
             class Flashlight: Flashlight {
@@ -986,7 +911,7 @@ class CfgWeapons {
         };
     };
 
-    class rhsusf_acc_anpeq15_bk_dh_75MRAD: rhsusf_acc_anpeq15_bk_dh_25MRAD {
+    class rhsusf_acc_anpeq15_bk_dh_75MRAD: rhsusf_acc_anpeq15_bk {
         class ItemInfo: ItemInfo {
             class Pointer;
             class Flashlight: Flashlight {
@@ -995,7 +920,7 @@ class CfgWeapons {
         };
     };
 
-    class rhsusf_acc_anpeq15_bk_dh_100MRAD: rhsusf_acc_anpeq15_bk_dh_25MRAD {
+    class rhsusf_acc_anpeq15_bk_dh_100MRAD: rhsusf_acc_anpeq15_bk {
         class ItemInfo: ItemInfo {
             class Pointer;
             class Flashlight: Flashlight {
@@ -1011,10 +936,10 @@ class CfgWeapons {
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
                 isIR=1;
-                irDotSize=0.03;
-                beamThickness=0;
+                irDotSize=0.005;
+                beamThickness=0.0;
                 beamColor[]={0,0,0};
-                dotColor[]={1,1,1};
+                dotColor[]={100,100,100};
             };
             class Flashlight: Flashlight {
                 BETTIR_ILLUMINATOR_PRESET_PEQ15(25,"laser pos","laser dir",0)
@@ -1024,13 +949,7 @@ class CfgWeapons {
 
     class rhsusf_acc_anpeq15_bk_dl_50MRAD: rhsusf_acc_anpeq15_bk_dl_25MRAD {
         class ItemInfo: ItemInfo {
-            class Pointer: Pointer {
-                isIR=1;
-                irDotSize=0.03;
-                beamThickness=0;
-                beamColor[]={0,0,0};
-                dotColor[]={1,1,1};
-            };
+            class Pointer;
             class Flashlight: Flashlight {
                 BETTIR_ILLUMINATOR_PRESET_PEQ15(50,"laser pos","laser dir",0)
             };
@@ -1039,13 +958,7 @@ class CfgWeapons {
 
     class rhsusf_acc_anpeq15_bk_dl_75MRAD: rhsusf_acc_anpeq15_bk_dl_25MRAD {
         class ItemInfo: ItemInfo {
-            class Pointer: Pointer {
-                isIR=1;
-                irDotSize=0.03;
-                beamThickness=0;
-                beamColor[]={0,0,0};
-                dotColor[]={1,1,1};
-            };
+            class Pointer;
             class Flashlight: Flashlight {
                 BETTIR_ILLUMINATOR_PRESET_PEQ15(75,"laser pos","laser dir",0)
             };
@@ -1054,13 +967,7 @@ class CfgWeapons {
 
     class rhsusf_acc_anpeq15_bk_dl_100MRAD: rhsusf_acc_anpeq15_bk_dl_25MRAD {
         class ItemInfo: ItemInfo {
-            class Pointer: Pointer {
-                isIR=1;
-                irDotSize=0.03;
-                beamThickness=0;
-                beamColor[]={0,0,0};
-                dotColor[]={1,1,1};
-            };
+            class Pointer;
             class Flashlight: Flashlight {
                 BETTIR_ILLUMINATOR_PRESET_PEQ15(100,"laser pos","laser dir",0)
             };
@@ -1068,4 +975,326 @@ class CfgWeapons {
     };
 
     class rhsusf_acc_anpeq15_bk_light_ir: rhsusf_acc_anpeq15_light_ir {};
+
+    class rhsusf_acc_M952V: rhsusf_acc_anpeq15_light {};
+    class rhsusf_acc_M952V_IR : rhsusf_acc_M952V {
+        class ItemInfo: ItemInfo {
+            class Flashlight: Flashlight {
+                irLight=1;
+            };
+        };
+    };
+
+    class rhsusf_acc_wmx: rhsusf_acc_M952V {};
+    class rhsusf_acc_wmx_ir : rhsusf_acc_wmx {
+        class ItemInfo: ItemInfo {
+            class Flashlight: Flashlight {
+                irLight=1;
+            };
+        };
+    };
+
+    class rhsusf_acc_wmx_bk: rhsusf_acc_M952V {};
+    class rhsusf_acc_wmx_bk_ir : rhsusf_acc_wmx_bk {
+        class ItemInfo: ItemInfo {
+            class Flashlight: Flashlight {
+                irLight=1;
+            };
+        };
+    };
+
+    class rhsusf_acc_anpeq16a: rhsusf_acc_anpeq15 {
+        class ItemInfo: ItemInfo {
+            class Pointer;
+        };
+    };
+
+    class rhsusf_acc_anpeq16a_vis: rhsusf_acc_anpeq16a {
+        scope=1;
+        class ItemInfo: ItemInfo {
+            class Pointer: Pointer {
+                isIR=0;
+                irDotSize=0.015;
+                beamThickness=0.00005;
+                beamColor[]={50000000,0,0};
+                dotColor[]={5000,0,0};
+            };
+        };
+    };
+    
+    class rhsusf_acc_anpeq16a_light: rhsusf_acc_anpeq15_light {
+        scope=1;
+        class ItemInfo: ItemInfo {
+            class Flashlight;
+        };
+    };
+    
+
+    class rhsusf_acc_anpeq16a_dvis: rhsusf_acc_anpeq16a_light {
+        scope=1;
+        class ItemInfo: ItemInfo {
+            // no pointer to inherit from in the light config
+            class Pointer: Pointer {
+                irLaserPos="laser pos";
+                irLaserEnd="laser dir";
+                isIR=0;
+                irDotSize=0.015;
+                beamThickness=0.00005;
+                beamColor[]={50000000,0,0};
+                dotColor[]={5000,0,0};
+            };
+            class Flashlight;
+        };
+    };
+
+    class rhsusf_acc_anpeq16a_al: rhsusf_acc_anpeq16a {
+        scope=1;
+        class ItemInfo: ItemInfo {
+            class Pointer: Pointer {
+                isIR=1;
+                irDotSize=0.005;
+                beamThickness=0.0;
+                beamColor[]={0,0,0};
+                dotColor[]={100,100,100};
+            };
+        };
+    };
+ 
+    class rhsusf_acc_anpeq16a_dl_25MRAD: rhsusf_acc_anpeq16a_al {
+        scope=1;
+        class ItemInfo: ItemInfo {
+            class Pointer;
+            class Flashlight: Flashlight {
+                BETTIR_ILLUMINATOR_PRESET_PEQ15(25,"laser pos","laser dir",0)
+            };
+        };
+    };
+    
+    class rhsusf_acc_anpeq16a_dl_50MRAD: rhsusf_acc_anpeq16a_al {
+        class ItemInfo: ItemInfo {
+            class Pointer;
+            class Flashlight: Flashlight {
+                BETTIR_ILLUMINATOR_PRESET_PEQ15(50,"laser pos","laser dir",0)
+            };
+        };
+    };
+    
+    class rhsusf_acc_anpeq16a_dl_75MRAD: rhsusf_acc_anpeq16a_al {
+        class ItemInfo: ItemInfo {
+            class Pointer;
+            class Flashlight: Flashlight {
+                BETTIR_ILLUMINATOR_PRESET_PEQ15(75,"laser pos","laser dir",0)
+            };
+        };
+    };
+    
+    class rhsusf_acc_anpeq16a_dl_105MRAD: rhsusf_acc_anpeq16a_al {
+        class ItemInfo: ItemInfo {
+            class Pointer;
+            class Flashlight: Flashlight {
+                BETTIR_ILLUMINATOR_PRESET_PEQ15(105,"laser pos","laser dir",0)
+            };
+        };
+    };
+    
+    class rhsusf_acc_anpeq16a_dh_25MRAD: rhsusf_acc_anpeq16a {
+        scope=1;
+        class ItemInfo: ItemInfo {
+            class Pointer;
+            class Flashlight: Flashlight {
+                BETTIR_ILLUMINATOR_PRESET_PEQ15(25,"laser pos","laser dir",1)
+            };
+        };
+    };
+    
+    class rhsusf_acc_anpeq16a_dh_50MRAD: rhsusf_acc_anpeq16a {
+        class ItemInfo: ItemInfo {
+            class Pointer;
+            class Flashlight: Flashlight {
+                BETTIR_ILLUMINATOR_PRESET_PEQ15(50,"laser pos","laser dir",1)
+            };
+        };
+    };
+    
+    class rhsusf_acc_anpeq16a_dh_75MRAD: rhsusf_acc_anpeq16a {
+        class ItemInfo: ItemInfo {
+            class Pointer;
+            class Flashlight: Flashlight {
+                BETTIR_ILLUMINATOR_PRESET_PEQ15(75,"laser pos","laser dir",1)
+            };
+        };
+    };
+    
+    class rhsusf_acc_anpeq16a_dh_105MRAD: rhsusf_acc_anpeq16a {
+        class ItemInfo: ItemInfo {
+            class Pointer;
+            class Flashlight: Flashlight {
+                BETTIR_ILLUMINATOR_PRESET_PEQ15(105,"laser pos","laser dir",1)
+            };
+        };
+    };
+
+    class rhsusf_acc_anpeq15_wmx: rhsusf_acc_anpeq15 {
+         class ItemInfo: ItemInfo {
+            class Pointer;
+        };
+    };
+
+    class rhsusf_acc_anpeq15_wmx_vis: rhsusf_acc_anpeq15_wmx {
+        scope=1;
+        class ItemInfo: ItemInfo {
+            class Pointer: Pointer {
+                isIR=0;
+                irDotSize=0.015;
+                beamThickness=0.00005;
+                beamColor[]={50000000,0,0};
+                dotColor[]={5000,0,0};
+            };
+        };
+    };
+    
+    class rhsusf_acc_anpeq15_wmx_al: rhsusf_acc_anpeq15_wmx {
+        scope=1;
+        class ItemInfo: ItemInfo {
+            class Pointer: Pointer {
+                isIR=1;
+                irDotSize=0.005;
+                beamThickness=0.0;
+                beamColor[]={0,0,0};
+                dotColor[]={100,100,100};
+            };
+        };
+    };
+    
+    class rhsusf_acc_anpeq15_wmx_ih_25MRAD: rhsusf_acc_anpeq15_wmx {
+        scope=1;
+        class ItemInfo: ItemInfo {
+            class Pointer {};
+            class Flashlight: Flashlight {
+                BETTIR_ILLUMINATOR_PRESET_PEQ15(25,"laser pos","laser dir",1)
+            };
+        };
+    };
+    
+    class rhsusf_acc_anpeq15_wmx_ih_50MRAD: rhsusf_acc_anpeq15_wmx_ih_25MRAD {
+        class ItemInfo: ItemInfo {
+            class Pointer {};
+            class Flashlight: Flashlight {
+                BETTIR_ILLUMINATOR_PRESET_PEQ15(50,"laser pos","laser dir",1)
+            };
+        };
+    };
+    
+    class rhsusf_acc_anpeq15_wmx_ih_75MRAD: rhsusf_acc_anpeq15_wmx_ih_25MRAD {
+        class ItemInfo: ItemInfo {
+            class Pointer {};
+            class Flashlight: Flashlight {
+                BETTIR_ILLUMINATOR_PRESET_PEQ15(75,"laser pos","laser dir",1)
+            };
+        };
+    };
+    
+    class rhsusf_acc_anpeq15_wmx_ih_100MRAD: rhsusf_acc_anpeq15_wmx_ih_25MRAD {
+        class ItemInfo: ItemInfo {
+            class Pointer {};
+            class Flashlight: Flashlight {
+                BETTIR_ILLUMINATOR_PRESET_PEQ15(100,"laser pos","laser dir",1)
+            };
+        };
+    };
+    
+    class rhsusf_acc_anpeq15_wmx_dh_25MRAD: rhsusf_acc_anpeq15_wmx {
+        scope=1;
+        class ItemInfo: ItemInfo {
+            class Pointer;
+            class Flashlight: Flashlight {
+                BETTIR_ILLUMINATOR_PRESET_PEQ15(25,"laser pos","laser dir",1)
+            };
+        };
+    };
+    
+    class rhsusf_acc_anpeq15_wmx_dh_50MRAD: rhsusf_acc_anpeq15_wmx_dh_25MRAD {
+        class ItemInfo: ItemInfo {
+            class Pointer;
+            class Flashlight: Flashlight {
+                BETTIR_ILLUMINATOR_PRESET_PEQ15(50,"laser pos","laser dir",1)
+            };
+        };
+    };
+    
+    class rhsusf_acc_anpeq15_wmx_dh_75MRAD: rhsusf_acc_anpeq15_wmx_dh_25MRAD {
+        class ItemInfo: ItemInfo {
+            class Pointer;
+            class Flashlight: Flashlight {
+                BETTIR_ILLUMINATOR_PRESET_PEQ15(75,"laser pos","laser dir",1)
+            };
+        };
+    };
+    
+    class rhsusf_acc_anpeq15_wmx_dh_100MRAD: rhsusf_acc_anpeq15_wmx_dh_25MRAD {
+        class ItemInfo: ItemInfo {
+            class Pointer;
+            class Flashlight: Flashlight {
+                BETTIR_ILLUMINATOR_PRESET_PEQ15(100,"laser pos","laser dir",1)
+            };
+        };
+    };
+    
+    class rhsusf_acc_anpeq15_wmx_dl_25MRAD: rhsusf_acc_anpeq15_wmx_al {
+        scope=1;
+        class ItemInfo: ItemInfo {
+            class Pointer;
+            class Flashlight: Flashlight {
+                BETTIR_ILLUMINATOR_PRESET_PEQ15(25,"laser pos","laser dir",0)
+            };
+        };
+    };
+    
+    class rhsusf_acc_anpeq15_wmx_dl_50MRAD: rhsusf_acc_anpeq15_wmx_dl_25MRAD {
+        class ItemInfo: ItemInfo {
+            class Pointer;
+            class Flashlight: Flashlight {
+                BETTIR_ILLUMINATOR_PRESET_PEQ15(50,"laser pos","laser dir",0)
+            };
+        };
+    };
+    
+    class rhsusf_acc_anpeq15_wmx_dl_75MRAD: rhsusf_acc_anpeq15_wmx_dl_25MRAD {
+        class ItemInfo: ItemInfo {
+            class Pointer;
+            class Flashlight: Flashlight {
+                BETTIR_ILLUMINATOR_PRESET_PEQ15(75,"laser pos","laser dir",0)
+            };
+        };
+    };
+    
+    class rhsusf_acc_anpeq15_wmx_dl_100MRAD: rhsusf_acc_anpeq15_wmx_dl_25MRAD {
+        class ItemInfo: ItemInfo {
+            class Pointer;
+            class Flashlight: Flashlight {
+                BETTIR_ILLUMINATOR_PRESET_PEQ15(100,"laser pos","laser dir",0)
+            };
+        };
+    };
+    
+    class rhsusf_acc_anpeq15_wmx_light: rhsusf_acc_anpeq15_wmx {
+        scope=1;
+        class ItemInfo: ItemInfo {
+            class Pointer {};
+            class Flashlight;
+        };
+    };
+
+    class rhsusf_acc_anpeq15_wmx_light_ir : rhsusf_acc_anpeq15_wmx_light {
+        class ItemInfo: ItemInfo {
+            class Flashlight {
+                irLight=1;
+                scale[]={1,1,1};
+                ambient[]={1,1,1};
+                color[]={1,1,1};
+                intensity=600;
+                onlyInNvg=1; // not sure what it does, but it's 0 right now
+            };
+        };
+    };
 };

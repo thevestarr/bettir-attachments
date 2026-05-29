@@ -1,4 +1,4 @@
-params ["_unit", "_buttonIndex"];
+params ["_unit", "_buttonIndex", ["_laserDeactivateScript", BettIR_Attachments_fnc_defaultDeactivateDoubleTap], ["_flashlightDeactivateScript", {}]];
 
 
 _primaryAttachmentArray = (_unit getVariable ["BettIR_primaryWeaponAttachment", [[], []]]);
@@ -8,10 +8,9 @@ _device = _currentPrimaryAttachment getOrDefault ["Device", "Laser"];
 
 if (_buttonIndex == 0) then {
     if (_device == "Laser") then {
-        [_unit, _buttonIndex] spawn BettIR_Attachments_fnc_defaultDeactivateDoubleTap;
+        [_unit, _buttonIndex] spawn _laserDeactivateScript;
     } else {
-        // no deactivate script atm
-        // [_unit] spawn BettIR_Attachments_fnc_defaultDeviceActivate;
+        [_unit, _buttonIndex] spawn _flashlightDeactivateScript;
     };
 } else {
     if (_device == "Laser") then {
@@ -22,6 +21,7 @@ if (_buttonIndex == 0) then {
 
     sleep 0.1;
 
+    // TODO: use the actual device activation script
     _unit action ["IRLaserOff", _unit];
     _unit action ["GunLightOff", _unit];
 };
