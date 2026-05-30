@@ -241,6 +241,7 @@ class PointerSlot_Rail: PointerSlot {
 
         rhsusf_acc_anpeq15_wmx_vis = 1;
         rhsusf_acc_anpeq15_wmx_al = 1;
+        rhsusf_acc_anpeq15_wmx_light_ir = 1;
         rhsusf_acc_anpeq15_wmx_ih_25MRAD = 1;
         rhsusf_acc_anpeq15_wmx_ih_50MRAD = 1;
         rhsusf_acc_anpeq15_wmx_ih_75MRAD = 1;
