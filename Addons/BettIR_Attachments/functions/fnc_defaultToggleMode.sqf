@@ -28,4 +28,4 @@ if (_index == -1) exitWith {
 };
 
 _newMode = _modes select ((_index + 1) mod (count _modes));
-[_unit, _modeName, _newMode] call BettIR_Attachments_fnc_changeConfigurableAttachment;
+[_unit, _modeName, _newMode, true, true] call BettIR_Attachments_fnc_changeConfigurableAttachment;

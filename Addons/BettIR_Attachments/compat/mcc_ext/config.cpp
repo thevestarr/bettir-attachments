@@ -1,3 +1,6 @@
+#include "..\..\include\presets\dbal_a2.hpp"
+
+
 class CfgPatches {
     class BettIR_Attachments_Compat_MCC_Extended {
         addonRootClass="BettIR_Attachments";
@@ -30,11 +33,7 @@ class CfgWeapons {
         scope=1;
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
-                isIR=0;
-                irDotSize=0.015;
-                beamThickness=0.00005;
-                beamColor[]={50000000,0,0};
-                dotColor[]={5000,0,0};
+                BETTIR_VIS_LASER_PRESET_DBAL_A2_RED
             };
         };
     };

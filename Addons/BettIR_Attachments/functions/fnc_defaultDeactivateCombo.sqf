@@ -14,9 +14,9 @@ if (_buttonIndex == 0) then {
     };
 } else {
     if (_device == "Laser") then {
-        [_unit, "Device", "Flashlight", false] call BettIR_Attachments_fnc_changeConfigurableAttachment;
+        [_unit, "Device", "Flashlight", false, false] call BettIR_Attachments_fnc_changeConfigurableAttachment;
     } else {
-        [_unit, "Device", "Laser", false] call BettIR_Attachments_fnc_changeConfigurableAttachment;
+        [_unit, "Device", "Laser", false, false] call BettIR_Attachments_fnc_changeConfigurableAttachment;
     };
 
     sleep 0.1;

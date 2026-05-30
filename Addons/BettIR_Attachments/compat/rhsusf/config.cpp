@@ -1,12 +1,11 @@
 class CfgPatches {
     class BettIR_Attachments_Compat_RHSUSF {
         addonRootClass="BettIR_Attachments";
-        name="BettIR Attachment Compatibility with core game";
+        name="BettIR Attachment Compatibility with RHS USAF";
         units[]={};
         weapons[]={"acc_pointer_IR"};
         requiredVersion=2.14;
-        // requiredAddons[]={"rhsusf_main_loadorder"};
-        requiredAddons[]={"dupa"};
+        requiredAddons[]={"rhsusf_main_loadorder"};
         skipWhenMissingDependencies = 1;
     };
 };

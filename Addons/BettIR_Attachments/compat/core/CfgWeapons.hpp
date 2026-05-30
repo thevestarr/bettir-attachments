@@ -12,10 +12,7 @@ class CfgWeapons {
 
         class ItemInfo: InventoryFlashLightItem_Base_F {
             class Pointer: Pointer {
-                irDotSize=0.025;
-                beamThickness=0.015;
-                beamColor[]={50000000,50000000,50000000};
-                dotColor[]={1000,1000,1000};
+                BETTIR_IR_LASER_PRESET_DBAL_A2
             };
         };
     };
@@ -27,11 +24,7 @@ class CfgWeapons {
 
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
-                isIR=1;
-                irDotSize=0.005;
-                beamThickness=0.0;
-                beamColor[]={0,0,0};
-                dotColor[]={100,100,100};
+                BETTIR_IR_LASER_PRESET_DBAL_A2_LO
             };
         };
     };
@@ -42,11 +35,7 @@ class CfgWeapons {
         displayName="Steiner DBAL A2 (Laser, Red)";
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
-                isIR=0;
-                irDotSize=0.005;
-                beamThickness=0.00005;
-                beamColor[]={5000000,0,0};
-                dotColor[]={3000,0,0};
+                BETTIR_VIS_LASER_PRESET_DBAL_A2_RED
             };
         };
     };
@@ -56,11 +45,7 @@ class CfgWeapons {
         model="BettIR_Attachments\data\models\DBAL_vis_lo.p3d";
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
-                isIR=0;
-                irDotSize=0.003;
-                beamThickness=0;
-                beamColor[]={0,0,0};
-                dotColor[]={1000,0,0};
+                BETTIR_VIS_LASER_PRESET_DBAL_A2_RED_LO
             };
         };
     };

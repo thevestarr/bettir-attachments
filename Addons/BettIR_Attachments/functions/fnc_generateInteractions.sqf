@@ -26,7 +26,7 @@ _configurables = [_macro] call BettIR_Attachments_fnc_getConfigurableClasses;
             format ["BettIR_Primary_%1_%2", _key, _name],
             _displayName,
             "",
-            compile format ["params ['_target']; [_target,'%1', '%2'] call BettIR_Attachments_fnc_changeConfigurableAttachment", _key, _name],
+            compile format ["params ['_target']; [_target,'%1', '%2', true, false] call BettIR_Attachments_fnc_changeConfigurableAttachment", _key, _name],
             {true} // todo: add condition
         ] call ace_interact_menu_fnc_createAction;
         [_unit, 1, ["ACE_SelfActions", "BettIR", "BettIR_Primary", format ["BettIR_Primary_%1", _key]], _variantInteraction] call ace_interact_menu_fnc_addActionToObject;

@@ -1,4 +1,5 @@
 #include "..\..\include\presets\peq15.hpp"
+#include "..\..\include\presets\dbal_a2.hpp"
 
 class CfgWeapons {
     class ItemCore;
@@ -17,7 +18,9 @@ class CfgWeapons {
 
     class rhsusf_acc_anpeq15side: acc_pointer_IR {
         class ItemInfo: ItemInfo {
-            class Pointer;
+            class Pointer: Pointer {
+                BETTIR_IR_LASER_PRESET_DBAL_A2
+            };
         };
     };
 
@@ -26,11 +29,7 @@ class CfgWeapons {
         scope=1;
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
-                isIR=1;
-                irDotSize=0.005;
-                beamThickness=0.0;
-                beamColor[]={0,0,0};
-                dotColor[]={100,100,100};
+                BETTIR_IR_LASER_PRESET_DBAL_A2_LO
             };
         };
     };
@@ -40,11 +39,7 @@ class CfgWeapons {
         scope=1;
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
-                isIR=0;
-                irDotSize=0.015;
-                beamThickness=0.00005;
-                beamColor[]={50000000,0,0};
-                dotColor[]={5000,0,0};
+                BETTIR_VIS_LASER_PRESET_DBAL_A2_RED
             };
         };
     };
@@ -131,11 +126,7 @@ class CfgWeapons {
         scope=1;
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
-                isIR=1;
-                irDotSize=0.005;
-                beamThickness=0.0;
-                beamColor[]={0,0,0};
-                dotColor[]={100,100,100};
+                BETTIR_IR_LASER_PRESET_DBAL_A2_LO
             };
             class Flashlight: Flashlight {
                 BETTIR_ILLUMINATOR_PRESET_PEQ15(25,"laser pos","laser dir",0)
@@ -182,11 +173,7 @@ class CfgWeapons {
         scope=1;
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
-                isIR=1;
-                irDotSize=0.005;
-                beamThickness=0.0;
-                beamColor[]={0,0,0};
-                dotColor[]={100,100,100};
+                BETTIR_IR_LASER_PRESET_DBAL_A2_LO
             };
         };
     };
@@ -196,11 +183,7 @@ class CfgWeapons {
         scope=1;
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
-                isIR=0;
-                irDotSize=0.015;
-                beamThickness=0.00005;
-                beamColor[]={50000000,0,0};
-                dotColor[]={5000,0,0};
+                BETTIR_VIS_LASER_PRESET_DBAL_A2_RED
             };
         };
     };
@@ -287,11 +270,7 @@ class CfgWeapons {
         scope=1;
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
-                isIR=1;
-                irDotSize=0.005;
-                beamThickness=0.0;
-                beamColor[]={0,0,0};
-                dotColor[]={100,100,100};
+                BETTIR_IR_LASER_PRESET_DBAL_A2_LO
             };
             class Flashlight: Flashlight {
                 BETTIR_ILLUMINATOR_PRESET_PEQ15(25,"laser pos","laser dir",0)
@@ -346,11 +325,7 @@ class CfgWeapons {
         scope=1;
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
-                isIR=1;
-                irDotSize=0.005;
-                beamThickness=0.0;
-                beamColor[]={0,0,0};
-                dotColor[]={100,100,100};
+                BETTIR_IR_LASER_PRESET_DBAL_A2_LO
             };
         };
     };
@@ -360,11 +335,7 @@ class CfgWeapons {
         scope=1;
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
-                isIR=0;
-                irDotSize=0.015;
-                beamThickness=0.00005;
-                beamColor[]={50000000,0,0};
-                dotColor[]={5000,0,0};
+                BETTIR_VIS_LASER_PRESET_DBAL_A2_RED
             };
         };
     };
@@ -451,11 +422,7 @@ class CfgWeapons {
         scope=1;
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
-                isIR=1;
-                irDotSize=0.005;
-                beamThickness=0.0;
-                beamColor[]={0,0,0};
-                dotColor[]={100,100,100};
+                BETTIR_IR_LASER_PRESET_DBAL_A2_LO
             };
             class Flashlight: Flashlight {
                 BETTIR_ILLUMINATOR_PRESET_PEQ15(25,"laser pos","laser dir",0)
@@ -497,7 +464,9 @@ class CfgWeapons {
 
     class rhsusf_acc_anpeq15_bk_top: rhsusf_acc_anpeq15_top {
         class ItemInfo: ItemInfo {
-            class Pointer;
+            class Pointer: Pointer {
+                BETTIR_IR_LASER_PRESET_DBAL_A2_LO
+            };
         };
     };
 
@@ -505,11 +474,7 @@ class CfgWeapons {
         scope=1;
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
-                isIR=1;
-                irDotSize=0.005;
-                beamThickness=0.0;
-                beamColor[]={0,0,0};
-                dotColor[]={100,100,100};
+                BETTIR_IR_LASER_PRESET_DBAL_A2_LO
             };
         };
     };
@@ -519,11 +484,7 @@ class CfgWeapons {
         scope=1;
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
-                isIR=0;
-                irDotSize=0.015;
-                beamThickness=0.00005;
-                beamColor[]={50000000,0,0};
-                dotColor[]={5000,0,0};
+                BETTIR_VIS_LASER_PRESET_DBAL_A2_RED
             };
         };
     };
@@ -610,11 +571,7 @@ class CfgWeapons {
         scope=1;
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
-                isIR=1;
-                irDotSize=0.005;
-                beamThickness=0.0;
-                beamColor[]={0,0,0};
-                dotColor[]={100,100,100};
+                BETTIR_IR_LASER_PRESET_DBAL_A2_LO
             };
             class Flashlight: Flashlight {
                 BETTIR_ILLUMINATOR_PRESET_PEQ15(25,"laser pos","laser dir",0)
@@ -654,18 +611,20 @@ class CfgWeapons {
 
 
 
-    class rhsusf_acc_anpeq15: acc_pointer_IR {};
+    class rhsusf_acc_anpeq15: acc_pointer_IR {
+        class ItemInfo: ItemInfo {
+            class Pointer: Pointer {
+                BETTIR_IR_LASER_PRESET_DBAL_A2
+            };
+        };
+    };
 
     // aim low
     class rhsusf_acc_anpeq15_al: rhsusf_acc_anpeq15 {
         scope=1;
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
-                isIR=1;
-                irDotSize=0.005;
-                beamThickness=0.0;
-                beamColor[]={0,0,0};
-                dotColor[]={100,100,100};
+                BETTIR_IR_LASER_PRESET_DBAL_A2_LO
             };
         };
     };
@@ -675,11 +634,7 @@ class CfgWeapons {
         scope=1;
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
-                isIR=0;
-                irDotSize=0.015;
-                beamThickness=0.00005;
-                beamColor[]={50000000,0,0};
-                dotColor[]={5000,0,0};
+                BETTIR_VIS_LASER_PRESET_DBAL_A2_RED
             };
         };
     };
@@ -766,11 +721,7 @@ class CfgWeapons {
         scope=1;
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
-                isIR=1;
-                irDotSize=0.005;
-                beamThickness=0.0;
-                beamColor[]={0,0,0};
-                dotColor[]={100,100,100};
+                BETTIR_IR_LASER_PRESET_DBAL_A2_LO
             };
             class Flashlight: Flashlight {
                 BETTIR_ILLUMINATOR_PRESET_PEQ15(25,"laser pos","laser dir",0)
@@ -805,11 +756,7 @@ class CfgWeapons {
         };
     };
 
-    class rhsusf_acc_anpeq15_light: rhsusf_acc_anpeq15 {
-        class ItemInfo: ItemInfo {
-            class Flashlight;
-        };
-    };
+    class rhsusf_acc_anpeq15_light: rhsusf_acc_anpeq15 {};
 
     class rhsusf_acc_anpeq15_light_ir: rhsusf_acc_anpeq15_light {
         class ItemInfo: ItemInfo {
@@ -830,11 +777,7 @@ class CfgWeapons {
         scope=1;
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
-                isIR=1;
-                irDotSize=0.005;
-                beamThickness=0.0;
-                beamColor[]={0,0,0};
-                dotColor[]={100,100,100};
+                BETTIR_IR_LASER_PRESET_DBAL_A2_LO
             };
         };
     };
@@ -844,11 +787,7 @@ class CfgWeapons {
         scope=1;
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
-                isIR=0;
-                irDotSize=0.015;
-                beamThickness=0.00005;
-                beamColor[]={50000000,0,0};
-                dotColor[]={5000,0,0};
+                BETTIR_VIS_LASER_PRESET_DBAL_A2_RED
             };
         };
     };
@@ -935,11 +874,7 @@ class CfgWeapons {
         scope=1;
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
-                isIR=1;
-                irDotSize=0.005;
-                beamThickness=0.0;
-                beamColor[]={0,0,0};
-                dotColor[]={100,100,100};
+                BETTIR_IR_LASER_PRESET_DBAL_A2_LO
             };
             class Flashlight: Flashlight {
                 BETTIR_ILLUMINATOR_PRESET_PEQ15(25,"laser pos","laser dir",0)
@@ -974,7 +909,14 @@ class CfgWeapons {
         };
     };
 
-    class rhsusf_acc_anpeq15_bk_light_ir: rhsusf_acc_anpeq15_light_ir {};
+    class rhsusf_acc_anpeq15_bk_light: rhsusf_acc_anpeq15_bk {};
+    class rhsusf_acc_anpeq15_bk_light_ir: rhsusf_acc_anpeq15_bk_light {
+        class ItemInfo: ItemInfo {
+            class Flashlight: Flashlight {
+                irLight=1;
+            };
+        };
+    };
 
     class rhsusf_acc_M952V: rhsusf_acc_anpeq15_light {};
     class rhsusf_acc_M952V_IR : rhsusf_acc_M952V {
@@ -1013,21 +955,12 @@ class CfgWeapons {
         scope=1;
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
-                isIR=0;
-                irDotSize=0.015;
-                beamThickness=0.00005;
-                beamColor[]={50000000,0,0};
-                dotColor[]={5000,0,0};
+                BETTIR_VIS_LASER_PRESET_DBAL_A2_RED
             };
         };
     };
     
-    class rhsusf_acc_anpeq16a_light: rhsusf_acc_anpeq15_light {
-        scope=1;
-        class ItemInfo: ItemInfo {
-            class Flashlight;
-        };
-    };
+    class rhsusf_acc_anpeq16a_light: rhsusf_acc_anpeq15_light {};
     
 
     class rhsusf_acc_anpeq16a_dvis: rhsusf_acc_anpeq16a_light {
@@ -1037,11 +970,7 @@ class CfgWeapons {
             class Pointer: Pointer {
                 irLaserPos="laser pos";
                 irLaserEnd="laser dir";
-                isIR=0;
-                irDotSize=0.015;
-                beamThickness=0.00005;
-                beamColor[]={50000000,0,0};
-                dotColor[]={5000,0,0};
+                BETTIR_VIS_LASER_PRESET_DBAL_A2_RED
             };
             class Flashlight;
         };
@@ -1051,11 +980,7 @@ class CfgWeapons {
         scope=1;
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
-                isIR=1;
-                irDotSize=0.005;
-                beamThickness=0.0;
-                beamColor[]={0,0,0};
-                dotColor[]={100,100,100};
+                BETTIR_IR_LASER_PRESET_DBAL_A2_LO
             };
         };
     };
@@ -1144,11 +1069,7 @@ class CfgWeapons {
         scope=1;
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
-                isIR=0;
-                irDotSize=0.015;
-                beamThickness=0.00005;
-                beamColor[]={50000000,0,0};
-                dotColor[]={5000,0,0};
+                BETTIR_VIS_LASER_PRESET_DBAL_A2_RED
             };
         };
     };
@@ -1157,11 +1078,7 @@ class CfgWeapons {
         scope=1;
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
-                isIR=1;
-                irDotSize=0.005;
-                beamThickness=0.0;
-                beamColor[]={0,0,0};
-                dotColor[]={100,100,100};
+                BETTIR_IR_LASER_PRESET_DBAL_A2_LO
             };
         };
     };
@@ -1277,13 +1194,7 @@ class CfgWeapons {
         };
     };
     
-    class rhsusf_acc_anpeq15_wmx_light: rhsusf_acc_anpeq15_wmx {
-        scope=1;
-        class ItemInfo: ItemInfo {
-            class Pointer {};
-            class Flashlight;
-        };
-    };
+    class rhsusf_acc_anpeq15_wmx_light: rhsusf_acc_anpeq15_wmx {};
 
     class rhsusf_acc_anpeq15_wmx_light_ir : rhsusf_acc_anpeq15_wmx_light {
         class ItemInfo: ItemInfo {

@@ -2,10 +2,6 @@
 
 #define MRADTODEG(MRAD) ((MRAD) * 0.057296)
 
-#define SCRIPTED_LASER_PRESET_RED #RED
-#define SCRIPTED_LASER_PRESET_GREEN #GREEN
-#define SCRIPTED_LASER_PRESET_IR #IR
-
 
 // BETTIR LIGHT SPLASH
 // attachTo [player, [-0.035,-0.02,0.12], "bubbleseffect", true] <- right eye, wtf is bubbles

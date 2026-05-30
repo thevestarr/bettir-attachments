@@ -17,9 +17,9 @@ if (_buttonIndex == 0) then {
     };
 } else {
     if (_device == "Laser") then {
-        [_unit, "Device", "Flashlight"] call BettIR_Attachments_fnc_changeConfigurableAttachment;
+        [_unit, "Device", "Flashlight", false, false] call BettIR_Attachments_fnc_changeConfigurableAttachment;
         // can't update in the same frame
-        sleep 0.1;
+        sleep 0.05;
 
         // TODO: use the actual device activation script
         _unit action ["IRLaserOn", _unit];

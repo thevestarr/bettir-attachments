@@ -1,3 +1,4 @@
+#include "..\..\include\presets\dbal_a2.hpp"
 
 class CfgWeapons {
     class ItemCore;
@@ -44,11 +45,7 @@ class CfgWeapons {
 
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
-                isIR=0;
-                irDotSize=0.015;
-                beamThickness=0.00015;
-                beamColor[]={0,50000000,0};
-                dotColor[]={0,3000,0};
+                BETTIR_VIS_LASER_PRESET_DBAL_A2_GREEN
             };
         };
     };
@@ -62,11 +59,7 @@ class CfgWeapons {
 
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
-                isIR=0;
-                irDotSize=0.003;
-                beamThickness=0;
-                beamColor[]={0,0,0};
-                dotColor[]={0,1000,0};
+                BETTIR_VIS_LASER_PRESET_DBAL_A2_GREEN_LO
             };
         };
     };

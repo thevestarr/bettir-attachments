@@ -31,3 +31,44 @@
         hardLimitStart = 160 + (HIPWR * 40); \
         hardLimitEnd = 240 + (HIPWR * 60); \
     };
+
+#define BETTIR_IR_LASER_PRESET_DBAL_A2 \
+    irDotSize=0.025; \
+    beamThickness=0.015; \
+    beamColor[]={50000000,50000000,50000000}; \
+    dotColor[]={1000,1000,1000};
+
+#define BETTIR_IR_LASER_PRESET_DBAL_A2_LO \
+    isIR=1; \
+    irDotSize=0.005; \
+    beamThickness=0.0; \
+    beamColor[]={0,0,0}; \
+    dotColor[]={100,100,100};
+
+#define BETTIR_VIS_LASER_PRESET_DBAL_A2_RED \
+    isIR=0; \
+    irDotSize=0.005; \
+    beamThickness=0.00005; \
+    beamColor[]={5000000,0,0}; \
+    dotColor[]={3000,0,0};
+
+#define BETTIR_VIS_LASER_PRESET_DBAL_A2_RED_LO \
+    isIR=0; \
+    irDotSize=0.003; \
+    beamThickness=0; \
+    beamColor[]={0,0,0}; \
+    dotColor[]={1000,0,0};
+
+#define BETTIR_VIS_LASER_PRESET_DBAL_A2_GREEN \
+    isIR=0; \
+    irDotSize=0.005; \
+    beamThickness=0.00005; \
+    beamColor[]={0,5000000,0}; \
+    dotColor[]={0,3000,0};
+
+#define BETTIR_VIS_LASER_PRESET_DBAL_A2_GREEN_LO \
+    isIR=0; \
+    irDotSize=0.003; \
+    beamThickness=0; \
+    beamColor[]={0,0,0}; \
+    dotColor[]={0,1000,0};

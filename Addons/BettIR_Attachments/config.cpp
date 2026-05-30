@@ -76,7 +76,7 @@ class BettIR_Config {
                 };
 
                 class Focus {
-                    displayName="Illuminator Beam";
+                    displayName="Illuminator Divergence";
                     defaultValue="100MRAD";
                     steps[] = {"25MRAD","50MRAD","75MRAD","100MRAD"};
                     class 25MRAD { displayName = "25 MRAD"; };
@@ -92,7 +92,7 @@ class BettIR_Config {
 
             class Configurable {
                 class Focus {
-                    displayName="Illuminator Beam";
+                    displayName="Illuminator Divergence";
                     defaultValue="100MRAD";
                     steps[] = {"25MRAD","50MRAD","75MRAD","100MRAD"};
                     class 25MRAD { displayName = "25 MRAD"; };
@@ -158,7 +158,7 @@ class BettIR_Config {
             class Configurable {
                 class Focus {
                     defaultValue="105MRAD";
-                    displayName="Focus";
+                    displayName="Illuminator Divergence";
 
                     class 105MRAD {
                         displayName="105 MRAD";
