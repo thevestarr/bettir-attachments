@@ -25,23 +25,22 @@ class BettIR_Config {
         class BettIR_Base_NGAL_GenericFlashlightCombo: BettIR_Base_NGAL {};
 
         class TOTT_Base_PEQ15: BettIR_Base_PEQ15 {
-            classParser="BettIR_Attachments_Compat_TOTT_Core_fnc_peq15_parseClass";
-            classComposer="BettIR_Attachments_Compat_TOTT_Core_fnc_peq15_composeClass";
+            classParser="BettIR_Attachments_Compat_TOTT_Core_peq15_fnc_parseClass";
+            classComposer="BettIR_Attachments_Compat_TOTT_Core_peq15_fnc_composeClass";
         };
 
         class TOTT_Base_NGAL: BettIR_Base_NGAL {
-            classParser="BettIR_Attachments_Compat_TOTT_Core_fnc_ngal_parseClass";
-            classComposer="BettIR_Attachments_Compat_TOTT_Core_fnc_ngal_composeClass";
+            classParser="BettIR_Attachments_Compat_TOTT_Core_ngal_fnc_parseClass";
+            classComposer="BettIR_Attachments_Compat_TOTT_Core_ngal_fnc_composeClass";
         };
+        // class TOTT_Base_PEQ15_Combo: BettIR_Base_PEQ15_GenericFlashlightCombo {
+        //     classParser="BettIR_Attachments_Compat_TOTT_Core_peq15_fnc_parseClass";
+        //     classComposer="BettIR_Attachments_Compat_TOTT_Core_peq15_fnc_composeClass";
+        // };
 
-        class TOTT_Base_PEQ15_Combo: BettIR_Base_PEQ15_GenericFlashlightCombo {
-            classParser="BettIR_Attachments_Compat_TOTT_Core_fnc_peq15_combo_parseClass";
-            classComposer="BettIR_Attachments_Compat_TOTT_Core_fnc_peq15_combo_composeClass";
-        };
-
-        class TOTT_Base_NGAL_Combo: BettIR_Base_NGAL_GenericFlashlightCombo {
-            classParser="BettIR_Attachments_Compat_TOTT_Core_fnc_ngal_combo_parseClass";
-            classComposer="BettIR_Attachments_Compat_TOTT_Core_fnc_ngal_combo_composeClass";
-        };
+        // class TOTT_Base_NGAL_Combo: BettIR_Base_NGAL_GenericFlashlightCombo {
+        //     classParser="BettIR_Attachments_Compat_TOTT_Core_ngal_fnc_parseClass";
+        //     classComposer="BettIR_Attachments_Compat_TOTT_Core_ngal_fnc_composeClass";
+        // };
     };
 };
