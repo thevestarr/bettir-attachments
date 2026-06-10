@@ -26,7 +26,6 @@ class CfgWeapons {
 
     // aim low
     class rhsusf_acc_anpeq15side_al: rhsusf_acc_anpeq15side {
-        scope=1;
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
                 BETTIR_IR_LASER_PRESET_DBAL_A2_LO
@@ -36,7 +35,6 @@ class CfgWeapons {
 
     // aim vis
     class rhsusf_acc_anpeq15side_vis: rhsusf_acc_anpeq15side {
-        scope=1;
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
                 BETTIR_VIS_LASER_PRESET_DBAL_A2_RED
@@ -46,7 +44,6 @@ class CfgWeapons {
 
     // illuminator high
     class rhsusf_acc_anpeq15side_ih_25MRAD: rhsusf_acc_anpeq15side {
-        scope=1;
         class ItemInfo: ItemInfo {
             class Pointer {};
             class Flashlight: Flashlight {
@@ -84,7 +81,6 @@ class CfgWeapons {
 
     // dual high
     class rhsusf_acc_anpeq15side_dh_25MRAD: rhsusf_acc_anpeq15side {
-        scope=1;
         class ItemInfo: ItemInfo {
             class Pointer;
             class Flashlight: Flashlight {
@@ -123,7 +119,6 @@ class CfgWeapons {
 
     // dual low
     class rhsusf_acc_anpeq15side_dl_25MRAD: rhsusf_acc_anpeq15side {
-        scope=1;
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
                 BETTIR_IR_LASER_PRESET_DBAL_A2_LO
@@ -170,7 +165,6 @@ class CfgWeapons {
     };
     // aim low
     class rhsusf_acc_anpeq15side_bk_al: rhsusf_acc_anpeq15side_bk {
-        scope=1;
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
                 BETTIR_IR_LASER_PRESET_DBAL_A2_LO
@@ -180,7 +174,6 @@ class CfgWeapons {
 
     // aim vis
     class rhsusf_acc_anpeq15side_bk_vis: rhsusf_acc_anpeq15side_bk {
-        scope=1;
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
                 BETTIR_VIS_LASER_PRESET_DBAL_A2_RED
@@ -190,7 +183,6 @@ class CfgWeapons {
 
     // illuminator high
     class rhsusf_acc_anpeq15side_bk_ih_25MRAD: rhsusf_acc_anpeq15side_bk {
-        scope=1;
         class ItemInfo: ItemInfo {
             class Pointer {};
             class Flashlight: Flashlight {
@@ -228,7 +220,6 @@ class CfgWeapons {
 
     // dual high
     class rhsusf_acc_anpeq15side_bk_dh_25MRAD: rhsusf_acc_anpeq15side_bk {
-        scope=1;
         class ItemInfo: ItemInfo {
             class Pointer;
             class Flashlight: Flashlight {
@@ -267,7 +258,6 @@ class CfgWeapons {
 
     // dual low
     class rhsusf_acc_anpeq15side_bk_dl_25MRAD: rhsusf_acc_anpeq15side_bk {
-        scope=1;
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
                 BETTIR_IR_LASER_PRESET_DBAL_A2_LO
@@ -310,7 +300,6 @@ class CfgWeapons {
     // rhs has its own dbal for some reason and it uses the same model as core
     // also somehow it's the base class for the top variant (??)
     class rhsusf_acc_anpeq15a: acc_pointer_IR {
-        scope=1;
     };
 
     class rhsusf_acc_anpeq15_top: rhsusf_acc_anpeq15a {
@@ -322,7 +311,6 @@ class CfgWeapons {
 
     // aim low
     class rhsusf_acc_anpeq15_top_al: rhsusf_acc_anpeq15_top {
-        scope=1;
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
                 BETTIR_IR_LASER_PRESET_DBAL_A2_LO
@@ -332,7 +320,6 @@ class CfgWeapons {
 
     // aim vis
     class rhsusf_acc_anpeq15_top_vis: rhsusf_acc_anpeq15_top {
-        scope=1;
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
                 BETTIR_VIS_LASER_PRESET_DBAL_A2_RED
@@ -342,7 +329,6 @@ class CfgWeapons {
 
     // illuminator high
     class rhsusf_acc_anpeq15_top_ih_25MRAD: rhsusf_acc_anpeq15_top {
-        scope=1;
         class ItemInfo: ItemInfo {
             class Pointer {};
             class Flashlight: Flashlight {
@@ -380,7 +366,6 @@ class CfgWeapons {
 
     // dual high
     class rhsusf_acc_anpeq15_top_dh_25MRAD: rhsusf_acc_anpeq15_top {
-        scope=1;
         class ItemInfo: ItemInfo {
             class Pointer;
             class Flashlight: Flashlight {
@@ -419,7 +404,6 @@ class CfgWeapons {
 
     // dual low
     class rhsusf_acc_anpeq15_top_dl_25MRAD: rhsusf_acc_anpeq15_top {
-        scope=1;
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
                 BETTIR_IR_LASER_PRESET_DBAL_A2_LO
@@ -471,7 +455,6 @@ class CfgWeapons {
     };
 
     class rhsusf_acc_anpeq15_bk_top_al: rhsusf_acc_anpeq15_bk_top {
-        scope=1;
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
                 BETTIR_IR_LASER_PRESET_DBAL_A2_LO
@@ -481,7 +464,6 @@ class CfgWeapons {
 
     // aim vis
     class rhsusf_acc_anpeq15_bk_top_vis: rhsusf_acc_anpeq15_bk_top {
-        scope=1;
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
                 BETTIR_VIS_LASER_PRESET_DBAL_A2_RED
@@ -491,7 +473,6 @@ class CfgWeapons {
 
     // illuminator high
     class rhsusf_acc_anpeq15_bk_top_ih_25MRAD: rhsusf_acc_anpeq15_bk_top {
-        scope=1;
         class ItemInfo: ItemInfo {
             class Pointer {};
             class Flashlight: Flashlight {
@@ -529,7 +510,6 @@ class CfgWeapons {
 
     // dual high
     class rhsusf_acc_anpeq15_bk_top_dh_25MRAD: rhsusf_acc_anpeq15_bk_top {
-        scope=1;
         class ItemInfo: ItemInfo {
             class Pointer;
             class Flashlight: Flashlight {
@@ -568,7 +548,6 @@ class CfgWeapons {
 
     // dual low
     class rhsusf_acc_anpeq15_bk_top_dl_25MRAD: rhsusf_acc_anpeq15_bk_top {
-        scope=1;
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
                 BETTIR_IR_LASER_PRESET_DBAL_A2_LO
@@ -621,7 +600,6 @@ class CfgWeapons {
 
     // aim low
     class rhsusf_acc_anpeq15_al: rhsusf_acc_anpeq15 {
-        scope=1;
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
                 BETTIR_IR_LASER_PRESET_DBAL_A2_LO
@@ -631,7 +609,6 @@ class CfgWeapons {
 
     // aim vis
     class rhsusf_acc_anpeq15_vis: rhsusf_acc_anpeq15 {
-        scope=1;
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
                 BETTIR_VIS_LASER_PRESET_DBAL_A2_RED
@@ -641,7 +618,6 @@ class CfgWeapons {
 
     // illuminator high
     class rhsusf_acc_anpeq15_ih_25MRAD: rhsusf_acc_anpeq15 {
-        scope=1;
         class ItemInfo: ItemInfo {
             class Pointer {};
             class Flashlight: Flashlight {
@@ -679,7 +655,6 @@ class CfgWeapons {
 
     // dual high
     class rhsusf_acc_anpeq15_dh_25MRAD: rhsusf_acc_anpeq15 {
-        scope=1;
         class ItemInfo: ItemInfo {
             class Pointer;
             class Flashlight: Flashlight {
@@ -718,7 +693,6 @@ class CfgWeapons {
 
     // dual low
     class rhsusf_acc_anpeq15_dl_25MRAD: rhsusf_acc_anpeq15 {
-        scope=1;
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
                 BETTIR_IR_LASER_PRESET_DBAL_A2_LO
@@ -774,7 +748,6 @@ class CfgWeapons {
 
     class rhsusf_acc_anpeq15_bk: rhsusf_acc_anpeq15 {};
     class rhsusf_acc_anpeq15_bk_al: rhsusf_acc_anpeq15_bk {
-        scope=1;
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
                 BETTIR_IR_LASER_PRESET_DBAL_A2_LO
@@ -784,7 +757,6 @@ class CfgWeapons {
 
     // aim vis
     class rhsusf_acc_anpeq15_bk_vis: rhsusf_acc_anpeq15_bk {
-        scope=1;
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
                 BETTIR_VIS_LASER_PRESET_DBAL_A2_RED
@@ -794,7 +766,6 @@ class CfgWeapons {
 
     // illuminator high
     class rhsusf_acc_anpeq15_bk_ih_25MRAD: rhsusf_acc_anpeq15_bk {
-        scope=1;
         class ItemInfo: ItemInfo {
             class Pointer {};
             class Flashlight: Flashlight {
@@ -832,7 +803,6 @@ class CfgWeapons {
 
     // dual high
     class rhsusf_acc_anpeq15_bk_dh_25MRAD: rhsusf_acc_anpeq15_bk {
-        scope=1;
         class ItemInfo: ItemInfo {
             class Pointer;
             class Flashlight: Flashlight {
@@ -871,7 +841,6 @@ class CfgWeapons {
 
     // dual low
     class rhsusf_acc_anpeq15_bk_dl_25MRAD: rhsusf_acc_anpeq15_bk {
-        scope=1;
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
                 BETTIR_IR_LASER_PRESET_DBAL_A2_LO
@@ -952,7 +921,6 @@ class CfgWeapons {
     };
 
     class rhsusf_acc_anpeq16a_vis: rhsusf_acc_anpeq16a {
-        scope=1;
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
                 BETTIR_VIS_LASER_PRESET_DBAL_A2_RED
@@ -964,7 +932,6 @@ class CfgWeapons {
     
 
     class rhsusf_acc_anpeq16a_dvis: rhsusf_acc_anpeq16a_light {
-        scope=1;
         class ItemInfo: ItemInfo {
             // no pointer to inherit from in the light config
             class Pointer: Pointer {
@@ -977,7 +944,6 @@ class CfgWeapons {
     };
 
     class rhsusf_acc_anpeq16a_al: rhsusf_acc_anpeq16a {
-        scope=1;
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
                 BETTIR_IR_LASER_PRESET_DBAL_A2_LO
@@ -986,7 +952,6 @@ class CfgWeapons {
     };
  
     class rhsusf_acc_anpeq16a_dl_25MRAD: rhsusf_acc_anpeq16a_al {
-        scope=1;
         class ItemInfo: ItemInfo {
             class Pointer;
             class Flashlight: Flashlight {
@@ -1023,7 +988,6 @@ class CfgWeapons {
     };
     
     class rhsusf_acc_anpeq16a_dh_25MRAD: rhsusf_acc_anpeq16a {
-        scope=1;
         class ItemInfo: ItemInfo {
             class Pointer;
             class Flashlight: Flashlight {
@@ -1066,7 +1030,6 @@ class CfgWeapons {
     };
 
     class rhsusf_acc_anpeq15_wmx_vis: rhsusf_acc_anpeq15_wmx {
-        scope=1;
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
                 BETTIR_VIS_LASER_PRESET_DBAL_A2_RED
@@ -1075,7 +1038,6 @@ class CfgWeapons {
     };
     
     class rhsusf_acc_anpeq15_wmx_al: rhsusf_acc_anpeq15_wmx {
-        scope=1;
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
                 BETTIR_IR_LASER_PRESET_DBAL_A2_LO
@@ -1084,7 +1046,6 @@ class CfgWeapons {
     };
     
     class rhsusf_acc_anpeq15_wmx_ih_25MRAD: rhsusf_acc_anpeq15_wmx {
-        scope=1;
         class ItemInfo: ItemInfo {
             class Pointer {};
             class Flashlight: Flashlight {
@@ -1121,7 +1082,6 @@ class CfgWeapons {
     };
     
     class rhsusf_acc_anpeq15_wmx_dh_25MRAD: rhsusf_acc_anpeq15_wmx {
-        scope=1;
         class ItemInfo: ItemInfo {
             class Pointer;
             class Flashlight: Flashlight {
@@ -1158,7 +1118,6 @@ class CfgWeapons {
     };
     
     class rhsusf_acc_anpeq15_wmx_dl_25MRAD: rhsusf_acc_anpeq15_wmx_al {
-        scope=1;
         class ItemInfo: ItemInfo {
             class Pointer;
             class Flashlight: Flashlight {

@@ -207,5 +207,25 @@ class BettIR_Config {
                 };
             };
         };
+
+        class BettIR_Base_NGAL_GenericFlashlightCombo: BettIR_Base_NGAL {
+            onToggleModeSecondary="[_this select 0, 'Device'] spawn BettIR_Attachments_fnc_defaultToggleMode";
+
+            onActivate="_this spawn BettIR_Attachments_fnc_defaultActivateCombo";
+            onDeactivate="_this spawn BettIR_Attachments_fnc_defaultDeactivateCombo";
+
+            class Configurable: Configurable {
+                class Device {
+                    displayName="Device";
+                    defaultValue="Laser";
+                    class Laser {
+                        displayName="Laser";
+                    };
+                    class Flashlight {
+                        displayName="Flashlight";
+                    };
+                };
+            };
+        };
     };    
 };
