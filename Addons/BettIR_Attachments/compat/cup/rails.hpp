@@ -7,6 +7,18 @@ class asdg_FrontSideRail: asdg_SlotInfo {
         BETTIR_CUP_PEQ15_RAIL(CUP_acc_ANPEQ_15_Tan_Top)
         BETTIR_CUP_PEQ15_RAIL(CUP_acc_ANPEQ_15_Black_Top)
         BETTIR_CUP_PEQ15_RAIL(CUP_acc_ANPEQ_15_OD_Top)
+        BETTIR_CUP_PEQ15_RAIL(CUP_acc_ANPEQ_15_Flashlight_Tan_L)
+        CUP_acc_ANPEQ_15_Flashlight_Tan_F_ir = 1;
+        BETTIR_CUP_PEQ15_RAIL(CUP_acc_ANPEQ_15_Flashlight_OD_L)
+        CUP_acc_ANPEQ_15_Flashlight_OD_F_ir = 1;
+        BETTIR_CUP_PEQ15_RAIL(CUP_acc_ANPEQ_15_Flashlight_Black_L)
+        CUP_acc_ANPEQ_15_Flashlight_Black_F_ir = 1;
+        BETTIR_CUP_PEQ15_RAIL(CUP_acc_ANPEQ_15_Top_Flashlight_Tan_L)
+        CUP_acc_ANPEQ_15_Top_Flashlight_Tan_F_ir = 1;
+        BETTIR_CUP_PEQ15_RAIL(CUP_acc_ANPEQ_15_Top_Flashlight_OD_L)
+        CUP_acc_ANPEQ_15_Top_Flashlight_OD_F_ir = 1;
+        BETTIR_CUP_PEQ15_RAIL(CUP_acc_ANPEQ_15_Top_Flashlight_Black_L)
+        CUP_acc_ANPEQ_15_Top_Flashlight_Black_F_ir = 1;
     };
 };
 class PointerSlot;
@@ -18,5 +30,17 @@ class PointerSlot_Rail: PointerSlot {
         BETTIR_CUP_PEQ15_RAIL(CUP_acc_ANPEQ_15_Tan_Top)
         BETTIR_CUP_PEQ15_RAIL(CUP_acc_ANPEQ_15_Black_Top)
         BETTIR_CUP_PEQ15_RAIL(CUP_acc_ANPEQ_15_OD_Top)
+        BETTIR_CUP_PEQ15_RAIL(CUP_acc_ANPEQ_15_Flashlight_Tan_L)
+        CUP_acc_ANPEQ_15_Flashlight_Tan_F_ir = 1;
+        BETTIR_CUP_PEQ15_RAIL(CUP_acc_ANPEQ_15_Flashlight_OD_L)
+        CUP_acc_ANPEQ_15_Flashlight_OD_F_ir = 1;
+        BETTIR_CUP_PEQ15_RAIL(CUP_acc_ANPEQ_15_Flashlight_Black_L)
+        CUP_acc_ANPEQ_15_Flashlight_Black_F_ir = 1;
+        BETTIR_CUP_PEQ15_RAIL(CUP_acc_ANPEQ_15_Top_Flashlight_Tan_L)
+        CUP_acc_ANPEQ_15_Top_Flashlight_Tan_F_ir = 1;
+        BETTIR_CUP_PEQ15_RAIL(CUP_acc_ANPEQ_15_Top_Flashlight_OD_L)
+        CUP_acc_ANPEQ_15_Top_Flashlight_OD_F_ir = 1;
+        BETTIR_CUP_PEQ15_RAIL(CUP_acc_ANPEQ_15_Top_Flashlight_Black_L)
+        CUP_acc_ANPEQ_15_Top_Flashlight_Black_F_ir = 1;
     };
 };

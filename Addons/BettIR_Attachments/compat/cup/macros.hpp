@@ -88,3 +88,16 @@
 
 #define BETTIR_CUP_PEQ2_RAIL(BASE) \
     BASE##_al = 1; BETTIR_CUP_RAIL_ILLUM(BASE)
+
+// ============================================================
+//  PEQ-15 combo CfgWeapons generator — FBASE = the real CUP _F (white-light) class.
+//  Generates the BettIR-invented IR sibling (_F_ir).
+// ============================================================
+#define BETTIR_CUP_COMBO_FLASHLIGHT_IR(FBASE) \
+    class FBASE##_ir: FBASE { \
+        class ItemInfo: ItemInfo { \
+            class Flashlight: Flashlight { \
+                irLight=1; scale[]={1,1,1}; ambient[]={1,1,1}; color[]={1,1,1}; intensity=600; onlyInNvg=1; \
+            }; \
+        }; \
+    };

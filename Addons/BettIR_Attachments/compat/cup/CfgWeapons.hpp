@@ -57,4 +57,47 @@ class CfgWeapons {
         };
     };
     BETTIR_CUP_PEQ15_STATES(CUP_acc_ANPEQ_15_OD_Top)
+
+    // ---- AN/PEQ-15 + white-light combos ----
+    class CUP_acc_ANPEQ_15_Flashlight_Tan_L {
+        class ItemInfo: ItemInfo { class Pointer: Pointer { irLaserEnd="laser dir"; irLaserPos="laser pos"; BETTIR_IR_LASER_PRESET_DBAL_A2 }; };
+    };
+    BETTIR_CUP_PEQ15_STATES(CUP_acc_ANPEQ_15_Flashlight_Tan_L)
+    class CUP_acc_ANPEQ_15_Flashlight_Tan_F;
+    BETTIR_CUP_COMBO_FLASHLIGHT_IR(CUP_acc_ANPEQ_15_Flashlight_Tan_F)
+
+    class CUP_acc_ANPEQ_15_Flashlight_OD_L {
+        class ItemInfo: ItemInfo { class Pointer: Pointer { irLaserEnd="laser dir"; irLaserPos="laser pos"; BETTIR_IR_LASER_PRESET_DBAL_A2 }; };
+    };
+    BETTIR_CUP_PEQ15_STATES(CUP_acc_ANPEQ_15_Flashlight_OD_L)
+    class CUP_acc_ANPEQ_15_Flashlight_OD_F;
+    BETTIR_CUP_COMBO_FLASHLIGHT_IR(CUP_acc_ANPEQ_15_Flashlight_OD_F)
+
+    class CUP_acc_ANPEQ_15_Flashlight_Black_L {
+        class ItemInfo: ItemInfo { class Pointer: Pointer { irLaserEnd="laser dir"; irLaserPos="laser pos"; BETTIR_IR_LASER_PRESET_DBAL_A2 }; };
+    };
+    BETTIR_CUP_PEQ15_STATES(CUP_acc_ANPEQ_15_Flashlight_Black_L)
+    class CUP_acc_ANPEQ_15_Flashlight_Black_F;
+    BETTIR_CUP_COMBO_FLASHLIGHT_IR(CUP_acc_ANPEQ_15_Flashlight_Black_F)
+
+    class CUP_acc_ANPEQ_15_Top_Flashlight_Tan_L {
+        class ItemInfo: ItemInfo { class Pointer: Pointer { irLaserEnd="laser dir"; irLaserPos="laser pos"; BETTIR_IR_LASER_PRESET_DBAL_A2 }; };
+    };
+    BETTIR_CUP_PEQ15_STATES(CUP_acc_ANPEQ_15_Top_Flashlight_Tan_L)
+    class CUP_acc_ANPEQ_15_Top_Flashlight_Tan_F;
+    BETTIR_CUP_COMBO_FLASHLIGHT_IR(CUP_acc_ANPEQ_15_Top_Flashlight_Tan_F)
+
+    class CUP_acc_ANPEQ_15_Top_Flashlight_OD_L {
+        class ItemInfo: ItemInfo { class Pointer: Pointer { irLaserEnd="laser dir"; irLaserPos="laser pos"; BETTIR_IR_LASER_PRESET_DBAL_A2 }; };
+    };
+    BETTIR_CUP_PEQ15_STATES(CUP_acc_ANPEQ_15_Top_Flashlight_OD_L)
+    class CUP_acc_ANPEQ_15_Top_Flashlight_OD_F;
+    BETTIR_CUP_COMBO_FLASHLIGHT_IR(CUP_acc_ANPEQ_15_Top_Flashlight_OD_F)
+
+    class CUP_acc_ANPEQ_15_Top_Flashlight_Black_L {
+        class ItemInfo: ItemInfo { class Pointer: Pointer { irLaserEnd="laser dir"; irLaserPos="laser pos"; BETTIR_IR_LASER_PRESET_DBAL_A2 }; };
+    };
+    BETTIR_CUP_PEQ15_STATES(CUP_acc_ANPEQ_15_Top_Flashlight_Black_L)
+    class CUP_acc_ANPEQ_15_Top_Flashlight_Black_F;
+    BETTIR_CUP_COMBO_FLASHLIGHT_IR(CUP_acc_ANPEQ_15_Top_Flashlight_Black_F)
 };
