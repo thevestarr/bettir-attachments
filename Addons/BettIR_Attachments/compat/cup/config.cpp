@@ -404,5 +404,31 @@ class BettIR_Config {
         BETTIR_CUP_PEQ15_REG(CUP_acc_LLM01_od_L, CUP_acc_LLM01_od_L)
         class CUP_acc_LLM01_od_F: CUP_acc_LLM01_od_L {};
         class CUP_acc_LLM01_od_F_ir: CUP_acc_LLM01_od_L {};
+
+        // ===== LLM MKIII weapon light =====
+        class CUP_acc_LLM {
+            macroClass="CUP_acc_LLM";
+            classParser="BettIR_Compat_CUP_Flashlight_fnc_parseClass";
+            classComposer="BettIR_Compat_CUP_Flashlight_fnc_composeClass";
+            onActivate="_this spawn BettIR_Attachments_fnc_defaultActivateDoubleTap";
+            onDeactivate="_this spawn BettIR_Attachments_fnc_defaultDeactivateDoubleTap";
+            onToggleModePrimary="[_this select 0, 'Output'] spawn BettIR_Attachments_fnc_defaultToggleMode";
+            onToggleModeSecondary="[_this select 0, 'Output'] spawn BettIR_Attachments_fnc_defaultToggleMode";
+            onStepperUp="";
+            onStepperDown="";
+            class Configurable {
+                class Output {
+                    displayName="Output";
+                    defaultValue="White";
+                    class White { displayName="White"; };
+                    class IR { displayName="Infrared"; };
+                };
+            };
+        };
+        class CUP_acc_LLM_ir: CUP_acc_LLM {};
+        class CUP_acc_LLM_black: CUP_acc_LLM { macroClass="CUP_acc_LLM_black"; };
+        class CUP_acc_LLM_black_ir: CUP_acc_LLM_black {};
+        class CUP_acc_LLM_od: CUP_acc_LLM { macroClass="CUP_acc_LLM_od"; };
+        class CUP_acc_LLM_od_ir: CUP_acc_LLM_od {};
     };
 };

@@ -29,4 +29,10 @@ class CfgFunctions {
             class parseClass   { file = "\BettIR_Attachments\compat\cup\functions\fnc_llm01_combo_parseClass.sqf"; };
         };
     };
+    class BettIR_Compat_CUP_Flashlight {
+        class Core {
+            class composeClass { file = "\BettIR_Attachments\compat\cup\functions\fnc_flashlight_composeClass.sqf"; };
+            class parseClass   { file = "\BettIR_Attachments\compat\cup\functions\fnc_flashlight_parseClass.sqf"; };
+        };
+    };
 };

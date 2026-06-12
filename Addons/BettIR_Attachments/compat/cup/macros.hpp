@@ -111,3 +111,15 @@
     };
 #define BETTIR_CUP_LLM01_STATES(BASE) \
     BETTIR_CUP_STATE_AL(BASE) BETTIR_CUP_STATE_VIS_GREEN(BASE) BETTIR_CUP_STATES_ILLUM(BASE)
+
+// ============================================================
+//  LLM MKIII white-light base gets an IR sibling. BASE = real CUP white class.
+// ============================================================
+#define BETTIR_CUP_FLASHLIGHT_IR(BASE) \
+    class BASE##_ir: BASE { \
+        class ItemInfo: ItemInfo { \
+            class Flashlight: Flashlight { \
+                irLight=1; scale[]={1,1,1}; ambient[]={1,1,1}; color[]={1,1,1}; intensity=600; onlyInNvg=1; \
+            }; \
+        }; \
+    };

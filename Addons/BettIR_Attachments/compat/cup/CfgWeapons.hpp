@@ -182,4 +182,12 @@ class CfgWeapons {
     BETTIR_CUP_LLM01_STATES(CUP_acc_LLM01_od_L)
     class CUP_acc_LLM01_od_F;
     BETTIR_CUP_COMBO_FLASHLIGHT_IR(CUP_acc_LLM01_od_F)
+
+    // ---- LLM MKIII weapon light (White/IR) ----
+    class CUP_acc_LLM;
+    BETTIR_CUP_FLASHLIGHT_IR(CUP_acc_LLM)
+    class CUP_acc_LLM_black;
+    BETTIR_CUP_FLASHLIGHT_IR(CUP_acc_LLM_black)
+    class CUP_acc_LLM_od;
+    BETTIR_CUP_FLASHLIGHT_IR(CUP_acc_LLM_od)
 };
