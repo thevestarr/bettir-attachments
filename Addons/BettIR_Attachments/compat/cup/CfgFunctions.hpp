@@ -23,4 +23,10 @@ class CfgFunctions {
             class parseClass   { file = "\BettIR_Attachments\compat\cup\functions\fnc_peq2_combo_parseClass.sqf"; };
         };
     };
+    class BettIR_Compat_CUP_LLM01_Combo {
+        class Core {
+            class composeClass { file = "\BettIR_Attachments\compat\cup\functions\fnc_llm01_combo_composeClass.sqf"; };
+            class parseClass   { file = "\BettIR_Attachments\compat\cup\functions\fnc_llm01_combo_parseClass.sqf"; };
+        };
+    };
 };

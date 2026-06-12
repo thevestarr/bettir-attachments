@@ -31,6 +31,16 @@ class asdg_FrontSideRail: asdg_SlotInfo {
         CUP_acc_ANPEQ_2_Flashlight_OD_F_ir = 1;
         BETTIR_CUP_PEQ2_RAIL(CUP_acc_ANPEQ_2_Flashlight_Coyote_L)
         CUP_acc_ANPEQ_2_Flashlight_Coyote_F_ir = 1;
+        BETTIR_CUP_PEQ15_RAIL(CUP_acc_LLM01_L)
+        CUP_acc_LLM01_F_ir = 1;
+        BETTIR_CUP_PEQ15_RAIL(CUP_acc_LLM01_coyote_L)
+        CUP_acc_LLM01_coyote_F_ir = 1;
+        BETTIR_CUP_PEQ15_RAIL(CUP_acc_LLM01_desert_L)
+        CUP_acc_LLM01_desert_F_ir = 1;
+        BETTIR_CUP_PEQ15_RAIL(CUP_acc_LLM01_hex_L)
+        CUP_acc_LLM01_hex_F_ir = 1;
+        BETTIR_CUP_PEQ15_RAIL(CUP_acc_LLM01_od_L)
+        CUP_acc_LLM01_od_F_ir = 1;
     };
 };
 class PointerSlot;
@@ -66,5 +76,15 @@ class PointerSlot_Rail: PointerSlot {
         CUP_acc_ANPEQ_2_Flashlight_OD_F_ir = 1;
         BETTIR_CUP_PEQ2_RAIL(CUP_acc_ANPEQ_2_Flashlight_Coyote_L)
         CUP_acc_ANPEQ_2_Flashlight_Coyote_F_ir = 1;
+        BETTIR_CUP_PEQ15_RAIL(CUP_acc_LLM01_L)
+        CUP_acc_LLM01_F_ir = 1;
+        BETTIR_CUP_PEQ15_RAIL(CUP_acc_LLM01_coyote_L)
+        CUP_acc_LLM01_coyote_F_ir = 1;
+        BETTIR_CUP_PEQ15_RAIL(CUP_acc_LLM01_desert_L)
+        CUP_acc_LLM01_desert_F_ir = 1;
+        BETTIR_CUP_PEQ15_RAIL(CUP_acc_LLM01_hex_L)
+        CUP_acc_LLM01_hex_F_ir = 1;
+        BETTIR_CUP_PEQ15_RAIL(CUP_acc_LLM01_od_L)
+        CUP_acc_LLM01_od_F_ir = 1;
     };
 };

@@ -101,3 +101,13 @@
             }; \
         }; \
     };
+
+// ============================================================
+//  LLM01 laser grammar: GREEN VIS instead of red. Same suffix set as PEQ-15.
+// ============================================================
+#define BETTIR_CUP_STATE_VIS_GREEN(BASE) \
+    class BASE##_vis: BASE { \
+        class ItemInfo: ItemInfo { class Pointer: Pointer { BETTIR_VIS_LASER_PRESET_DBAL_A2_GREEN }; }; \
+    };
+#define BETTIR_CUP_LLM01_STATES(BASE) \
+    BETTIR_CUP_STATE_AL(BASE) BETTIR_CUP_STATE_VIS_GREEN(BASE) BETTIR_CUP_STATES_ILLUM(BASE)

@@ -146,4 +146,40 @@ class CfgWeapons {
     BETTIR_CUP_PEQ2_STATES(CUP_acc_ANPEQ_2_Flashlight_Coyote_L)
     class CUP_acc_ANPEQ_2_Flashlight_Coyote_F;
     BETTIR_CUP_COMBO_FLASHLIGHT_IR(CUP_acc_ANPEQ_2_Flashlight_Coyote_F)
+
+    // ---- LLM01 laser+light combos (green VIS) ----
+    class CUP_acc_LLM01_L {
+        class ItemInfo: ItemInfo { class Pointer: Pointer { irLaserEnd="laser dir"; irLaserPos="laser pos"; BETTIR_IR_LASER_PRESET_DBAL_A2 }; };
+    };
+    BETTIR_CUP_LLM01_STATES(CUP_acc_LLM01_L)
+    class CUP_acc_LLM01_F;
+    BETTIR_CUP_COMBO_FLASHLIGHT_IR(CUP_acc_LLM01_F)
+
+    class CUP_acc_LLM01_coyote_L {
+        class ItemInfo: ItemInfo { class Pointer: Pointer { irLaserEnd="laser dir"; irLaserPos="laser pos"; BETTIR_IR_LASER_PRESET_DBAL_A2 }; };
+    };
+    BETTIR_CUP_LLM01_STATES(CUP_acc_LLM01_coyote_L)
+    class CUP_acc_LLM01_coyote_F;
+    BETTIR_CUP_COMBO_FLASHLIGHT_IR(CUP_acc_LLM01_coyote_F)
+
+    class CUP_acc_LLM01_desert_L {
+        class ItemInfo: ItemInfo { class Pointer: Pointer { irLaserEnd="laser dir"; irLaserPos="laser pos"; BETTIR_IR_LASER_PRESET_DBAL_A2 }; };
+    };
+    BETTIR_CUP_LLM01_STATES(CUP_acc_LLM01_desert_L)
+    class CUP_acc_LLM01_desert_F;
+    BETTIR_CUP_COMBO_FLASHLIGHT_IR(CUP_acc_LLM01_desert_F)
+
+    class CUP_acc_LLM01_hex_L {
+        class ItemInfo: ItemInfo { class Pointer: Pointer { irLaserEnd="laser dir"; irLaserPos="laser pos"; BETTIR_IR_LASER_PRESET_DBAL_A2 }; };
+    };
+    BETTIR_CUP_LLM01_STATES(CUP_acc_LLM01_hex_L)
+    class CUP_acc_LLM01_hex_F;
+    BETTIR_CUP_COMBO_FLASHLIGHT_IR(CUP_acc_LLM01_hex_F)
+
+    class CUP_acc_LLM01_od_L {
+        class ItemInfo: ItemInfo { class Pointer: Pointer { irLaserEnd="laser dir"; irLaserPos="laser pos"; BETTIR_IR_LASER_PRESET_DBAL_A2 }; };
+    };
+    BETTIR_CUP_LLM01_STATES(CUP_acc_LLM01_od_L)
+    class CUP_acc_LLM01_od_F;
+    BETTIR_CUP_COMBO_FLASHLIGHT_IR(CUP_acc_LLM01_od_F)
 };
