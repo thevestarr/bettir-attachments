@@ -1,0 +1,15 @@
+#include "macros.hpp"
+
+class CfgWeapons {
+    class ItemCore;
+    class InventoryFlashLightItem_Base_F {
+        class Flashlight;
+        class Pointer;
+    };
+    class acc_pointer_IR: ItemCore {
+        class ItemInfo: InventoryFlashLightItem_Base_F {
+            class Pointer;
+        };
+    };
+    // device blocks added in later tasks
+};
