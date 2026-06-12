@@ -25,6 +25,29 @@ class BettIR_Config {
                 class Device;
             };
         };
-        // device registrations added in later tasks
+        // ===== AN/PEQ-15 standalone =====
+        class CUP_acc_ANPEQ_15: BettIR_Base_PEQ15 {
+            macroClass = "CUP_acc_ANPEQ_15";
+            classParser="BettIR_Compat_CUP_PEQ15_fnc_parseClass";
+            classComposer="BettIR_Compat_CUP_PEQ15_fnc_composeClass";
+            onActivate="_this spawn BettIR_Attachments_fnc_defaultActivateDoubleTap";
+            onDeactivate="_this spawn BettIR_Attachments_fnc_defaultDeactivateDoubleTap";
+        };
+        BETTIR_CUP_PEQ15_REG(CUP_acc_ANPEQ_15, CUP_acc_ANPEQ_15)
+
+        class CUP_acc_ANPEQ_15_Black: CUP_acc_ANPEQ_15 { macroClass = "CUP_acc_ANPEQ_15_Black"; };
+        BETTIR_CUP_PEQ15_REG(CUP_acc_ANPEQ_15_Black, CUP_acc_ANPEQ_15_Black)
+
+        class CUP_acc_ANPEQ_15_OD: CUP_acc_ANPEQ_15 { macroClass = "CUP_acc_ANPEQ_15_OD"; };
+        BETTIR_CUP_PEQ15_REG(CUP_acc_ANPEQ_15_OD, CUP_acc_ANPEQ_15_OD)
+
+        class CUP_acc_ANPEQ_15_Tan_Top: CUP_acc_ANPEQ_15 { macroClass = "CUP_acc_ANPEQ_15_Tan_Top"; };
+        BETTIR_CUP_PEQ15_REG(CUP_acc_ANPEQ_15_Tan_Top, CUP_acc_ANPEQ_15_Tan_Top)
+
+        class CUP_acc_ANPEQ_15_Black_Top: CUP_acc_ANPEQ_15 { macroClass = "CUP_acc_ANPEQ_15_Black_Top"; };
+        BETTIR_CUP_PEQ15_REG(CUP_acc_ANPEQ_15_Black_Top, CUP_acc_ANPEQ_15_Black_Top)
+
+        class CUP_acc_ANPEQ_15_OD_Top: CUP_acc_ANPEQ_15 { macroClass = "CUP_acc_ANPEQ_15_OD_Top"; };
+        BETTIR_CUP_PEQ15_REG(CUP_acc_ANPEQ_15_OD_Top, CUP_acc_ANPEQ_15_OD_Top)
     };
 };
