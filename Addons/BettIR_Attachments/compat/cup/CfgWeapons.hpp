@@ -100,4 +100,50 @@ class CfgWeapons {
     BETTIR_CUP_PEQ15_STATES(CUP_acc_ANPEQ_15_Top_Flashlight_Black_L)
     class CUP_acc_ANPEQ_15_Top_Flashlight_Black_F;
     BETTIR_CUP_COMBO_FLASHLIGHT_IR(CUP_acc_ANPEQ_15_Top_Flashlight_Black_F)
+
+    // ---- AN/PEQ-2 standalone (IR-only) ----
+    class CUP_acc_ANPEQ_2_grey {
+        class ItemInfo: ItemInfo { class Pointer: Pointer { irLaserEnd="laser dir"; irLaserPos="laser pos"; BETTIR_IR_LASER_PRESET_DBAL_A2 }; };
+    };
+    BETTIR_CUP_PEQ2_STATES(CUP_acc_ANPEQ_2_grey)
+    class CUP_acc_ANPEQ_2_desert {
+        class ItemInfo: ItemInfo { class Pointer: Pointer { irLaserEnd="laser dir"; irLaserPos="laser pos"; BETTIR_IR_LASER_PRESET_DBAL_A2 }; };
+    };
+    BETTIR_CUP_PEQ2_STATES(CUP_acc_ANPEQ_2_desert)
+    class CUP_acc_ANPEQ_2_camo {
+        class ItemInfo: ItemInfo { class Pointer: Pointer { irLaserEnd="laser dir"; irLaserPos="laser pos"; BETTIR_IR_LASER_PRESET_DBAL_A2 }; };
+    };
+    BETTIR_CUP_PEQ2_STATES(CUP_acc_ANPEQ_2_camo)
+    class CUP_acc_ANPEQ_2_Black_Top {
+        class ItemInfo: ItemInfo { class Pointer: Pointer { irLaserEnd="laser dir"; irLaserPos="laser pos"; BETTIR_IR_LASER_PRESET_DBAL_A2 }; };
+    };
+    BETTIR_CUP_PEQ2_STATES(CUP_acc_ANPEQ_2_Black_Top)
+    class CUP_acc_ANPEQ_2_Coyote_Top {
+        class ItemInfo: ItemInfo { class Pointer: Pointer { irLaserEnd="laser dir"; irLaserPos="laser pos"; BETTIR_IR_LASER_PRESET_DBAL_A2 }; };
+    };
+    BETTIR_CUP_PEQ2_STATES(CUP_acc_ANPEQ_2_Coyote_Top)
+    class CUP_acc_ANPEQ_2_OD_Top {
+        class ItemInfo: ItemInfo { class Pointer: Pointer { irLaserEnd="laser dir"; irLaserPos="laser pos"; BETTIR_IR_LASER_PRESET_DBAL_A2 }; };
+    };
+    BETTIR_CUP_PEQ2_STATES(CUP_acc_ANPEQ_2_OD_Top)
+
+    // ---- AN/PEQ-2 + white-light combos ----
+    class CUP_acc_ANPEQ_2_Flashlight_Black_L {
+        class ItemInfo: ItemInfo { class Pointer: Pointer { irLaserEnd="laser dir"; irLaserPos="laser pos"; BETTIR_IR_LASER_PRESET_DBAL_A2 }; };
+    };
+    BETTIR_CUP_PEQ2_STATES(CUP_acc_ANPEQ_2_Flashlight_Black_L)
+    class CUP_acc_ANPEQ_2_Flashlight_Black_F;
+    BETTIR_CUP_COMBO_FLASHLIGHT_IR(CUP_acc_ANPEQ_2_Flashlight_Black_F)
+    class CUP_acc_ANPEQ_2_Flashlight_OD_L {
+        class ItemInfo: ItemInfo { class Pointer: Pointer { irLaserEnd="laser dir"; irLaserPos="laser pos"; BETTIR_IR_LASER_PRESET_DBAL_A2 }; };
+    };
+    BETTIR_CUP_PEQ2_STATES(CUP_acc_ANPEQ_2_Flashlight_OD_L)
+    class CUP_acc_ANPEQ_2_Flashlight_OD_F;
+    BETTIR_CUP_COMBO_FLASHLIGHT_IR(CUP_acc_ANPEQ_2_Flashlight_OD_F)
+    class CUP_acc_ANPEQ_2_Flashlight_Coyote_L {
+        class ItemInfo: ItemInfo { class Pointer: Pointer { irLaserEnd="laser dir"; irLaserPos="laser pos"; BETTIR_IR_LASER_PRESET_DBAL_A2 }; };
+    };
+    BETTIR_CUP_PEQ2_STATES(CUP_acc_ANPEQ_2_Flashlight_Coyote_L)
+    class CUP_acc_ANPEQ_2_Flashlight_Coyote_F;
+    BETTIR_CUP_COMBO_FLASHLIGHT_IR(CUP_acc_ANPEQ_2_Flashlight_Coyote_F)
 };
