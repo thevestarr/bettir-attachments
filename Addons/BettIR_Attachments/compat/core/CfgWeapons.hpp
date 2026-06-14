@@ -18,6 +18,7 @@ class CfgWeapons {
     };
 
     class acc_pointer_IR_LO: acc_pointer_IR {
+        baseWeapon="acc_pointer_IR";
         model="BettIR_Attachments\data\models\dbal_lo.p3d";
         displayName="Steiner DBAL A2 (Laser, LO)";
 
@@ -29,6 +30,7 @@ class CfgWeapons {
     };
 
     class acc_pointer_VIS: acc_pointer_IR {
+        baseWeapon="acc_pointer_IR";
         model="BettIR_Attachments\data\models\DBAL_vis_hi.p3d";
         displayName="Steiner DBAL A2 (Laser, Red)";
         class ItemInfo: ItemInfo {
@@ -39,6 +41,7 @@ class CfgWeapons {
     };
 
     class acc_pointer_VIS_LO: acc_pointer_VIS {
+        baseWeapon="acc_pointer_IR";
         displayName="Steiner DBAL A2 (Laser, Red, LO)";
         model="BettIR_Attachments\data\models\DBAL_vis_lo.p3d";
         class ItemInfo: ItemInfo {

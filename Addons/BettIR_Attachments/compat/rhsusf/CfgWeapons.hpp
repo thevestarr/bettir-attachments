@@ -16,15 +16,21 @@ class CfgWeapons {
         };
     };
 
+    /*  =============
+
+        RHS: AN/PEQ-15 Standalone TAN, side
+
+        ============= */
+
     class rhsusf_acc_anpeq15side: acc_pointer_IR {
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
+                // Apparently RHS doesnt inherit the laser params from vanilla
                 BETTIR_IR_LASER_PRESET_DBAL_A2
             };
         };
     };
 
-    // aim low
     class rhsusf_acc_anpeq15side_al: rhsusf_acc_anpeq15side {
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
@@ -33,7 +39,6 @@ class CfgWeapons {
         };
     };
 
-    // aim vis
     class rhsusf_acc_anpeq15side_vis: rhsusf_acc_anpeq15side {
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
@@ -42,7 +47,6 @@ class CfgWeapons {
         };
     };
 
-    // illuminator high
     class rhsusf_acc_anpeq15side_ih_25MRAD: rhsusf_acc_anpeq15side {
         class ItemInfo: ItemInfo {
             class Pointer {};
@@ -79,7 +83,6 @@ class CfgWeapons {
         };
     };
 
-    // dual high
     class rhsusf_acc_anpeq15side_dh_25MRAD: rhsusf_acc_anpeq15side {
         class ItemInfo: ItemInfo {
             class Pointer;
@@ -117,7 +120,6 @@ class CfgWeapons {
     };
 
 
-    // dual low
     class rhsusf_acc_anpeq15side_dl_25MRAD: rhsusf_acc_anpeq15side {
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
@@ -157,13 +159,19 @@ class CfgWeapons {
     };
 
 
+    /*  =============
+
+        RHS: AN/PEQ-15 Standalone BLACK, side
+
+        ============= */
+
 
     class rhsusf_acc_anpeq15side_bk: rhsusf_acc_anpeq15side {
         class ItemInfo: ItemInfo {
             class Pointer;
         };
     };
-    // aim low
+
     class rhsusf_acc_anpeq15side_bk_al: rhsusf_acc_anpeq15side_bk {
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
@@ -172,7 +180,6 @@ class CfgWeapons {
         };
     };
 
-    // aim vis
     class rhsusf_acc_anpeq15side_bk_vis: rhsusf_acc_anpeq15side_bk {
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
@@ -218,7 +225,6 @@ class CfgWeapons {
         };
     };
 
-    // dual high
     class rhsusf_acc_anpeq15side_bk_dh_25MRAD: rhsusf_acc_anpeq15side_bk {
         class ItemInfo: ItemInfo {
             class Pointer;
@@ -255,8 +261,6 @@ class CfgWeapons {
         };
     };
 
-
-    // dual low
     class rhsusf_acc_anpeq15side_bk_dl_25MRAD: rhsusf_acc_anpeq15side_bk {
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
@@ -296,11 +300,15 @@ class CfgWeapons {
     };
 
 
+    /*  =============
+
+        RHS: AN/PEQ-15 Standalone TAN, top
+
+        ============= */
 
     // rhs has its own dbal for some reason and it uses the same model as core
     // also somehow it's the base class for the top variant (??)
-    class rhsusf_acc_anpeq15a: acc_pointer_IR {
-    };
+    class rhsusf_acc_anpeq15a: acc_pointer_IR {};
 
     class rhsusf_acc_anpeq15_top: rhsusf_acc_anpeq15a {
         scope=2;
@@ -309,7 +317,6 @@ class CfgWeapons {
         };
     };
 
-    // aim low
     class rhsusf_acc_anpeq15_top_al: rhsusf_acc_anpeq15_top {
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
@@ -318,7 +325,6 @@ class CfgWeapons {
         };
     };
 
-    // aim vis
     class rhsusf_acc_anpeq15_top_vis: rhsusf_acc_anpeq15_top {
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
@@ -327,7 +333,6 @@ class CfgWeapons {
         };
     };
 
-    // illuminator high
     class rhsusf_acc_anpeq15_top_ih_25MRAD: rhsusf_acc_anpeq15_top {
         class ItemInfo: ItemInfo {
             class Pointer {};
@@ -364,7 +369,6 @@ class CfgWeapons {
         };
     };
 
-    // dual high
     class rhsusf_acc_anpeq15_top_dh_25MRAD: rhsusf_acc_anpeq15_top {
         class ItemInfo: ItemInfo {
             class Pointer;
@@ -401,8 +405,6 @@ class CfgWeapons {
         };
     };
 
-
-    // dual low
     class rhsusf_acc_anpeq15_top_dl_25MRAD: rhsusf_acc_anpeq15_top {
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
@@ -442,8 +444,11 @@ class CfgWeapons {
     };
 
 
+    /*  =============
 
+        RHS: AN/PEQ-15 Standalone BLACK, Top
 
+        ============= */
 
 
     class rhsusf_acc_anpeq15_bk_top: rhsusf_acc_anpeq15_top {
@@ -462,7 +467,6 @@ class CfgWeapons {
         };
     };
 
-    // aim vis
     class rhsusf_acc_anpeq15_bk_top_vis: rhsusf_acc_anpeq15_bk_top {
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
@@ -471,7 +475,6 @@ class CfgWeapons {
         };
     };
 
-    // illuminator high
     class rhsusf_acc_anpeq15_bk_top_ih_25MRAD: rhsusf_acc_anpeq15_bk_top {
         class ItemInfo: ItemInfo {
             class Pointer {};
@@ -508,7 +511,6 @@ class CfgWeapons {
         };
     };
 
-    // dual high
     class rhsusf_acc_anpeq15_bk_top_dh_25MRAD: rhsusf_acc_anpeq15_bk_top {
         class ItemInfo: ItemInfo {
             class Pointer;
@@ -545,8 +547,6 @@ class CfgWeapons {
         };
     };
 
-
-    // dual low
     class rhsusf_acc_anpeq15_bk_top_dl_25MRAD: rhsusf_acc_anpeq15_bk_top {
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
@@ -587,7 +587,12 @@ class CfgWeapons {
 
 
 
+    /*  =============
 
+        RHS: AN/PEQ-15 + M952V combo, TAN
+        Base height version
+
+        ============= */
 
 
     class rhsusf_acc_anpeq15: acc_pointer_IR {
@@ -598,7 +603,6 @@ class CfgWeapons {
         };
     };
 
-    // aim low
     class rhsusf_acc_anpeq15_al: rhsusf_acc_anpeq15 {
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
@@ -607,7 +611,6 @@ class CfgWeapons {
         };
     };
 
-    // aim vis
     class rhsusf_acc_anpeq15_vis: rhsusf_acc_anpeq15 {
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
@@ -616,7 +619,6 @@ class CfgWeapons {
         };
     };
 
-    // illuminator high
     class rhsusf_acc_anpeq15_ih_25MRAD: rhsusf_acc_anpeq15 {
         class ItemInfo: ItemInfo {
             class Pointer {};
@@ -653,7 +655,6 @@ class CfgWeapons {
         };
     };
 
-    // dual high
     class rhsusf_acc_anpeq15_dh_25MRAD: rhsusf_acc_anpeq15 {
         class ItemInfo: ItemInfo {
             class Pointer;
@@ -690,8 +691,6 @@ class CfgWeapons {
         };
     };
 
-
-    // dual low
     class rhsusf_acc_anpeq15_dl_25MRAD: rhsusf_acc_anpeq15 {
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
@@ -746,6 +745,321 @@ class CfgWeapons {
         };
     };
 
+
+
+    /*  =============
+
+        RHS: AN/PEQ-15 + M952V combo, TAN
+        _h height version
+
+        ============= */
+
+
+    class rhsusf_acc_anpeq15_h: rhsusf_acc_anpeq15 {};
+
+    class rhsusf_acc_anpeq15_al_h: rhsusf_acc_anpeq15_h {
+        class ItemInfo: ItemInfo {
+            class Pointer: Pointer {
+                BETTIR_IR_LASER_PRESET_DBAL_A2_LO
+            };
+        };
+    };
+
+    class rhsusf_acc_anpeq15_vis_h: rhsusf_acc_anpeq15_h {
+        class ItemInfo: ItemInfo {
+            class Pointer: Pointer {
+                BETTIR_VIS_LASER_PRESET_DBAL_A2_RED
+            };
+        };
+    };
+
+    class rhsusf_acc_anpeq15_ih_25MRAD_h: rhsusf_acc_anpeq15_h {
+        class ItemInfo: ItemInfo {
+            class Pointer {};
+            class Flashlight: Flashlight {
+                BETTIR_ILLUMINATOR_PRESET_PEQ15(25,"laser pos","laser dir",1)
+            };
+        };
+    };
+
+    class rhsusf_acc_anpeq15_ih_50MRAD_h: rhsusf_acc_anpeq15_h {
+        class ItemInfo: ItemInfo {
+            class Pointer {};
+            class Flashlight: Flashlight {
+                BETTIR_ILLUMINATOR_PRESET_PEQ15(50,"laser pos","laser dir",1)
+            };
+        };
+    };
+
+    class rhsusf_acc_anpeq15_ih_75MRAD_h: rhsusf_acc_anpeq15_h {
+        class ItemInfo: ItemInfo {
+            class Pointer {};
+            class Flashlight: Flashlight {
+                BETTIR_ILLUMINATOR_PRESET_PEQ15(75,"laser pos","laser dir",1)
+            };
+        };
+    };
+
+    class rhsusf_acc_anpeq15_ih_100MRAD_h: rhsusf_acc_anpeq15_h {
+        class ItemInfo: ItemInfo {
+            class Pointer {};
+            class Flashlight: Flashlight {
+                BETTIR_ILLUMINATOR_PRESET_PEQ15(100,"laser pos","laser dir",1)
+            };
+        };
+    };
+
+    class rhsusf_acc_anpeq15_dh_25MRAD_h: rhsusf_acc_anpeq15_h {
+        class ItemInfo: ItemInfo {
+            class Pointer;
+            class Flashlight: Flashlight {
+                BETTIR_ILLUMINATOR_PRESET_PEQ15(25,"laser pos","laser dir",1)
+            };
+        };
+    };
+
+    class rhsusf_acc_anpeq15_dh_50MRAD_h: rhsusf_acc_anpeq15_h {
+        class ItemInfo: ItemInfo {
+            class Pointer;
+            class Flashlight: Flashlight {
+                BETTIR_ILLUMINATOR_PRESET_PEQ15(50,"laser pos","laser dir",1)
+            };
+        };
+    };
+
+    class rhsusf_acc_anpeq15_dh_75MRAD_h: rhsusf_acc_anpeq15_h {
+        class ItemInfo: ItemInfo {
+            class Pointer;
+            class Flashlight: Flashlight {
+                BETTIR_ILLUMINATOR_PRESET_PEQ15(75,"laser pos","laser dir",1)
+            };
+        };
+    };
+
+    class rhsusf_acc_anpeq15_dh_100MRAD_h: rhsusf_acc_anpeq15_h {
+        class ItemInfo: ItemInfo {
+            class Pointer;
+            class Flashlight: Flashlight {
+                BETTIR_ILLUMINATOR_PRESET_PEQ15(100,"laser pos","laser dir",1)
+            };
+        };
+    };
+
+    class rhsusf_acc_anpeq15_dl_25MRAD_h: rhsusf_acc_anpeq15_h {
+        class ItemInfo: ItemInfo {
+            class Pointer: Pointer {
+                BETTIR_IR_LASER_PRESET_DBAL_A2_LO
+            };
+            class Flashlight: Flashlight {
+                BETTIR_ILLUMINATOR_PRESET_PEQ15(25,"laser pos","laser dir",0)
+            };
+        };
+    };
+
+    class rhsusf_acc_anpeq15_dl_50MRAD_h: rhsusf_acc_anpeq15_dl_25MRAD_h {
+        class ItemInfo: ItemInfo {
+            class Pointer;
+            class Flashlight: Flashlight {
+                BETTIR_ILLUMINATOR_PRESET_PEQ15(50,"laser pos","laser dir",0)
+            };
+        };
+    };
+
+    class rhsusf_acc_anpeq15_dl_75MRAD_h: rhsusf_acc_anpeq15_dl_25MRAD_h {
+        class ItemInfo: ItemInfo {
+            class Pointer;
+            class Flashlight: Flashlight {
+                BETTIR_ILLUMINATOR_PRESET_PEQ15(75,"laser pos","laser dir",0)
+            };
+        };
+    };
+
+    class rhsusf_acc_anpeq15_dl_100MRAD_h: rhsusf_acc_anpeq15_dl_25MRAD_h {
+        class ItemInfo: ItemInfo {
+            class Pointer;
+            class Flashlight: Flashlight {
+                BETTIR_ILLUMINATOR_PRESET_PEQ15(100,"laser pos","laser dir",0)
+            };
+        };
+    };
+
+    class rhsusf_acc_anpeq15_light_h: rhsusf_acc_anpeq15_light {};
+
+    class rhsusf_acc_anpeq15_light_ir_h: rhsusf_acc_anpeq15_light_h {
+        class ItemInfo: ItemInfo {
+            class Flashlight: Flashlight {
+                // for test purposes
+                irLight=1;
+                scale[]={1,1,1};
+                ambient[]={1,1,1};
+                color[]={1,1,1};
+                intensity=600;
+                onlyInNvg=1; // not sure what it does, but it's 0 right now
+            };
+        };
+    };
+
+    /*  =============
+
+        RHS: AN/PEQ-15 + M952V combo, TAN
+        _sc height version
+
+        ============= */
+
+
+    class rhsusf_acc_anpeq15_sc: rhsusf_acc_anpeq15 {};
+
+    class rhsusf_acc_anpeq15_al_sc: rhsusf_acc_anpeq15_sc {
+        class ItemInfo: ItemInfo {
+            class Pointer: Pointer {
+                BETTIR_IR_LASER_PRESET_DBAL_A2_LO
+            };
+        };
+    };
+
+    class rhsusf_acc_anpeq15_vis_sc: rhsusf_acc_anpeq15_sc {
+        class ItemInfo: ItemInfo {
+            class Pointer: Pointer {
+                BETTIR_VIS_LASER_PRESET_DBAL_A2_RED
+            };
+        };
+    };
+
+    class rhsusf_acc_anpeq15_ih_25MRAD_sc: rhsusf_acc_anpeq15_sc {
+        class ItemInfo: ItemInfo {
+            class Pointer {};
+            class Flashlight: Flashlight {
+                BETTIR_ILLUMINATOR_PRESET_PEQ15(25,"laser pos","laser dir",1)
+            };
+        };
+    };
+
+    class rhsusf_acc_anpeq15_ih_50MRAD_sc: rhsusf_acc_anpeq15_sc {
+        class ItemInfo: ItemInfo {
+            class Pointer {};
+            class Flashlight: Flashlight {
+                BETTIR_ILLUMINATOR_PRESET_PEQ15(50,"laser pos","laser dir",1)
+            };
+        };
+    };
+
+    class rhsusf_acc_anpeq15_ih_75MRAD_sc: rhsusf_acc_anpeq15_sc {
+        class ItemInfo: ItemInfo {
+            class Pointer {};
+            class Flashlight: Flashlight {
+                BETTIR_ILLUMINATOR_PRESET_PEQ15(75,"laser pos","laser dir",1)
+            };
+        };
+    };
+
+    class rhsusf_acc_anpeq15_ih_100MRAD_sc: rhsusf_acc_anpeq15_sc {
+        class ItemInfo: ItemInfo {
+            class Pointer {};
+            class Flashlight: Flashlight {
+                BETTIR_ILLUMINATOR_PRESET_PEQ15(100,"laser pos","laser dir",1)
+            };
+        };
+    };
+
+    class rhsusf_acc_anpeq15_dh_25MRAD_sc: rhsusf_acc_anpeq15_sc {
+        class ItemInfo: ItemInfo {
+            class Pointer;
+            class Flashlight: Flashlight {
+                BETTIR_ILLUMINATOR_PRESET_PEQ15(25,"laser pos","laser dir",1)
+            };
+        };
+    };
+
+    class rhsusf_acc_anpeq15_dh_50MRAD_sc: rhsusf_acc_anpeq15_sc {
+        class ItemInfo: ItemInfo {
+            class Pointer;
+            class Flashlight: Flashlight {
+                BETTIR_ILLUMINATOR_PRESET_PEQ15(50,"laser pos","laser dir",1)
+            };
+        };
+    };
+
+    class rhsusf_acc_anpeq15_dh_75MRAD_sc: rhsusf_acc_anpeq15_sc {
+        class ItemInfo: ItemInfo {
+            class Pointer;
+            class Flashlight: Flashlight {
+                BETTIR_ILLUMINATOR_PRESET_PEQ15(75,"laser pos","laser dir",1)
+            };
+        };
+    };
+
+    class rhsusf_acc_anpeq15_dh_100MRAD_sc: rhsusf_acc_anpeq15_sc {
+        class ItemInfo: ItemInfo {
+            class Pointer;
+            class Flashlight: Flashlight {
+                BETTIR_ILLUMINATOR_PRESET_PEQ15(100,"laser pos","laser dir",1)
+            };
+        };
+    };
+
+    class rhsusf_acc_anpeq15_dl_25MRAD_sc: rhsusf_acc_anpeq15_sc {
+        class ItemInfo: ItemInfo {
+            class Pointer: Pointer {
+                BETTIR_IR_LASER_PRESET_DBAL_A2_LO
+            };
+            class Flashlight: Flashlight {
+                BETTIR_ILLUMINATOR_PRESET_PEQ15(25,"laser pos","laser dir",0)
+            };
+        };
+    };
+
+    class rhsusf_acc_anpeq15_dl_50MRAD_sc: rhsusf_acc_anpeq15_dl_25MRAD_sc {
+        class ItemInfo: ItemInfo {
+            class Pointer;
+            class Flashlight: Flashlight {
+                BETTIR_ILLUMINATOR_PRESET_PEQ15(50,"laser pos","laser dir",0)
+            };
+        };
+    };
+
+    class rhsusf_acc_anpeq15_dl_75MRAD_sc: rhsusf_acc_anpeq15_dl_25MRAD_sc {
+        class ItemInfo: ItemInfo {
+            class Pointer;
+            class Flashlight: Flashlight {
+                BETTIR_ILLUMINATOR_PRESET_PEQ15(75,"laser pos","laser dir",0)
+            };
+        };
+    };
+
+    class rhsusf_acc_anpeq15_dl_100MRAD_sc: rhsusf_acc_anpeq15_dl_25MRAD_sc {
+        class ItemInfo: ItemInfo {
+            class Pointer;
+            class Flashlight: Flashlight {
+                BETTIR_ILLUMINATOR_PRESET_PEQ15(100,"laser pos","laser dir",0)
+            };
+        };
+    };
+
+    class rhsusf_acc_anpeq15_light_sc: rhsusf_acc_anpeq15_light {};
+
+    class rhsusf_acc_anpeq15_light_ir_sc: rhsusf_acc_anpeq15_light_sc {
+        class ItemInfo: ItemInfo {
+            class Flashlight: Flashlight {
+                // for test purposes
+                irLight=1;
+                scale[]={1,1,1};
+                ambient[]={1,1,1};
+                color[]={1,1,1};
+                intensity=600;
+                onlyInNvg=1; // not sure what it does, but it's 0 right now
+            };
+        };
+    };
+
+
+
+    /*  =============
+
+        RHS: AN/PEQ-15 + M952V combo, BLACK
+        Base height version
+
+        ============= */
+
     class rhsusf_acc_anpeq15_bk: rhsusf_acc_anpeq15 {};
     class rhsusf_acc_anpeq15_bk_al: rhsusf_acc_anpeq15_bk {
         class ItemInfo: ItemInfo {
@@ -755,7 +1069,6 @@ class CfgWeapons {
         };
     };
 
-    // aim vis
     class rhsusf_acc_anpeq15_bk_vis: rhsusf_acc_anpeq15_bk {
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
@@ -801,7 +1114,6 @@ class CfgWeapons {
         };
     };
 
-    // dual high
     class rhsusf_acc_anpeq15_bk_dh_25MRAD: rhsusf_acc_anpeq15_bk {
         class ItemInfo: ItemInfo {
             class Pointer;
@@ -838,8 +1150,6 @@ class CfgWeapons {
         };
     };
 
-
-    // dual low
     class rhsusf_acc_anpeq15_bk_dl_25MRAD: rhsusf_acc_anpeq15_bk {
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
@@ -878,7 +1188,7 @@ class CfgWeapons {
         };
     };
 
-    class rhsusf_acc_anpeq15_bk_light: rhsusf_acc_anpeq15_bk {};
+    class rhsusf_acc_anpeq15_bk_light: rhsusf_acc_anpeq15_light {};
     class rhsusf_acc_anpeq15_bk_light_ir: rhsusf_acc_anpeq15_bk_light {
         class ItemInfo: ItemInfo {
             class Flashlight: Flashlight {
@@ -886,6 +1196,317 @@ class CfgWeapons {
             };
         };
     };
+
+    /*  =============
+
+        RHS: AN/PEQ-15 + M952V combo, BLACK
+        _h height version
+
+        ============= */
+
+
+    class rhsusf_acc_anpeq15_bk_h: rhsusf_acc_anpeq15_bk {};
+
+    class rhsusf_acc_anpeq15_bk_al_h: rhsusf_acc_anpeq15_bk_h {
+        class ItemInfo: ItemInfo {
+            class Pointer: Pointer {
+                BETTIR_IR_LASER_PRESET_DBAL_A2_LO
+            };
+        };
+    };
+
+    class rhsusf_acc_anpeq15_bk_vis_h: rhsusf_acc_anpeq15_bk_h {
+        class ItemInfo: ItemInfo {
+            class Pointer: Pointer {
+                BETTIR_VIS_LASER_PRESET_DBAL_A2_RED
+            };
+        };
+    };
+
+    class rhsusf_acc_anpeq15_bk_ih_25MRAD_h: rhsusf_acc_anpeq15_bk_h {
+        class ItemInfo: ItemInfo {
+            class Pointer {};
+            class Flashlight: Flashlight {
+                BETTIR_ILLUMINATOR_PRESET_PEQ15(25,"laser pos","laser dir",1)
+            };
+        };
+    };
+
+    class rhsusf_acc_anpeq15_bk_ih_50MRAD_h: rhsusf_acc_anpeq15_bk_h {
+        class ItemInfo: ItemInfo {
+            class Pointer {};
+            class Flashlight: Flashlight {
+                BETTIR_ILLUMINATOR_PRESET_PEQ15(50,"laser pos","laser dir",1)
+            };
+        };
+    };
+
+    class rhsusf_acc_anpeq15_bk_ih_75MRAD_h: rhsusf_acc_anpeq15_bk_h {
+        class ItemInfo: ItemInfo {
+            class Pointer {};
+            class Flashlight: Flashlight {
+                BETTIR_ILLUMINATOR_PRESET_PEQ15(75,"laser pos","laser dir",1)
+            };
+        };
+    };
+
+    class rhsusf_acc_anpeq15_bk_ih_100MRAD_h: rhsusf_acc_anpeq15_bk_h {
+        class ItemInfo: ItemInfo {
+            class Pointer {};
+            class Flashlight: Flashlight {
+                BETTIR_ILLUMINATOR_PRESET_PEQ15(100,"laser pos","laser dir",1)
+            };
+        };
+    };
+
+    class rhsusf_acc_anpeq15_bk_dh_25MRAD_h: rhsusf_acc_anpeq15_bk_h {
+        class ItemInfo: ItemInfo {
+            class Pointer;
+            class Flashlight: Flashlight {
+                BETTIR_ILLUMINATOR_PRESET_PEQ15(25,"laser pos","laser dir",1)
+            };
+        };
+    };
+
+    class rhsusf_acc_anpeq15_bk_dh_50MRAD_h: rhsusf_acc_anpeq15_bk_h {
+        class ItemInfo: ItemInfo {
+            class Pointer;
+            class Flashlight: Flashlight {
+                BETTIR_ILLUMINATOR_PRESET_PEQ15(50,"laser pos","laser dir",1)
+            };
+        };
+    };
+
+    class rhsusf_acc_anpeq15_bk_dh_75MRAD_h: rhsusf_acc_anpeq15_bk_h {
+        class ItemInfo: ItemInfo {
+            class Pointer;
+            class Flashlight: Flashlight {
+                BETTIR_ILLUMINATOR_PRESET_PEQ15(75,"laser pos","laser dir",1)
+            };
+        };
+    };
+
+    class rhsusf_acc_anpeq15_bk_dh_100MRAD_h: rhsusf_acc_anpeq15_bk_h {
+        class ItemInfo: ItemInfo {
+            class Pointer;
+            class Flashlight: Flashlight {
+                BETTIR_ILLUMINATOR_PRESET_PEQ15(100,"laser pos","laser dir",1)
+            };
+        };
+    };
+
+    class rhsusf_acc_anpeq15_bk_dl_25MRAD_h: rhsusf_acc_anpeq15_bk_h {
+        class ItemInfo: ItemInfo {
+            class Pointer: Pointer {
+                BETTIR_IR_LASER_PRESET_DBAL_A2_LO
+            };
+            class Flashlight: Flashlight {
+                BETTIR_ILLUMINATOR_PRESET_PEQ15(25,"laser pos","laser dir",0)
+            };
+        };
+    };
+
+    class rhsusf_acc_anpeq15_bk_dl_50MRAD_h: rhsusf_acc_anpeq15_bk_dl_25MRAD_h {
+        class ItemInfo: ItemInfo {
+            class Pointer;
+            class Flashlight: Flashlight {
+                BETTIR_ILLUMINATOR_PRESET_PEQ15(50,"laser pos","laser dir",0)
+            };
+        };
+    };
+
+    class rhsusf_acc_anpeq15_bk_dl_75MRAD_h: rhsusf_acc_anpeq15_bk_dl_25MRAD_h {
+        class ItemInfo: ItemInfo {
+            class Pointer;
+            class Flashlight: Flashlight {
+                BETTIR_ILLUMINATOR_PRESET_PEQ15(75,"laser pos","laser dir",0)
+            };
+        };
+    };
+
+    class rhsusf_acc_anpeq15_bk_dl_100MRAD_h: rhsusf_acc_anpeq15_bk_dl_25MRAD_h {
+        class ItemInfo: ItemInfo {
+            class Pointer;
+            class Flashlight: Flashlight {
+                BETTIR_ILLUMINATOR_PRESET_PEQ15(100,"laser pos","laser dir",0)
+            };
+        };
+    };
+
+    class rhsusf_acc_anpeq15_bk_light_h: rhsusf_acc_anpeq15_bk_light {};
+
+    class rhsusf_acc_anpeq15_bk_light_ir_h: rhsusf_acc_anpeq15_bk_light_h {
+        class ItemInfo: ItemInfo {
+            class Flashlight: Flashlight {
+                // for test purposes
+                irLight=1;
+                scale[]={1,1,1};
+                ambient[]={1,1,1};
+                color[]={1,1,1};
+                intensity=600;
+                onlyInNvg=1; // not sure what it does, but it's 0 right now
+            };
+        };
+    };
+
+    /*  =============
+
+        RHS: AN/PEQ-15 + M952V combo, BLACK
+        _sc height version
+
+        ============= */
+
+
+    class rhsusf_acc_anpeq15_bk_sc: rhsusf_acc_anpeq15_bk {};
+
+    class rhsusf_acc_anpeq15_bk_al_sc: rhsusf_acc_anpeq15_bk_sc {
+        class ItemInfo: ItemInfo {
+            class Pointer: Pointer {
+                BETTIR_IR_LASER_PRESET_DBAL_A2_LO
+            };
+        };
+    };
+
+    class rhsusf_acc_anpeq15_bk_vis_sc: rhsusf_acc_anpeq15_bk_sc {
+        class ItemInfo: ItemInfo {
+            class Pointer: Pointer {
+                BETTIR_VIS_LASER_PRESET_DBAL_A2_RED
+            };
+        };
+    };
+
+    class rhsusf_acc_anpeq15_bk_ih_25MRAD_sc: rhsusf_acc_anpeq15_bk_sc {
+        class ItemInfo: ItemInfo {
+            class Pointer {};
+            class Flashlight: Flashlight {
+                BETTIR_ILLUMINATOR_PRESET_PEQ15(25,"laser pos","laser dir",1)
+            };
+        };
+    };
+
+    class rhsusf_acc_anpeq15_bk_ih_50MRAD_sc: rhsusf_acc_anpeq15_bk_sc {
+        class ItemInfo: ItemInfo {
+            class Pointer {};
+            class Flashlight: Flashlight {
+                BETTIR_ILLUMINATOR_PRESET_PEQ15(50,"laser pos","laser dir",1)
+            };
+        };
+    };
+
+    class rhsusf_acc_anpeq15_bk_ih_75MRAD_sc: rhsusf_acc_anpeq15_bk_sc {
+        class ItemInfo: ItemInfo {
+            class Pointer {};
+            class Flashlight: Flashlight {
+                BETTIR_ILLUMINATOR_PRESET_PEQ15(75,"laser pos","laser dir",1)
+            };
+        };
+    };
+
+    class rhsusf_acc_anpeq15_bk_ih_100MRAD_sc: rhsusf_acc_anpeq15_bk_sc {
+        class ItemInfo: ItemInfo {
+            class Pointer {};
+            class Flashlight: Flashlight {
+                BETTIR_ILLUMINATOR_PRESET_PEQ15(100,"laser pos","laser dir",1)
+            };
+        };
+    };
+
+    class rhsusf_acc_anpeq15_bk_dh_25MRAD_sc: rhsusf_acc_anpeq15_bk_sc {
+        class ItemInfo: ItemInfo {
+            class Pointer;
+            class Flashlight: Flashlight {
+                BETTIR_ILLUMINATOR_PRESET_PEQ15(25,"laser pos","laser dir",1)
+            };
+        };
+    };
+
+    class rhsusf_acc_anpeq15_bk_dh_50MRAD_sc: rhsusf_acc_anpeq15_bk_sc {
+        class ItemInfo: ItemInfo {
+            class Pointer;
+            class Flashlight: Flashlight {
+                BETTIR_ILLUMINATOR_PRESET_PEQ15(50,"laser pos","laser dir",1)
+            };
+        };
+    };
+
+    class rhsusf_acc_anpeq15_bk_dh_75MRAD_sc: rhsusf_acc_anpeq15_bk_sc {
+        class ItemInfo: ItemInfo {
+            class Pointer;
+            class Flashlight: Flashlight {
+                BETTIR_ILLUMINATOR_PRESET_PEQ15(75,"laser pos","laser dir",1)
+            };
+        };
+    };
+
+    class rhsusf_acc_anpeq15_bk_dh_100MRAD_sc: rhsusf_acc_anpeq15_bk_sc {
+        class ItemInfo: ItemInfo {
+            class Pointer;
+            class Flashlight: Flashlight {
+                BETTIR_ILLUMINATOR_PRESET_PEQ15(100,"laser pos","laser dir",1)
+            };
+        };
+    };
+
+    class rhsusf_acc_anpeq15_bk_dl_25MRAD_sc: rhsusf_acc_anpeq15_bk_sc {
+        class ItemInfo: ItemInfo {
+            class Pointer: Pointer {
+                BETTIR_IR_LASER_PRESET_DBAL_A2_LO
+            };
+            class Flashlight: Flashlight {
+                BETTIR_ILLUMINATOR_PRESET_PEQ15(25,"laser pos","laser dir",0)
+            };
+        };
+    };
+
+    class rhsusf_acc_anpeq15_bk_dl_50MRAD_sc: rhsusf_acc_anpeq15_bk_dl_25MRAD_sc {
+        class ItemInfo: ItemInfo {
+            class Pointer;
+            class Flashlight: Flashlight {
+                BETTIR_ILLUMINATOR_PRESET_PEQ15(50,"laser pos","laser dir",0)
+            };
+        };
+    };
+
+    class rhsusf_acc_anpeq15_bk_dl_75MRAD_sc: rhsusf_acc_anpeq15_bk_dl_25MRAD_sc {
+        class ItemInfo: ItemInfo {
+            class Pointer;
+            class Flashlight: Flashlight {
+                BETTIR_ILLUMINATOR_PRESET_PEQ15(75,"laser pos","laser dir",0)
+            };
+        };
+    };
+
+    class rhsusf_acc_anpeq15_bk_dl_100MRAD_sc: rhsusf_acc_anpeq15_bk_dl_25MRAD_sc {
+        class ItemInfo: ItemInfo {
+            class Pointer;
+            class Flashlight: Flashlight {
+                BETTIR_ILLUMINATOR_PRESET_PEQ15(100,"laser pos","laser dir",0)
+            };
+        };
+    };
+
+    class rhsusf_acc_anpeq15_bk_light_sc: rhsusf_acc_anpeq15_bk_light {};
+
+    class rhsusf_acc_anpeq15_bk_light_ir_sc: rhsusf_acc_anpeq15_bk_light_sc {
+        class ItemInfo: ItemInfo {
+            class Flashlight: Flashlight {
+                // for test purposes
+                irLight=1;
+                scale[]={1,1,1};
+                ambient[]={1,1,1};
+                color[]={1,1,1};
+                intensity=600;
+                onlyInNvg=1; // not sure what it does, but it's 0 right now
+            };
+        };
+    };
+
+
+    /*  =============
+
+        RHS: FLASHLIGHTS
+
+        ============= */
 
     class rhsusf_acc_M952V: rhsusf_acc_anpeq15_light {};
     class rhsusf_acc_M952V_IR : rhsusf_acc_M952V {
@@ -913,6 +1534,13 @@ class CfgWeapons {
             };
         };
     };
+
+
+    /*  =============
+
+        RHS: AN/PEQ-16A
+
+        ============= */
 
     class rhsusf_acc_anpeq16a: rhsusf_acc_anpeq15 {
         class ItemInfo: ItemInfo {
@@ -1022,6 +1650,14 @@ class CfgWeapons {
             };
         };
     };
+
+
+
+    /*  =============
+
+        RHS: AN/PEQ-15 + WMX Combo
+
+        ============= */
 
     class rhsusf_acc_anpeq15_wmx: rhsusf_acc_anpeq15 {
          class ItemInfo: ItemInfo {

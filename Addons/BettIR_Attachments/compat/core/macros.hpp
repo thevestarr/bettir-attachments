@@ -2,7 +2,7 @@
 
 #define BETTIR_ITEM_DBALA2_ILLUMINATOR_HI(MRAD) \
     class acc_pointer_IR_Illuminator_HI_##MRAD##mrad : acc_pointer_IR { \
-        scope=1; \
+        baseWeapon="acc_pointer_IR"; \
         model="BettIR_Attachments\data\models\DBAL_illum_hi.p3d"; \
         displayName=Steiner DBAL A2 (Illuminator, HI, ##MRAD## mrad); \
         class ItemInfo: ItemInfo { \
@@ -15,7 +15,7 @@
 
 #define BETTIR_ITEM_DBALA2_ILLUMINATOR_LO(MRAD) \
     class acc_pointer_IR_Illuminator_LO_##MRAD##mrad: acc_pointer_IR { \
-        scope=1; \
+        baseWeapon="acc_pointer_IR"; \
         model="BettIR_Attachments\data\models\DBAL_illum_lo.p3d"; \
         displayName=Steiner DBAL A2 (Illuminator, LO, ##MRAD## mrad); \
          class ItemInfo: ItemInfo { \
@@ -28,7 +28,7 @@
 
 #define BETTIR_ITEM_DBALA2_ILLUMINATOR_HI_LASER(MRAD) \
     class acc_pointer_IR_Illuminator_HI_##MRAD##mrad_LASER: acc_pointer_IR { \
-        scope=1; \
+        baseWeapon="acc_pointer_IR"; \
         model="BettIR_Attachments\data\models\DBAL_dual_hi.p3d"; \
         displayName=Steiner DBAL A2 (Illuminator & Laser, HI, ##MRAD## mrad); \
          class ItemInfo: ItemInfo { \
@@ -50,7 +50,7 @@
 
 #define BETTIR_ITEM_DBALA2_ILLUMINATOR_LO_LASER(MRAD) \
     class acc_pointer_IR_Illuminator_LO_##MRAD##mrad_LASER: acc_pointer_IR { \
-        scope=1; \
+        baseWeapon="acc_pointer_IR"; \
         model="BettIR_Attachments\data\models\DBAL_dual_lo.p3d"; \
         displayName=Steiner DBAL A2 (Illuminator & Laser, LO, ##MRAD## mrad); \
         class ItemInfo: ItemInfo { \

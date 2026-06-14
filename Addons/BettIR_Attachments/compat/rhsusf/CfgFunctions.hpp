@@ -58,4 +58,12 @@ class CfgFunctions {
             };
         };
     };
+
+    class RHS {
+        class functions {
+            class anpeq15_rail {
+                file = "\BettIR_Attachments\compat\rhsusf\functions\fnc_peq15_railfix.sqf";
+            };
+        };
+    };
 };

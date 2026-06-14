@@ -81,6 +81,38 @@ class asdg_FrontSideRail: asdg_SlotInfo {
         rhsusf_acc_anpeq15_dl_100MRAD = 1;
         rhsusf_acc_anpeq15_light_ir = 1;
 
+        rhsusf_acc_anpeq15_al_h = 1;
+        rhsusf_acc_anpeq15_vis_h = 1;
+        rhsusf_acc_anpeq15_ih_25MRAD_h = 1;
+        rhsusf_acc_anpeq15_ih_50MRAD_h = 1;
+        rhsusf_acc_anpeq15_ih_75MRAD_h = 1;
+        rhsusf_acc_anpeq15_ih_100MRAD_h = 1;
+        rhsusf_acc_anpeq15_dh_25MRAD_h = 1;
+        rhsusf_acc_anpeq15_dh_50MRAD_h = 1;
+        rhsusf_acc_anpeq15_dh_75MRAD_h = 1;
+        rhsusf_acc_anpeq15_dh_100MRAD_h = 1;
+        rhsusf_acc_anpeq15_dl_25MRAD_h = 1;
+        rhsusf_acc_anpeq15_dl_50MRAD_h = 1;
+        rhsusf_acc_anpeq15_dl_75MRAD_h = 1;
+        rhsusf_acc_anpeq15_dl_100MRAD_h = 1;
+        rhsusf_acc_anpeq15_light_ir_h = 1;
+
+        rhsusf_acc_anpeq15_al_sc = 1;
+        rhsusf_acc_anpeq15_vis_sc = 1;
+        rhsusf_acc_anpeq15_ih_25MRAD_sc = 1;
+        rhsusf_acc_anpeq15_ih_50MRAD_sc = 1;
+        rhsusf_acc_anpeq15_ih_75MRAD_sc = 1;
+        rhsusf_acc_anpeq15_ih_100MRAD_sc = 1;
+        rhsusf_acc_anpeq15_dh_25MRAD_sc = 1;
+        rhsusf_acc_anpeq15_dh_50MRAD_sc = 1;
+        rhsusf_acc_anpeq15_dh_75MRAD_sc = 1;
+        rhsusf_acc_anpeq15_dh_100MRAD_sc = 1;
+        rhsusf_acc_anpeq15_dl_25MRAD_sc = 1;
+        rhsusf_acc_anpeq15_dl_50MRAD_sc = 1;
+        rhsusf_acc_anpeq15_dl_75MRAD_sc = 1;
+        rhsusf_acc_anpeq15_dl_100MRAD_sc = 1;
+        rhsusf_acc_anpeq15_light_ir_sc = 1;
+
         rhsusf_acc_anpeq15_bk_al = 1;
         rhsusf_acc_anpeq15_bk_vis = 1;
         rhsusf_acc_anpeq15_bk_ih_25MRAD = 1;
@@ -96,6 +128,38 @@ class asdg_FrontSideRail: asdg_SlotInfo {
         rhsusf_acc_anpeq15_bk_dl_75MRAD = 1;
         rhsusf_acc_anpeq15_bk_dl_100MRAD = 1;
         rhsusf_acc_anpeq15_bk_light_ir = 1;
+
+        rhsusf_acc_anpeq15_bk_al_h = 1;
+        rhsusf_acc_anpeq15_bk_vis_h = 1;
+        rhsusf_acc_anpeq15_bk_ih_25MRAD_h = 1;
+        rhsusf_acc_anpeq15_bk_ih_50MRAD_h = 1;
+        rhsusf_acc_anpeq15_bk_ih_75MRAD_h = 1;
+        rhsusf_acc_anpeq15_bk_ih_100MRAD_h = 1;
+        rhsusf_acc_anpeq15_bk_dh_25MRAD_h = 1;
+        rhsusf_acc_anpeq15_bk_dh_50MRAD_h = 1;
+        rhsusf_acc_anpeq15_bk_dh_75MRAD_h = 1;
+        rhsusf_acc_anpeq15_bk_dh_100MRAD_h = 1;
+        rhsusf_acc_anpeq15_bk_dl_25MRAD_h = 1;
+        rhsusf_acc_anpeq15_bk_dl_50MRAD_h = 1;
+        rhsusf_acc_anpeq15_bk_dl_75MRAD_h = 1;
+        rhsusf_acc_anpeq15_bk_dl_100MRAD_h = 1;
+        rhsusf_acc_anpeq15_bk_light_ir_h = 1;
+
+        rhsusf_acc_anpeq15_bk_al_sc = 1;
+        rhsusf_acc_anpeq15_bk_vis_sc = 1;
+        rhsusf_acc_anpeq15_bk_ih_25MRAD_sc = 1;
+        rhsusf_acc_anpeq15_bk_ih_50MRAD_sc = 1;
+        rhsusf_acc_anpeq15_bk_ih_75MRAD_sc = 1;
+        rhsusf_acc_anpeq15_bk_ih_100MRAD_sc = 1;
+        rhsusf_acc_anpeq15_bk_dh_25MRAD_sc = 1;
+        rhsusf_acc_anpeq15_bk_dh_50MRAD_sc = 1;
+        rhsusf_acc_anpeq15_bk_dh_75MRAD_sc = 1;
+        rhsusf_acc_anpeq15_bk_dh_100MRAD_sc = 1;
+        rhsusf_acc_anpeq15_bk_dl_25MRAD_sc = 1;
+        rhsusf_acc_anpeq15_bk_dl_50MRAD_sc = 1;
+        rhsusf_acc_anpeq15_bk_dl_75MRAD_sc = 1;
+        rhsusf_acc_anpeq15_bk_dl_100MRAD_sc = 1;
+        rhsusf_acc_anpeq15_bk_light_ir_sc = 1;
 
         rhsusf_acc_anpeq16a_vis = 1;
         rhsusf_acc_anpeq16a_light = 1;
