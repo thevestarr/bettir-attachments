@@ -10,6 +10,8 @@ class CfgPatches {
     };
 };
 
+#include "CfgFunctions.hpp"
+
 class BettIR_Config {
     class CompatibleAttachments {
         class BettIR_Base_DBALA2;

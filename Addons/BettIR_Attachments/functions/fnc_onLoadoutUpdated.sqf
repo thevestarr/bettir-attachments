@@ -5,11 +5,21 @@ params ["_unit", "_loadout", "_prevLoadout"];
 _currentPrimaryWeaponLoadout = _loadout # 0;
 _prevPrimaryWeaponLoadout = _prevLoadout # 0;
 
-_currentPrimarySideAttachment = _currentPrimaryWeaponLoadout # 2;
-_prevPrimarySideAttachment = _prevPrimaryWeaponLoadout # 2;
+_currentPrimarySideAttachment = "";
+_prevPrimarySideAttachment = "";
 
-_currentPrimaryOpticAttachment = _currentPrimaryWeaponLoadout # 3;
-_prevPrimaryOpticAttachment = _prevPrimaryWeaponLoadout # 3;
+_currentPrimaryOpticAttachment = "";
+_prevPrimaryOpticAttachment = "";
+
+if ((count _currentPrimaryWeaponLoadout) >= 4) then {
+	_currentPrimarySideAttachment = _currentPrimaryWeaponLoadout # 2;
+	_currentPrimaryOpticAttachment = _currentPrimaryWeaponLoadout # 3;
+};
+
+if ((count _prevPrimaryWeaponLoadout) >= 4) then {
+	_prevPrimarySideAttachment = _prevPrimaryWeaponLoadout # 2;
+	_prevPrimaryOpticAttachment = _prevPrimaryWeaponLoadout # 3;
+};
 
 if (BETTIR_ATTACHMENTS_LOADOUTS_INITALIZED && (_currentPrimarySideAttachment == _prevPrimarySideAttachment) && (_currentPrimaryOpticAttachment == _prevPrimaryOpticAttachment)) exitWith {
 	"Attachment hasn't changed, exiting" call BettIR_Attachments_fnc_printDebug;

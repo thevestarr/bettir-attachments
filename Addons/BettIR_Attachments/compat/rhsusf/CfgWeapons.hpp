@@ -188,7 +188,6 @@ class CfgWeapons {
         };
     };
 
-    // illuminator high
     class rhsusf_acc_anpeq15side_bk_ih_25MRAD: rhsusf_acc_anpeq15side_bk {
         class ItemInfo: ItemInfo {
             class Pointer {};
@@ -1077,7 +1076,6 @@ class CfgWeapons {
         };
     };
 
-    // illuminator high
     class rhsusf_acc_anpeq15_bk_ih_25MRAD: rhsusf_acc_anpeq15_bk {
         class ItemInfo: ItemInfo {
             class Pointer {};
