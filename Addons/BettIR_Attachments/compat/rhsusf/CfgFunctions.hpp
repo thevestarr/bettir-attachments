@@ -1,4 +1,12 @@
 class CfgFunctions {
+     class BettIR_Compat_RHSUSF {
+        class Core {
+            class getHeightVariant {
+                file = "\BettIR_Attachments\compat\rhsusf\functions\fnc_getHeightVariant.sqf";
+            };
+        };
+    };
+
     class BettIR_Compat_RHSUSF_PEQ15 {
         class Core {
             class composeClass {

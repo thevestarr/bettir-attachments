@@ -1,3 +1,4 @@
+
     class rhsusf_acc_anpeq15: acc_pointer_IR {
         class ItemInfo: ItemInfo {
             class Pointer: Pointer {
@@ -136,14 +137,9 @@
 
     class rhsusf_acc_anpeq15_light_ir: rhsusf_acc_anpeq15_light {
         class ItemInfo: ItemInfo {
-            class Flashlight: Flashlight {
-                // for test purposes
+            class Flashlight {
+                RHS_M952V_FLASHLIGHT_CONFIG
                 irLight=1;
-                scale[]={1,1,1};
-                ambient[]={1,1,1};
-                color[]={1,1,1};
-                intensity=600;
-                onlyInNvg=1; // not sure what it does, but it's 0 right now
             };
         };
     };
@@ -287,14 +283,9 @@
 
     class rhsusf_acc_anpeq15_light_ir_h: rhsusf_acc_anpeq15_light_h {
         class ItemInfo: ItemInfo {
-            class Flashlight: Flashlight {
-                // for test purposes
+            class Flashlight {
                 irLight=1;
-                scale[]={1,1,1};
-                ambient[]={1,1,1};
-                color[]={1,1,1};
-                intensity=600;
-                onlyInNvg=1; // not sure what it does, but it's 0 right now
+                RHS_M952V_FLASHLIGHT_CONFIG
             };
         };
     };
@@ -438,14 +429,9 @@
 
     class rhsusf_acc_anpeq15_light_ir_sc: rhsusf_acc_anpeq15_light_sc {
         class ItemInfo: ItemInfo {
-            class Flashlight: Flashlight {
-                // for test purposes
+            class Flashlight {
                 irLight=1;
-                scale[]={1,1,1};
-                ambient[]={1,1,1};
-                color[]={1,1,1};
-                intensity=600;
-                onlyInNvg=1; // not sure what it does, but it's 0 right now
+                RHS_M952V_FLASHLIGHT_CONFIG
             };
         };
     };
@@ -589,8 +575,9 @@
     class rhsusf_acc_anpeq15_bk_light: rhsusf_acc_anpeq15_light {};
     class rhsusf_acc_anpeq15_bk_light_ir: rhsusf_acc_anpeq15_bk_light {
         class ItemInfo: ItemInfo {
-            class Flashlight: Flashlight {
+            class Flashlight {
                 irLight=1;
+                RHS_M952V_FLASHLIGHT_CONFIG
             };
         };
     };
@@ -734,14 +721,9 @@
 
     class rhsusf_acc_anpeq15_bk_light_ir_h: rhsusf_acc_anpeq15_bk_light_h {
         class ItemInfo: ItemInfo {
-            class Flashlight: Flashlight {
-                // for test purposes
+            class Flashlight {
                 irLight=1;
-                scale[]={1,1,1};
-                ambient[]={1,1,1};
-                color[]={1,1,1};
-                intensity=600;
-                onlyInNvg=1; // not sure what it does, but it's 0 right now
+                RHS_M952V_FLASHLIGHT_CONFIG
             };
         };
     };
@@ -884,14 +866,9 @@
 
     class rhsusf_acc_anpeq15_bk_light_ir_sc: rhsusf_acc_anpeq15_bk_light_sc {
         class ItemInfo: ItemInfo {
-            class Flashlight: Flashlight {
-                // for test purposes
+            class Flashlight {
                 irLight=1;
-                scale[]={1,1,1};
-                ambient[]={1,1,1};
-                color[]={1,1,1};
-                intensity=600;
-                onlyInNvg=1; // not sure what it does, but it's 0 right now
+                RHS_M952V_FLASHLIGHT_CONFIG
             };
         };
     };

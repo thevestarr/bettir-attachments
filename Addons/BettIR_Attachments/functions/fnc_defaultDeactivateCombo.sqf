@@ -19,9 +19,10 @@ if (_buttonIndex == 0) then {
         [_unit, "Device", "Laser", false, false] call BettIR_Attachments_fnc_changeConfigurableAttachment;
     };
 
-    sleep 0.1;
+    // sleep 0.1;
 
     // TODO: use the actual device activation script
-    _unit action ["IRLaserOff", _unit];
-    _unit action ["GunLightOff", _unit];
+    // _unit action ["IRLaserOff", _unit];
+    // _unit action ["GunLightOff", _unit];
 };
+

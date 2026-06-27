@@ -11,7 +11,6 @@ if ((count (keys _currentPrimaryAttachment)) == 0) exitWith {
     "Not a BettIR attachment!" call BettIR_Attachments_fnc_printDebug;
 };
 
-
 _macro = _currentPrimaryAttachment getOrDefault ["__BETTIR_MACRO", ""];
 if (_macro == "") exitWith {
     "No valid BettIR device" call BettIR_Attachments_fnc_printDebug;

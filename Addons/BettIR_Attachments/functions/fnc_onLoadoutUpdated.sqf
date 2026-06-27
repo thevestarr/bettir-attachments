@@ -60,6 +60,7 @@ if (_prevPrimarySideAttachment != "") then {
 // had a compatible device, doesn't anymore
 if ((_currentCompatibleAttachment == "") && ((_previousCompatibleAttachment != ""))) exitWith {
 	"No more compatible device, resetting to normal" call BettIR_Attachments_fnc_printDebug;
+	// these variables are too specific, TODO: Make it more abstract
 	_unit setVariable ["BettIR_primaryWeaponAttachment", [[], []]];
 	_unit setVariable ["BettIR_keepPrimaryDeviceOn", false];
 	_unit setVariable ["BettIR_lastPrimaryDeviceActivate", 0];

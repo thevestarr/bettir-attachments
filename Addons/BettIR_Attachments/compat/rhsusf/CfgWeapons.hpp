@@ -1,6 +1,8 @@
 #include "..\..\include\presets\peq15.hpp"
 #include "..\..\include\presets\dbal_a2.hpp"
 
+#include "macros.hpp"
+
 class CfgWeapons {
     class ItemCore;
     class acc_flashlight;
@@ -55,7 +57,8 @@ class CfgWeapons {
     class rhsusf_acc_M952V: rhsusf_acc_anpeq15_light {};
     class rhsusf_acc_M952V_IR : rhsusf_acc_M952V {
         class ItemInfo: ItemInfo {
-            class Flashlight: Flashlight {
+            class Flashlight {
+                RHS_M952V_FLASHLIGHT_CONFIG
                 irLight=1;
             };
         };
@@ -64,7 +67,8 @@ class CfgWeapons {
     class rhsusf_acc_wmx: rhsusf_acc_M952V {};
     class rhsusf_acc_wmx_ir : rhsusf_acc_wmx {
         class ItemInfo: ItemInfo {
-            class Flashlight: Flashlight {
+            class Flashlight {
+                RHS_WMX_FLASHLIGHT_CONFIG
                 irLight=1;
             };
         };
@@ -73,7 +77,8 @@ class CfgWeapons {
     class rhsusf_acc_wmx_bk: rhsusf_acc_M952V {};
     class rhsusf_acc_wmx_bk_ir : rhsusf_acc_wmx_bk {
         class ItemInfo: ItemInfo {
-            class Flashlight: Flashlight {
+            class Flashlight {
+                RHS_WMX_FLASHLIGHT_CONFIG
                 irLight=1;
             };
         };
@@ -95,5 +100,5 @@ class CfgWeapons {
 
         ============= */
 
-    #include "CfgWeapons_peq16_wmx.hpp"
+    #include "CfgWeapons_peq15_wmx.hpp"
 };

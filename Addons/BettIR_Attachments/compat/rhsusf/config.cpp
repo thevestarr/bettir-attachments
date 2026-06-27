@@ -508,7 +508,7 @@ class BettIR_Config {
         class rhsusf_acc_anpeq15_wmx_dl_75MRAD: rhsusf_acc_anpeq15_wmx {};
         class rhsusf_acc_anpeq15_wmx_dl_100MRAD: rhsusf_acc_anpeq15_wmx {};
         class rhsusf_acc_anpeq15_wmx_light: rhsusf_acc_anpeq15_wmx {};
-
+        class rhsusf_acc_anpeq15_wmx_light_ir: rhsusf_acc_anpeq15_wmx {};
 
         class rhsusf_acc_anpeq15_wmx_h: rhsusf_acc_anpeq15_wmx {
             macroClass="rhsusf_acc_anpeq15_wmx_h";
@@ -527,6 +527,7 @@ class BettIR_Config {
         class rhsusf_acc_anpeq15_wmx_dl_50MRAD_h: rhsusf_acc_anpeq15_wmx {};
         class rhsusf_acc_anpeq15_wmx_dl_75MRAD_h: rhsusf_acc_anpeq15_wmx {};
         class rhsusf_acc_anpeq15_wmx_dl_100MRAD_h: rhsusf_acc_anpeq15_wmx {};
+        class rhsusf_acc_anpeq15_wmx_light_h: rhsusf_acc_anpeq15_wmx {};
         class rhsusf_acc_anpeq15_wmx_light_ir_h: rhsusf_acc_anpeq15_wmx {};
 
 
@@ -547,6 +548,7 @@ class BettIR_Config {
         class rhsusf_acc_anpeq15_wmx_dl_50MRAD_sc: rhsusf_acc_anpeq15_wmx {};
         class rhsusf_acc_anpeq15_wmx_dl_75MRAD_sc: rhsusf_acc_anpeq15_wmx {};
         class rhsusf_acc_anpeq15_wmx_dl_100MRAD_sc: rhsusf_acc_anpeq15_wmx {};
+        class rhsusf_acc_anpeq15_wmx_light_sc: rhsusf_acc_anpeq15_wmx {};
         class rhsusf_acc_anpeq15_wmx_light_ir_sc: rhsusf_acc_anpeq15_wmx {};
     };
 };
