@@ -41,9 +41,12 @@ class asdg_FrontSideRail: asdg_SlotInfo {
         CUP_acc_LLM01_hex_F_ir = 1;
         BETTIR_CUP_PEQ15_RAIL(CUP_acc_LLM01_od_L)
         CUP_acc_LLM01_od_F_ir = 1;
-        CUP_acc_LLM_ir = 1;
-        CUP_acc_LLM_black_ir = 1;
-        CUP_acc_LLM_od_ir = 1;
+        BETTIR_CUP_PEQ15_RAIL(CUP_acc_LLM)
+        CUP_acc_LLM_Flashlight_ir = 1;
+        BETTIR_CUP_PEQ15_RAIL(CUP_acc_LLM_black)
+        CUP_acc_LLM_black_Flashlight_ir = 1;
+        BETTIR_CUP_PEQ15_RAIL(CUP_acc_LLM_od)
+        CUP_acc_LLM_od_Flashlight_ir = 1;
     };
 };
 class PointerSlot;
@@ -89,8 +92,11 @@ class PointerSlot_Rail: PointerSlot {
         CUP_acc_LLM01_hex_F_ir = 1;
         BETTIR_CUP_PEQ15_RAIL(CUP_acc_LLM01_od_L)
         CUP_acc_LLM01_od_F_ir = 1;
-        CUP_acc_LLM_ir = 1;
-        CUP_acc_LLM_black_ir = 1;
-        CUP_acc_LLM_od_ir = 1;
+        BETTIR_CUP_PEQ15_RAIL(CUP_acc_LLM)
+        CUP_acc_LLM_Flashlight_ir = 1;
+        BETTIR_CUP_PEQ15_RAIL(CUP_acc_LLM_black)
+        CUP_acc_LLM_black_Flashlight_ir = 1;
+        BETTIR_CUP_PEQ15_RAIL(CUP_acc_LLM_od)
+        CUP_acc_LLM_od_Flashlight_ir = 1;
     };
 };

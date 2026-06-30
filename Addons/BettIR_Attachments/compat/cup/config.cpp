@@ -51,6 +51,8 @@ class BettIR_Config {
         BETTIR_CUP_PEQ15_REG(CUP_acc_ANPEQ_15_OD_Top, CUP_acc_ANPEQ_15_OD_Top)
 
         // ===== AN/PEQ-15 combos =====
+        // First variant defines the Device dimension (via GenericFlashlightCombo);
+        // the rest inherit it and only override macroClass.
         class CUP_acc_ANPEQ_15_Flashlight_Tan_L: BettIR_Base_PEQ15_GenericFlashlightCombo {
             macroClass    = "CUP_acc_ANPEQ_15_Flashlight_Tan";
             classParser   = "BettIR_Compat_CUP_PEQ15_Combo_fnc_parseClass";
@@ -72,107 +74,27 @@ class BettIR_Config {
         class CUP_acc_ANPEQ_15_Flashlight_Tan_F: CUP_acc_ANPEQ_15_Flashlight_Tan_L {};
         class CUP_acc_ANPEQ_15_Flashlight_Tan_F_ir: CUP_acc_ANPEQ_15_Flashlight_Tan_L {};
 
-        class CUP_acc_ANPEQ_15_Flashlight_OD_L: BettIR_Base_PEQ15_GenericFlashlightCombo {
-            macroClass    = "CUP_acc_ANPEQ_15_Flashlight_OD";
-            classParser   = "BettIR_Compat_CUP_PEQ15_Combo_fnc_parseClass";
-            classComposer = "BettIR_Compat_CUP_PEQ15_Combo_fnc_composeClass";
-            class Configurable: Configurable {
-                class Device: Device {
-                    class Laser { displayName="AN/PEQ-15"; };
-                    class Flashlight { displayName="Flashlight"; };
-                };
-                class FlashlightOutput {
-                    displayName="Flashlight Output";
-                    defaultValue="White";
-                    class White { displayName="White"; };
-                    class IR { displayName="Infrared"; };
-                };
-            };
-        };
+        class CUP_acc_ANPEQ_15_Flashlight_OD_L: CUP_acc_ANPEQ_15_Flashlight_Tan_L { macroClass = "CUP_acc_ANPEQ_15_Flashlight_OD"; };
         BETTIR_CUP_PEQ15_REG(CUP_acc_ANPEQ_15_Flashlight_OD_L, CUP_acc_ANPEQ_15_Flashlight_OD_L)
         class CUP_acc_ANPEQ_15_Flashlight_OD_F: CUP_acc_ANPEQ_15_Flashlight_OD_L {};
         class CUP_acc_ANPEQ_15_Flashlight_OD_F_ir: CUP_acc_ANPEQ_15_Flashlight_OD_L {};
 
-        class CUP_acc_ANPEQ_15_Flashlight_Black_L: BettIR_Base_PEQ15_GenericFlashlightCombo {
-            macroClass    = "CUP_acc_ANPEQ_15_Flashlight_Black";
-            classParser   = "BettIR_Compat_CUP_PEQ15_Combo_fnc_parseClass";
-            classComposer = "BettIR_Compat_CUP_PEQ15_Combo_fnc_composeClass";
-            class Configurable: Configurable {
-                class Device: Device {
-                    class Laser { displayName="AN/PEQ-15"; };
-                    class Flashlight { displayName="Flashlight"; };
-                };
-                class FlashlightOutput {
-                    displayName="Flashlight Output";
-                    defaultValue="White";
-                    class White { displayName="White"; };
-                    class IR { displayName="Infrared"; };
-                };
-            };
-        };
+        class CUP_acc_ANPEQ_15_Flashlight_Black_L: CUP_acc_ANPEQ_15_Flashlight_Tan_L { macroClass = "CUP_acc_ANPEQ_15_Flashlight_Black"; };
         BETTIR_CUP_PEQ15_REG(CUP_acc_ANPEQ_15_Flashlight_Black_L, CUP_acc_ANPEQ_15_Flashlight_Black_L)
         class CUP_acc_ANPEQ_15_Flashlight_Black_F: CUP_acc_ANPEQ_15_Flashlight_Black_L {};
         class CUP_acc_ANPEQ_15_Flashlight_Black_F_ir: CUP_acc_ANPEQ_15_Flashlight_Black_L {};
 
-        class CUP_acc_ANPEQ_15_Top_Flashlight_Tan_L: BettIR_Base_PEQ15_GenericFlashlightCombo {
-            macroClass    = "CUP_acc_ANPEQ_15_Top_Flashlight_Tan";
-            classParser   = "BettIR_Compat_CUP_PEQ15_Combo_fnc_parseClass";
-            classComposer = "BettIR_Compat_CUP_PEQ15_Combo_fnc_composeClass";
-            class Configurable: Configurable {
-                class Device: Device {
-                    class Laser { displayName="AN/PEQ-15"; };
-                    class Flashlight { displayName="Flashlight"; };
-                };
-                class FlashlightOutput {
-                    displayName="Flashlight Output";
-                    defaultValue="White";
-                    class White { displayName="White"; };
-                    class IR { displayName="Infrared"; };
-                };
-            };
-        };
+        class CUP_acc_ANPEQ_15_Top_Flashlight_Tan_L: CUP_acc_ANPEQ_15_Flashlight_Tan_L { macroClass = "CUP_acc_ANPEQ_15_Top_Flashlight_Tan"; };
         BETTIR_CUP_PEQ15_REG(CUP_acc_ANPEQ_15_Top_Flashlight_Tan_L, CUP_acc_ANPEQ_15_Top_Flashlight_Tan_L)
         class CUP_acc_ANPEQ_15_Top_Flashlight_Tan_F: CUP_acc_ANPEQ_15_Top_Flashlight_Tan_L {};
         class CUP_acc_ANPEQ_15_Top_Flashlight_Tan_F_ir: CUP_acc_ANPEQ_15_Top_Flashlight_Tan_L {};
 
-        class CUP_acc_ANPEQ_15_Top_Flashlight_OD_L: BettIR_Base_PEQ15_GenericFlashlightCombo {
-            macroClass    = "CUP_acc_ANPEQ_15_Top_Flashlight_OD";
-            classParser   = "BettIR_Compat_CUP_PEQ15_Combo_fnc_parseClass";
-            classComposer = "BettIR_Compat_CUP_PEQ15_Combo_fnc_composeClass";
-            class Configurable: Configurable {
-                class Device: Device {
-                    class Laser { displayName="AN/PEQ-15"; };
-                    class Flashlight { displayName="Flashlight"; };
-                };
-                class FlashlightOutput {
-                    displayName="Flashlight Output";
-                    defaultValue="White";
-                    class White { displayName="White"; };
-                    class IR { displayName="Infrared"; };
-                };
-            };
-        };
+        class CUP_acc_ANPEQ_15_Top_Flashlight_OD_L: CUP_acc_ANPEQ_15_Flashlight_Tan_L { macroClass = "CUP_acc_ANPEQ_15_Top_Flashlight_OD"; };
         BETTIR_CUP_PEQ15_REG(CUP_acc_ANPEQ_15_Top_Flashlight_OD_L, CUP_acc_ANPEQ_15_Top_Flashlight_OD_L)
         class CUP_acc_ANPEQ_15_Top_Flashlight_OD_F: CUP_acc_ANPEQ_15_Top_Flashlight_OD_L {};
         class CUP_acc_ANPEQ_15_Top_Flashlight_OD_F_ir: CUP_acc_ANPEQ_15_Top_Flashlight_OD_L {};
 
-        class CUP_acc_ANPEQ_15_Top_Flashlight_Black_L: BettIR_Base_PEQ15_GenericFlashlightCombo {
-            macroClass    = "CUP_acc_ANPEQ_15_Top_Flashlight_Black";
-            classParser   = "BettIR_Compat_CUP_PEQ15_Combo_fnc_parseClass";
-            classComposer = "BettIR_Compat_CUP_PEQ15_Combo_fnc_composeClass";
-            class Configurable: Configurable {
-                class Device: Device {
-                    class Laser { displayName="AN/PEQ-15"; };
-                    class Flashlight { displayName="Flashlight"; };
-                };
-                class FlashlightOutput {
-                    displayName="Flashlight Output";
-                    defaultValue="White";
-                    class White { displayName="White"; };
-                    class IR { displayName="Infrared"; };
-                };
-            };
-        };
+        class CUP_acc_ANPEQ_15_Top_Flashlight_Black_L: CUP_acc_ANPEQ_15_Flashlight_Tan_L { macroClass = "CUP_acc_ANPEQ_15_Top_Flashlight_Black"; };
         BETTIR_CUP_PEQ15_REG(CUP_acc_ANPEQ_15_Top_Flashlight_Black_L, CUP_acc_ANPEQ_15_Top_Flashlight_Black_L)
         class CUP_acc_ANPEQ_15_Top_Flashlight_Black_F: CUP_acc_ANPEQ_15_Top_Flashlight_Black_L {};
         class CUP_acc_ANPEQ_15_Top_Flashlight_Black_F_ir: CUP_acc_ANPEQ_15_Top_Flashlight_Black_L {};
@@ -239,67 +161,17 @@ class BettIR_Config {
         class CUP_acc_ANPEQ_2_Flashlight_Black_F: CUP_acc_ANPEQ_2_Flashlight_Black_L {};
         class CUP_acc_ANPEQ_2_Flashlight_Black_F_ir: CUP_acc_ANPEQ_2_Flashlight_Black_L {};
 
-        class CUP_acc_ANPEQ_2_Flashlight_OD_L: BettIR_Base_PEQ15_GenericFlashlightCombo {
-            macroClass    = "CUP_acc_ANPEQ_2_Flashlight_OD";
-            classParser   = "BettIR_Compat_CUP_PEQ2_Combo_fnc_parseClass";
-            classComposer = "BettIR_Compat_CUP_PEQ2_Combo_fnc_composeClass";
-            class Configurable: Configurable {
-                class MasterMode {
-                    displayName="Master Mode";
-                    defaultValue="AH";
-                    class AH { displayName="Aim High"; };
-                    class AL { displayName="Aim Low"; };
-                    class IH { displayName="Illuminator"; };
-                    class DH { displayName="Dual High"; };
-                    class DL { displayName="Dual Low"; };
-                };
-                class Device: Device {
-                    class Laser { displayName="AN/PEQ-2"; };
-                    class Flashlight { displayName="Flashlight"; };
-                };
-                class FlashlightOutput {
-                    displayName="Flashlight Output";
-                    defaultValue="White";
-                    class White { displayName="White"; };
-                    class IR { displayName="Infrared"; };
-                };
-            };
-        };
+        class CUP_acc_ANPEQ_2_Flashlight_OD_L: CUP_acc_ANPEQ_2_Flashlight_Black_L { macroClass = "CUP_acc_ANPEQ_2_Flashlight_OD"; };
         BETTIR_CUP_PEQ2_REG(CUP_acc_ANPEQ_2_Flashlight_OD_L, CUP_acc_ANPEQ_2_Flashlight_OD_L)
         class CUP_acc_ANPEQ_2_Flashlight_OD_F: CUP_acc_ANPEQ_2_Flashlight_OD_L {};
         class CUP_acc_ANPEQ_2_Flashlight_OD_F_ir: CUP_acc_ANPEQ_2_Flashlight_OD_L {};
 
-        class CUP_acc_ANPEQ_2_Flashlight_Coyote_L: BettIR_Base_PEQ15_GenericFlashlightCombo {
-            macroClass    = "CUP_acc_ANPEQ_2_Flashlight_Coyote";
-            classParser   = "BettIR_Compat_CUP_PEQ2_Combo_fnc_parseClass";
-            classComposer = "BettIR_Compat_CUP_PEQ2_Combo_fnc_composeClass";
-            class Configurable: Configurable {
-                class MasterMode {
-                    displayName="Master Mode";
-                    defaultValue="AH";
-                    class AH { displayName="Aim High"; };
-                    class AL { displayName="Aim Low"; };
-                    class IH { displayName="Illuminator"; };
-                    class DH { displayName="Dual High"; };
-                    class DL { displayName="Dual Low"; };
-                };
-                class Device: Device {
-                    class Laser { displayName="AN/PEQ-2"; };
-                    class Flashlight { displayName="Flashlight"; };
-                };
-                class FlashlightOutput {
-                    displayName="Flashlight Output";
-                    defaultValue="White";
-                    class White { displayName="White"; };
-                    class IR { displayName="Infrared"; };
-                };
-            };
-        };
+        class CUP_acc_ANPEQ_2_Flashlight_Coyote_L: CUP_acc_ANPEQ_2_Flashlight_Black_L { macroClass = "CUP_acc_ANPEQ_2_Flashlight_Coyote"; };
         BETTIR_CUP_PEQ2_REG(CUP_acc_ANPEQ_2_Flashlight_Coyote_L, CUP_acc_ANPEQ_2_Flashlight_Coyote_L)
         class CUP_acc_ANPEQ_2_Flashlight_Coyote_F: CUP_acc_ANPEQ_2_Flashlight_Coyote_L {};
         class CUP_acc_ANPEQ_2_Flashlight_Coyote_F_ir: CUP_acc_ANPEQ_2_Flashlight_Coyote_L {};
 
-        // ===== LLM01 combos =====
+        // ===== LLM01 combos (green VIS) =====
         class CUP_acc_LLM01_L: BettIR_Base_PEQ15_GenericFlashlightCombo {
             macroClass    = "CUP_acc_LLM01";
             classParser   = "BettIR_Compat_CUP_LLM01_Combo_fnc_parseClass";
@@ -321,77 +193,38 @@ class BettIR_Config {
         class CUP_acc_LLM01_F: CUP_acc_LLM01_L {};
         class CUP_acc_LLM01_F_ir: CUP_acc_LLM01_L {};
 
-        class CUP_acc_LLM01_coyote_L: BettIR_Base_PEQ15_GenericFlashlightCombo {
-            macroClass    = "CUP_acc_LLM01_coyote";
-            classParser   = "BettIR_Compat_CUP_LLM01_Combo_fnc_parseClass";
-            classComposer = "BettIR_Compat_CUP_LLM01_Combo_fnc_composeClass";
-            class Configurable: Configurable {
-                class Device: Device {
-                    class Laser { displayName="LLM01 Laser"; };
-                    class Flashlight { displayName="LLM01 Light"; };
-                };
-                class FlashlightOutput {
-                    displayName="Flashlight Output";
-                    defaultValue="White";
-                    class White { displayName="White"; };
-                    class IR { displayName="Infrared"; };
-                };
-            };
-        };
+        class CUP_acc_LLM01_coyote_L: CUP_acc_LLM01_L { macroClass = "CUP_acc_LLM01_coyote"; };
         BETTIR_CUP_PEQ15_REG(CUP_acc_LLM01_coyote_L, CUP_acc_LLM01_coyote_L)
         class CUP_acc_LLM01_coyote_F: CUP_acc_LLM01_coyote_L {};
         class CUP_acc_LLM01_coyote_F_ir: CUP_acc_LLM01_coyote_L {};
 
-        class CUP_acc_LLM01_desert_L: BettIR_Base_PEQ15_GenericFlashlightCombo {
-            macroClass    = "CUP_acc_LLM01_desert";
-            classParser   = "BettIR_Compat_CUP_LLM01_Combo_fnc_parseClass";
-            classComposer = "BettIR_Compat_CUP_LLM01_Combo_fnc_composeClass";
-            class Configurable: Configurable {
-                class Device: Device {
-                    class Laser { displayName="LLM01 Laser"; };
-                    class Flashlight { displayName="LLM01 Light"; };
-                };
-                class FlashlightOutput {
-                    displayName="Flashlight Output";
-                    defaultValue="White";
-                    class White { displayName="White"; };
-                    class IR { displayName="Infrared"; };
-                };
-            };
-        };
+        class CUP_acc_LLM01_desert_L: CUP_acc_LLM01_L { macroClass = "CUP_acc_LLM01_desert"; };
         BETTIR_CUP_PEQ15_REG(CUP_acc_LLM01_desert_L, CUP_acc_LLM01_desert_L)
         class CUP_acc_LLM01_desert_F: CUP_acc_LLM01_desert_L {};
         class CUP_acc_LLM01_desert_F_ir: CUP_acc_LLM01_desert_L {};
 
-        class CUP_acc_LLM01_hex_L: BettIR_Base_PEQ15_GenericFlashlightCombo {
-            macroClass    = "CUP_acc_LLM01_hex";
-            classParser   = "BettIR_Compat_CUP_LLM01_Combo_fnc_parseClass";
-            classComposer = "BettIR_Compat_CUP_LLM01_Combo_fnc_composeClass";
-            class Configurable: Configurable {
-                class Device: Device {
-                    class Laser { displayName="LLM01 Laser"; };
-                    class Flashlight { displayName="LLM01 Light"; };
-                };
-                class FlashlightOutput {
-                    displayName="Flashlight Output";
-                    defaultValue="White";
-                    class White { displayName="White"; };
-                    class IR { displayName="Infrared"; };
-                };
-            };
-        };
+        class CUP_acc_LLM01_hex_L: CUP_acc_LLM01_L { macroClass = "CUP_acc_LLM01_hex"; };
         BETTIR_CUP_PEQ15_REG(CUP_acc_LLM01_hex_L, CUP_acc_LLM01_hex_L)
         class CUP_acc_LLM01_hex_F: CUP_acc_LLM01_hex_L {};
         class CUP_acc_LLM01_hex_F_ir: CUP_acc_LLM01_hex_L {};
 
-        class CUP_acc_LLM01_od_L: BettIR_Base_PEQ15_GenericFlashlightCombo {
-            macroClass    = "CUP_acc_LLM01_od";
-            classParser   = "BettIR_Compat_CUP_LLM01_Combo_fnc_parseClass";
-            classComposer = "BettIR_Compat_CUP_LLM01_Combo_fnc_composeClass";
+        class CUP_acc_LLM01_od_L: CUP_acc_LLM01_L { macroClass = "CUP_acc_LLM01_od"; };
+        BETTIR_CUP_PEQ15_REG(CUP_acc_LLM01_od_L, CUP_acc_LLM01_od_L)
+        class CUP_acc_LLM01_od_F: CUP_acc_LLM01_od_L {};
+        class CUP_acc_LLM01_od_F_ir: CUP_acc_LLM01_od_L {};
+
+        // ===== LLM MKIII laser+light combo =====
+        // Laser side uses the PEQ-15 grammar (red VIS) inherited from the combo
+        // base; the light side toggles White/IR. Color variants inherit the base
+        // Configurable and only override macroClass.
+        class CUP_acc_LLM: BettIR_Base_PEQ15_GenericFlashlightCombo {
+            macroClass    = "CUP_acc_LLM";
+            classParser   = "BettIR_Compat_CUP_MKIII_Combo_fnc_parseClass";
+            classComposer = "BettIR_Compat_CUP_MKIII_Combo_fnc_composeClass";
             class Configurable: Configurable {
                 class Device: Device {
-                    class Laser { displayName="LLM01 Laser"; };
-                    class Flashlight { displayName="LLM01 Light"; };
+                    class Laser { displayName="LLM MKIII Laser"; };
+                    class Flashlight { displayName="LLM MKIII Light"; };
                 };
                 class FlashlightOutput {
                     displayName="Flashlight Output";
@@ -401,34 +234,18 @@ class BettIR_Config {
                 };
             };
         };
-        BETTIR_CUP_PEQ15_REG(CUP_acc_LLM01_od_L, CUP_acc_LLM01_od_L)
-        class CUP_acc_LLM01_od_F: CUP_acc_LLM01_od_L {};
-        class CUP_acc_LLM01_od_F_ir: CUP_acc_LLM01_od_L {};
+        BETTIR_CUP_PEQ15_REG(CUP_acc_LLM, CUP_acc_LLM)
+        class CUP_acc_LLM_Flashlight: CUP_acc_LLM {};
+        class CUP_acc_LLM_Flashlight_ir: CUP_acc_LLM {};
 
-        // ===== LLM MKIII weapon light =====
-        class CUP_acc_LLM {
-            macroClass="CUP_acc_LLM";
-            classParser="BettIR_Compat_CUP_Flashlight_fnc_parseClass";
-            classComposer="BettIR_Compat_CUP_Flashlight_fnc_composeClass";
-            onActivate="_this spawn BettIR_Attachments_fnc_defaultActivateDoubleTap";
-            onDeactivate="_this spawn BettIR_Attachments_fnc_defaultDeactivateDoubleTap";
-            onToggleModePrimary="[_this select 0, 'Output'] spawn BettIR_Attachments_fnc_defaultToggleMode";
-            onToggleModeSecondary="[_this select 0, 'Output'] spawn BettIR_Attachments_fnc_defaultToggleMode";
-            onStepperUp="";
-            onStepperDown="";
-            class Configurable {
-                class Output {
-                    displayName="Output";
-                    defaultValue="White";
-                    class White { displayName="White"; };
-                    class IR { displayName="Infrared"; };
-                };
-            };
-        };
-        class CUP_acc_LLM_ir: CUP_acc_LLM {};
         class CUP_acc_LLM_black: CUP_acc_LLM { macroClass="CUP_acc_LLM_black"; };
-        class CUP_acc_LLM_black_ir: CUP_acc_LLM_black {};
+        BETTIR_CUP_PEQ15_REG(CUP_acc_LLM_black, CUP_acc_LLM_black)
+        class CUP_acc_LLM_black_Flashlight: CUP_acc_LLM_black {};
+        class CUP_acc_LLM_black_Flashlight_ir: CUP_acc_LLM_black {};
+
         class CUP_acc_LLM_od: CUP_acc_LLM { macroClass="CUP_acc_LLM_od"; };
-        class CUP_acc_LLM_od_ir: CUP_acc_LLM_od {};
+        BETTIR_CUP_PEQ15_REG(CUP_acc_LLM_od, CUP_acc_LLM_od)
+        class CUP_acc_LLM_od_Flashlight: CUP_acc_LLM_od {};
+        class CUP_acc_LLM_od_Flashlight_ir: CUP_acc_LLM_od {};
     };
 };

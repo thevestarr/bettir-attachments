@@ -200,15 +200,29 @@ class CfgWeapons {
     class CUP_acc_LLM01_od_F: acc_pointer_IR {};
     BETTIR_CUP_COMBO_FLASHLIGHT_IR(CUP_acc_LLM01_od_F)
 
-    // ---- LLM MKIII weapon light (White/IR) ----
-    // NOTE: model under review. CUP_acc_LLM is actually the IR-laser base of a
-    // laser+light combo (CUP_acc_LLM / _V visible / _Flashlight white), not a
-    // standalone flashlight. Inheritance is made valid here; the device model
-    // is being reconciled with the user (see task #2).
-    class CUP_acc_LLM: acc_pointer_IR {};
-    BETTIR_CUP_FLASHLIGHT_IR(CUP_acc_LLM)
-    class CUP_acc_LLM_black: acc_pointer_IR {};
-    BETTIR_CUP_FLASHLIGHT_IR(CUP_acc_LLM_black)
-    class CUP_acc_LLM_od: acc_pointer_IR {};
-    BETTIR_CUP_FLASHLIGHT_IR(CUP_acc_LLM_od)
+    // ---- LLM MKIII laser+light combo (red VIS, white/IR light) ----
+    // CUP_acc_LLM is the bare IR-laser head (real, scope=2); CUP_acc_LLM_Flashlight
+    // is the real white light. Laser side gets the PEQ-15 grammar (red VIS); the
+    // light side reuses the real white class + an invented IR sibling. Invented
+    // states derive from the real CUP classes so each keeps its LLM.p3d model.
+    class CUP_acc_LLM: acc_pointer_IR {
+        class ItemInfo: ItemInfo { class Pointer: Pointer { irLaserEnd="laser dir"; irLaserPos="laser pos"; BETTIR_IR_LASER_PRESET_DBAL_A2 }; };
+    };
+    BETTIR_CUP_PEQ15_STATES(CUP_acc_LLM)
+    class CUP_acc_LLM_Flashlight: acc_pointer_IR {};
+    BETTIR_CUP_FLASHLIGHT_IR(CUP_acc_LLM_Flashlight)
+
+    class CUP_acc_LLM_black: acc_pointer_IR {
+        class ItemInfo: ItemInfo { class Pointer: Pointer { irLaserEnd="laser dir"; irLaserPos="laser pos"; BETTIR_IR_LASER_PRESET_DBAL_A2 }; };
+    };
+    BETTIR_CUP_PEQ15_STATES(CUP_acc_LLM_black)
+    class CUP_acc_LLM_black_Flashlight: acc_pointer_IR {};
+    BETTIR_CUP_FLASHLIGHT_IR(CUP_acc_LLM_black_Flashlight)
+
+    class CUP_acc_LLM_od: acc_pointer_IR {
+        class ItemInfo: ItemInfo { class Pointer: Pointer { irLaserEnd="laser dir"; irLaserPos="laser pos"; BETTIR_IR_LASER_PRESET_DBAL_A2 }; };
+    };
+    BETTIR_CUP_PEQ15_STATES(CUP_acc_LLM_od)
+    class CUP_acc_LLM_od_Flashlight: acc_pointer_IR {};
+    BETTIR_CUP_FLASHLIGHT_IR(CUP_acc_LLM_od_Flashlight)
 };
