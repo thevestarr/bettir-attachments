@@ -164,6 +164,10 @@ class BettIR_Config {
                         displayName="105 MRAD";
                     };
 
+                    class 75MRAD {
+                        displayName="75 MRAD";
+                    };
+                    
                     class 50MRAD {
                         displayName="50 MRAD";
                     };
