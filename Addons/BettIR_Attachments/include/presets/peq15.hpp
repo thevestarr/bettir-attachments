@@ -1,7 +1,7 @@
 #include "..\core.hpp"
 
 // Intensity in low mode, 50 MRAD
-#define PEQ15_ILLUMINATOR_BASE_INTENSITY 300
+#define PEQ15_ILLUMINATOR_BASE_INTENSITY 500
 
 // TODO: tweak power settings, right now they are a copy of DBAL A2
 #define BETTIR_ILLUMINATOR_PRESET_PEQ15(MRAD,POS,DIR,HIPWR) \
@@ -11,7 +11,7 @@
     dayLight = 0; \
     position = POS ; \
     direction = DIR ; \
-    flareMaxDistance = 400 + (HIPWR * 600); \
+    flareMaxDistance = 800 + (HIPWR * 400); \
     flareSize = 1.4; \
     intensity =  ((1.4 * HIPWR) + 1) * (PEQ15_ILLUMINATOR_BASE_INTENSITY * (50 / MRAD) * (50 / MRAD)) ; \
     innerAngle = MRADTODEG(MRAD) ; \
@@ -25,6 +25,6 @@
         linear = 0; \
         quadratic = 0.065; \
         start = 10; \
-        hardLimitStart = 160 + (HIPWR * 40); \
-        hardLimitEnd = 240 + (HIPWR * 60); \
+        hardLimitStart = 220 + (HIPWR * 60); \
+        hardLimitEnd = 400 + (HIPWR * 120); \
     };
