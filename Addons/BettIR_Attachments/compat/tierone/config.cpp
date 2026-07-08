@@ -22,16 +22,10 @@ class BettIR_Config {
     };
 };
 
-/*class cfgWeapons {
+class cfgWeapons {
     #include "cfgWeapons\inheritance.hpp"
     #include "cfgWeapons\NGAL.hpp"
     #include "cfgWeapons\LA5.hpp"
-};*/
+};
 
 #include "rails\rails.hpp"
-
-
-class cfgWeapons {
-    #include "cfgWeapons\inheritance.hpp"
-    TIERONE_CFG_WEAPONS_LA5(Tier1_145_LA5_Top)
-};
