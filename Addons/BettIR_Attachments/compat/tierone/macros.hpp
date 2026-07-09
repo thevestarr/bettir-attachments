@@ -1,6 +1,6 @@
 #include "..\..\include\presets\peq15.hpp"
 #include "..\..\include\presets\dbal_a2.hpp"
-#include "placeholderNGAL.hpp"
+#include "..\..\include\presets\ngal.hpp"
 
 #define QUOTE(var1) #var1
 #define NOLASER class pointer {};
