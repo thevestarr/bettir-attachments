@@ -177,6 +177,9 @@
                 ILLUMCONF \
             }; \
         }; \
+        MRT_SwitchItemNextClass="";\
+        MRT_SwitchItemPrevClass="";\
+        MRT_switchItemHintText="";\
     };
 
 #define TIERONE_CFG_WEAPONS_NGAL(BASECLASS) \
@@ -214,7 +217,7 @@
         scopeArsenal = 1; \
         class itemInfo: itemInfo { \
             class pointer: pointer { \
-                BETTIR_VIS_LASER_PRESET_DBAL_A2_RED \
+                BETTIR_VIS_LASER_PRESET_DBAL_A2_RED_LO \
             }; \
         }; \
     }; \
@@ -240,6 +243,17 @@
                 BETTIR_IR_LASER_PRESET_DBAL_A2 \
             }; \
         }; \
+        MRT_SwitchItemNextClass="";\
+        MRT_SwitchItemPrevClass="";\
+        MRT_switchItemHintText="";\
+    }; \
+\
+    class BASECLASS##_fl: BASECLASS { \
+        scope = 1; \
+        scopeArsenal = 1; \
+        MRT_SwitchItemNextClass="";\
+        MRT_SwitchItemPrevClass="";\
+        MRT_switchItemHintText="";\
     }; \
 \
     class BASECLASS##_al: BASECLASS { \
@@ -267,7 +281,7 @@
         scopeArsenal = 1; \
         class itemInfo: itemInfo { \
             class pointer: pointer { \
-                BETTIR_VIS_LASER_PRESET_DBAL_A2_RED \
+                BETTIR_VIS_LASER_PRESET_DBAL_A2_RED_LO \
             }; \
         }; \
     }; \
@@ -293,6 +307,9 @@
                 BETTIR_IR_LASER_PRESET_DBAL_A2 \
             }; \
         }; \
+        MRT_SwitchItemNextClass="";\
+        MRT_SwitchItemPrevClass="";\
+        MRT_switchItemHintText="";\
     }; \
 \
     class BASECLASS##_al: BASECLASS { \
@@ -335,6 +352,17 @@
                 BETTIR_IR_LASER_PRESET_DBAL_A2 \
             }; \
         }; \
+        MRT_SwitchItemNextClass="";\
+        MRT_SwitchItemPrevClass="";\
+        MRT_switchItemHintText="";\
+    }; \
+\
+    class BASECLASS##_fl: BASECLASS { \
+        scope = 1; \
+        scopeArsenal = 1; \
+        MRT_SwitchItemNextClass="";\
+        MRT_SwitchItemPrevClass="";\
+        MRT_switchItemHintText="";\
     }; \
 \
     class BASECLASS##_al: BASECLASS { \
