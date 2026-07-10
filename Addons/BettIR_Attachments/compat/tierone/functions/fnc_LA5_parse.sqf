@@ -7,7 +7,7 @@ _splitClassName = _upperClassName splitString "_";
 _splitClassNameLength = count _splitClassName;
 _lastEntry = _splitClassName # (_splitClassNameLength - 1);
 
-if (_lastEntry == "LIGHT") then {
+if (_lastEntry == "FL") then {
     _map set ["Device", "Flashlight"]; 
 } else {
     _map set ["Device", "Laser"];
