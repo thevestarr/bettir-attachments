@@ -235,6 +235,7 @@
     TIERONE_CFG_WEAPONS_ATTACHMENT_MRAD(BASECLASS,IH,75,NOLASER,NGALCONF(75,1)) \
     TIERONE_CFG_WEAPONS_ATTACHMENT_MRAD(BASECLASS,IH,105,NOLASER,NGALCONF(100,1)) 
 
+//Note flashlight inheritence
 #define TIERONE_CFG_WEAPONS_NGAL_FL(BASECLASS) \
     class BASECLASS: acc_pointer_IR { \
         scope = 2; \
@@ -248,7 +249,7 @@
         MRT_switchItemHintText="";\
     }; \
 \
-    class BASECLASS##_fl: BASECLASS { \
+    class BASECLASS##_fl: acc_pointer_ir { \
         scope = 1; \
         scopeArsenal = 1; \
         MRT_SwitchItemNextClass="";\
@@ -344,6 +345,7 @@
     TIERONE_CFG_WEAPONS_ATTACHMENT_MRAD(BASECLASS,IH,75,NOLASER,PEQCONF(75,1)) \
     TIERONE_CFG_WEAPONS_ATTACHMENT_MRAD(BASECLASS,IH,100,NOLASER,PEQCONF(100,1)) 
 
+//Note flashlight inheritence
 #define TIERONE_CFG_WEAPONS_LA5_FL(BASECLASS) \
      class BASECLASS: acc_pointer_IR { \
         scope = 2; \
@@ -357,7 +359,7 @@
         MRT_switchItemHintText="";\
     }; \
 \
-    class BASECLASS##_fl: BASECLASS { \
+    class BASECLASS##_fl: acc_pointer_IR { \
         scope = 1; \
         scopeArsenal = 1; \
         MRT_SwitchItemNextClass="";\
