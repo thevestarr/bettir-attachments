@@ -31,9 +31,9 @@
     };
 
 #define BETTIR_IR_LASER_PRESET_DBAL_A2 \
-    irDotSize=0.025; \
-    beamThickness=0.015; \
-    beamColor[]={50000000,50000000,50000000}; \
+    irDotSize=0.035; \
+    beamThickness=0.05; \
+    beamColor[]={1000,1000,1000}; \
     dotColor[]={1000,1000,1000};
 
 #define BETTIR_IR_LASER_PRESET_DBAL_A2_LO \
