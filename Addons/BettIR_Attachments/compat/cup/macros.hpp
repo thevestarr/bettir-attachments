@@ -2,26 +2,78 @@
 #include "..\..\include\presets\dbal_a2.hpp"
 
 // ============================================================
+//  Shared fragments
+// ============================================================
+
+// Disable CUP's native CBA-MRT accessory cycling (the IR / _V / _F class
+// cycle). Applied to every real head BettIR manages and to every generated
+// state: the MRT keybind would otherwise swap a managed attachment to a class
+// BettIR does not track (e.g. CUP_acc_ANPEQ_15_V), stranding the state
+// machine. Same idiom as compat/ace/CfgWeapons.hpp.
+#define BETTIR_CUP_MRT_TAKEOVER \
+    MRT_SwitchItemNextClass=""; \
+    MRT_SwitchItemPrevClass=""; \
+    MRT_switchItemHintText="";
+
+// Every BettIR-invented state is hidden from the arsenal (scope=1, exactly
+// like CUP's own _V/_F siblings) and MRT-inert.
+#define BETTIR_CUP_STATE_COMMON \
+    scope=1; \
+    BETTIR_CUP_MRT_TAKEOVER
+
+// ============================================================
+//  Truthful re-opens of real CUP heads.
+//  PARENT must be the class's REAL parent per the CUP config dump
+//  (cup_config.cpp): a re-open with the true parent merges additively and
+//  never rewires CUP's inheritance.
+//
+//  HEAD_PATCH  - for heads that define their own ItemInfo in CUP (family
+//                roots and every combo _L: the combos redefine ItemInfo per
+//                color). Merges the BettIR AH beam preset into the existing
+//                parentless Pointer (compose maps MasterMode AH to the bare
+//                real class). The inner Pointer stays parentless to match
+//                CUP's declaration.
+//  HEAD_TAKEOVER - for heads that inherit their family root's ItemInfo (the
+//                standalone color/top variants and real _F whites). They get
+//                the preset via CUP's own inheritance and only need the MRT
+//                takeover. Do NOT use HEAD_PATCH on them: it would create a
+//                fresh ItemInfo that shadows the inherited one.
+// ============================================================
+#define BETTIR_CUP_HEAD_PATCH(NAME,PARENT) \
+    class NAME: PARENT { \
+        BETTIR_CUP_MRT_TAKEOVER \
+        class ItemInfo: InventoryFlashLightItem_Base_F { \
+            class Pointer { BETTIR_IR_LASER_PRESET_DBAL_A2 }; \
+        }; \
+    };
+
+#define BETTIR_CUP_HEAD_TAKEOVER(NAME,PARENT) \
+    class NAME: PARENT { BETTIR_CUP_MRT_TAKEOVER };
+
+// ============================================================
 //  CfgWeapons state-class generators
-//  BASE = the AH (IR-hi) class, already declared with its Pointer preset.
+//  BASE = the AH (IR-hi) head class, already carrying its Pointer preset.
 //  Light/illuminator memory points: position="flash dir", direction="flash".
 // ============================================================
 
 // IR-low aim
 #define BETTIR_CUP_STATE_AL(BASE) \
     class BASE##_al: BASE { \
+        BETTIR_CUP_STATE_COMMON \
         class ItemInfo: ItemInfo { class Pointer: Pointer { BETTIR_IR_LASER_PRESET_DBAL_A2_LO }; }; \
     };
 
-// Visible (red) — PEQ-15 / LLM01 only
+// Visible (red) — PEQ-15 only
 #define BETTIR_CUP_STATE_VIS(BASE) \
     class BASE##_vis: BASE { \
+        BETTIR_CUP_STATE_COMMON \
         class ItemInfo: ItemInfo { class Pointer: Pointer { BETTIR_VIS_LASER_PRESET_DBAL_A2_RED }; }; \
     };
 
 // Illuminator-high (no laser) at one MRAD
 #define BETTIR_CUP_STATE_IH(BASE,MRAD) \
     class BASE##_ih_##MRAD##MRAD: BASE { \
+        BETTIR_CUP_STATE_COMMON \
         class ItemInfo: ItemInfo { \
             class Pointer {}; \
             class Flashlight: Flashlight { BETTIR_ILLUMINATOR_PRESET_PEQ15(MRAD,"flash dir","flash",1) }; \
@@ -31,6 +83,7 @@
 // Dual-high (IR-hi laser + illuminator) at one MRAD
 #define BETTIR_CUP_STATE_DH(BASE,MRAD) \
     class BASE##_dh_##MRAD##MRAD: BASE { \
+        BETTIR_CUP_STATE_COMMON \
         class ItemInfo: ItemInfo { \
             class Pointer; \
             class Flashlight: Flashlight { BETTIR_ILLUMINATOR_PRESET_PEQ15(MRAD,"flash dir","flash",1) }; \
@@ -40,6 +93,7 @@
 // Dual-low (IR-lo laser + illuminator) at one MRAD
 #define BETTIR_CUP_STATE_DL(BASE,MRAD) \
     class BASE##_dl_##MRAD##MRAD: BASE { \
+        BETTIR_CUP_STATE_COMMON \
         class ItemInfo: ItemInfo { \
             class Pointer: Pointer { BETTIR_IR_LASER_PRESET_DBAL_A2_LO }; \
             class Flashlight: Flashlight { BETTIR_ILLUMINATOR_PRESET_PEQ15(MRAD,"flash dir","flash",0) }; \
@@ -90,11 +144,13 @@
     BASE##_al = 1; BETTIR_CUP_RAIL_ILLUM(BASE)
 
 // ============================================================
-//  PEQ-15 combo CfgWeapons generator — FBASE = the real CUP _F (white-light) class.
-//  Generates the BettIR-invented IR sibling (_F_ir).
+//  PEQ-15 combo CfgWeapons generator — FBASE = the real CUP _F (white-light)
+//  class. Generates the BettIR-invented IR sibling (_F_ir), which inherits the
+//  real white FlashLight and overrides it to an NVG-only IR light.
 // ============================================================
 #define BETTIR_CUP_COMBO_FLASHLIGHT_IR(FBASE) \
     class FBASE##_ir: FBASE { \
+        BETTIR_CUP_STATE_COMMON \
         class ItemInfo: ItemInfo { \
             class Flashlight: Flashlight { \
                 irLight=1; scale[]={1,1,1}; ambient[]={1,1,1}; color[]={1,1,1}; intensity=600; onlyInNvg=1; \
@@ -107,6 +163,7 @@
 // ============================================================
 #define BETTIR_CUP_STATE_VIS_GREEN(BASE) \
     class BASE##_vis: BASE { \
+        BETTIR_CUP_STATE_COMMON \
         class ItemInfo: ItemInfo { class Pointer: Pointer { BETTIR_VIS_LASER_PRESET_DBAL_A2_GREEN }; }; \
     };
 #define BETTIR_CUP_LLM01_STATES(BASE) \
@@ -117,6 +174,7 @@
 // ============================================================
 #define BETTIR_CUP_FLASHLIGHT_IR(BASE) \
     class BASE##_ir: BASE { \
+        BETTIR_CUP_STATE_COMMON \
         class ItemInfo: ItemInfo { \
             class Flashlight: Flashlight { \
                 irLight=1; scale[]={1,1,1}; ambient[]={1,1,1}; color[]={1,1,1}; intensity=600; onlyInNvg=1; \

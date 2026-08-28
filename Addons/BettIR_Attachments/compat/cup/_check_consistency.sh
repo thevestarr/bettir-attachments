@@ -3,7 +3,8 @@
 #
 # WHAT THIS PROVES: brace/bracket balance of every file; every fnc_*.sqf referenced in
 # CfgFunctions exists on disk; every classComposer/classParser named in config.cpp resolves
-# to a CfgFunctions entry whose file exists.
+# to a CfgFunctions entry whose file exists; no real CUP class is re-parented to the
+# vanilla acc_pointer_IR stub (re-opens must mirror CUP's REAL parents per cup_config.cpp).
 #
 # WHAT THIS DOES NOT PROVE: that the macros expand to class names matching the compose
 # functions' output, or that classes bind against real CUP. Those require preprocessing the
@@ -38,6 +39,13 @@ for fn in $(grep -oE 'BettIR_Compat_CUP_[A-Za-z0-9_]+_fnc_(compose|parse)Class' 
     echo "  $fn -> NO CfgFunctions class ${cls}"; fail=1
   fi
 done
+
+echo "== no false re-parenting (acc_pointer_IR banned in CfgWeapons.hpp / macros.hpp) =="
+if grep -n "acc_pointer_IR" CfgWeapons.hpp macros.hpp; then
+  echo "  FOUND -- real CUP classes must keep their real parents (see cup_config.cpp dump)"; fail=1
+else
+  echo "  OK"
+fi
 
 echo
 [ "$fail" = 0 ] && echo "ALL STATIC CHECKS PASSED" || echo "FAILURES PRESENT"

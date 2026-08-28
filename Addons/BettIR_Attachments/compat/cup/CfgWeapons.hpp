@@ -1,22 +1,30 @@
 #include "macros.hpp"
 
 // ============================================================
-//  Real CUP device classes are re-opened and re-parented to the local
-//  `acc_pointer_IR` stub, which provides a resolvable `ItemInfo > Pointer`
-//  (and, via InventoryFlashLightItem_Base_F, `Flashlight`) base.
+//  Truthful mirror of CUP's real class tree, verified line-by-line against a
+//  full config dump of CUP_Weapons_West_Attachments (cup_config.cpp).
 //
-//  WHY: the BettIR state-generator macros emit
-//      class <state>: <head> { class ItemInfo: ItemInfo { class Pointer: Pointer { ... }; }; };
-//  The inner `ItemInfo`/`Pointer`/`Flashlight` references only resolve if the
-//  head class inherits something that actually declares those inner classes.
-//  A no-parent re-open (`class CUP_acc_ANPEQ_15 { ... }`) leaves the inner
-//  ItemInfo with nothing to inherit from -> base class undefined.
+//  Principle: NEVER re-parent a real CUP class. Every re-open below declares
+//  the class's REAL parent, so the engine merges additively — no "Updating
+//  base class" rewiring, and CUP behaves identically for everything BettIR
+//  does not deliberately touch. The only deliberate touches are:
+//    1. BETTIR_CUP_HEAD_PATCH — merge the BettIR AH beam preset into the real
+//       head's existing parentless Pointer (compose maps MasterMode AH to the
+//       bare real class). CUP's memory points (irLaserPos/irLaserEnd) are
+//       already correct and are left alone.
+//    2. BETTIR_CUP_MRT_TAKEOVER — null CBA-MRT accessory switching on managed
+//       heads. CUP natively cycles its IR / _V / _F sibling classes via the
+//       MRT keybind, which would swap a managed attachment to an unregistered
+//       class; BettIR's interaction system replaces that cycle. The real _V
+//       classes themselves stay untouched (scope=1, now unreachable).
 //
-//  This mirrors the rhsusf compat module exactly (see ../rhsusf/CfgWeapons.hpp).
-//  CUP's real parents are ItemCore / each other, so re-parenting to
-//  acc_pointer_IR produces benign "base class mismatch" rpt warnings (the same
-//  ones rhsusf already produces); the device keeps its own model/picture/
-//  displayName because re-opening an existing class is additive.
+//  BettIR-invented states derive from the real heads (inheriting model /
+//  displayName / mass normally) and are scope=1 + MRT-inert.
+//
+//  HEAD_PATCH vs HEAD_TAKEOVER placement is dictated by the dump: standalone
+//  color/top variants inherit their family root's ItemInfo (one root patch
+//  covers them), while every combo _L redefines ItemInfo per color (each gets
+//  its own patch).
 // ============================================================
 class CfgWeapons {
     class ItemCore;
@@ -24,205 +32,146 @@ class CfgWeapons {
         class Flashlight;
         class Pointer;
     };
-    class acc_pointer_IR: ItemCore {
-        class ItemInfo: InventoryFlashLightItem_Base_F {
-            class Pointer;
-        };
-    };
 
     // ---- AN/PEQ-15 standalone ----
-    class CUP_acc_ANPEQ_15: acc_pointer_IR {
-        class ItemInfo: ItemInfo {
-            class Pointer: Pointer { irLaserEnd = "laser dir"; irLaserPos = "laser pos"; BETTIR_IR_LASER_PRESET_DBAL_A2 };
-        };
-    };
+    // Root patch covers _Black/_OD/_*_Top AND the whole PEQ-2 standalone
+    // family below (CUP_acc_ANPEQ_2: CUP_acc_ANPEQ_15) via CUP's own chain.
+    BETTIR_CUP_HEAD_PATCH(CUP_acc_ANPEQ_15, ItemCore)
     BETTIR_CUP_PEQ15_STATES(CUP_acc_ANPEQ_15)
 
-    class CUP_acc_ANPEQ_15_Black: acc_pointer_IR {
-        class ItemInfo: ItemInfo {
-            class Pointer: Pointer { irLaserEnd = "laser dir"; irLaserPos = "laser pos"; BETTIR_IR_LASER_PRESET_DBAL_A2 };
-        };
-    };
+    BETTIR_CUP_HEAD_TAKEOVER(CUP_acc_ANPEQ_15_Black, CUP_acc_ANPEQ_15)
     BETTIR_CUP_PEQ15_STATES(CUP_acc_ANPEQ_15_Black)
 
-    class CUP_acc_ANPEQ_15_OD: acc_pointer_IR {
-        class ItemInfo: ItemInfo {
-            class Pointer: Pointer { irLaserEnd = "laser dir"; irLaserPos = "laser pos"; BETTIR_IR_LASER_PRESET_DBAL_A2 };
-        };
-    };
+    BETTIR_CUP_HEAD_TAKEOVER(CUP_acc_ANPEQ_15_OD, CUP_acc_ANPEQ_15)
     BETTIR_CUP_PEQ15_STATES(CUP_acc_ANPEQ_15_OD)
 
-    class CUP_acc_ANPEQ_15_Tan_Top: acc_pointer_IR {
-        class ItemInfo: ItemInfo {
-            class Pointer: Pointer { irLaserEnd = "laser dir"; irLaserPos = "laser pos"; BETTIR_IR_LASER_PRESET_DBAL_A2 };
-        };
-    };
+    BETTIR_CUP_HEAD_TAKEOVER(CUP_acc_ANPEQ_15_Tan_Top, CUP_acc_ANPEQ_15)
     BETTIR_CUP_PEQ15_STATES(CUP_acc_ANPEQ_15_Tan_Top)
 
-    class CUP_acc_ANPEQ_15_Black_Top: acc_pointer_IR {
-        class ItemInfo: ItemInfo {
-            class Pointer: Pointer { irLaserEnd = "laser dir"; irLaserPos = "laser pos"; BETTIR_IR_LASER_PRESET_DBAL_A2 };
-        };
-    };
+    BETTIR_CUP_HEAD_TAKEOVER(CUP_acc_ANPEQ_15_Black_Top, CUP_acc_ANPEQ_15_Black)
     BETTIR_CUP_PEQ15_STATES(CUP_acc_ANPEQ_15_Black_Top)
 
-    class CUP_acc_ANPEQ_15_OD_Top: acc_pointer_IR {
-        class ItemInfo: ItemInfo {
-            class Pointer: Pointer { irLaserEnd = "laser dir"; irLaserPos = "laser pos"; BETTIR_IR_LASER_PRESET_DBAL_A2 };
-        };
-    };
+    BETTIR_CUP_HEAD_TAKEOVER(CUP_acc_ANPEQ_15_OD_Top, CUP_acc_ANPEQ_15_OD)
     BETTIR_CUP_PEQ15_STATES(CUP_acc_ANPEQ_15_OD_Top)
 
-    // ---- AN/PEQ-15 + white-light combos ----
-    // _L = laser-active head (gets full PEQ-15 laser grammar).
-    // _F = real CUP white-light state; re-parented so the invented _F_ir sibling resolves.
-    class CUP_acc_ANPEQ_15_Flashlight_Tan_L: acc_pointer_IR {
-        class ItemInfo: ItemInfo { class Pointer: Pointer { irLaserEnd="laser dir"; irLaserPos="laser pos"; BETTIR_IR_LASER_PRESET_DBAL_A2 }; };
-    };
-    BETTIR_CUP_PEQ15_STATES(CUP_acc_ANPEQ_15_Flashlight_Tan_L)
-    class CUP_acc_ANPEQ_15_Flashlight_Tan_F: acc_pointer_IR {};
-    BETTIR_CUP_COMBO_FLASHLIGHT_IR(CUP_acc_ANPEQ_15_Flashlight_Tan_F)
-
-    class CUP_acc_ANPEQ_15_Flashlight_OD_L: acc_pointer_IR {
-        class ItemInfo: ItemInfo { class Pointer: Pointer { irLaserEnd="laser dir"; irLaserPos="laser pos"; BETTIR_IR_LASER_PRESET_DBAL_A2 }; };
-    };
-    BETTIR_CUP_PEQ15_STATES(CUP_acc_ANPEQ_15_Flashlight_OD_L)
-    class CUP_acc_ANPEQ_15_Flashlight_OD_F: acc_pointer_IR {};
-    BETTIR_CUP_COMBO_FLASHLIGHT_IR(CUP_acc_ANPEQ_15_Flashlight_OD_F)
-
-    class CUP_acc_ANPEQ_15_Flashlight_Black_L: acc_pointer_IR {
-        class ItemInfo: ItemInfo { class Pointer: Pointer { irLaserEnd="laser dir"; irLaserPos="laser pos"; BETTIR_IR_LASER_PRESET_DBAL_A2 }; };
-    };
-    BETTIR_CUP_PEQ15_STATES(CUP_acc_ANPEQ_15_Flashlight_Black_L)
-    class CUP_acc_ANPEQ_15_Flashlight_Black_F: acc_pointer_IR {};
-    BETTIR_CUP_COMBO_FLASHLIGHT_IR(CUP_acc_ANPEQ_15_Flashlight_Black_F)
-
-    class CUP_acc_ANPEQ_15_Top_Flashlight_Tan_L: acc_pointer_IR {
-        class ItemInfo: ItemInfo { class Pointer: Pointer { irLaserEnd="laser dir"; irLaserPos="laser pos"; BETTIR_IR_LASER_PRESET_DBAL_A2 }; };
-    };
-    BETTIR_CUP_PEQ15_STATES(CUP_acc_ANPEQ_15_Top_Flashlight_Tan_L)
-    class CUP_acc_ANPEQ_15_Top_Flashlight_Tan_F: acc_pointer_IR {};
-    BETTIR_CUP_COMBO_FLASHLIGHT_IR(CUP_acc_ANPEQ_15_Top_Flashlight_Tan_F)
-
-    class CUP_acc_ANPEQ_15_Top_Flashlight_OD_L: acc_pointer_IR {
-        class ItemInfo: ItemInfo { class Pointer: Pointer { irLaserEnd="laser dir"; irLaserPos="laser pos"; BETTIR_IR_LASER_PRESET_DBAL_A2 }; };
-    };
-    BETTIR_CUP_PEQ15_STATES(CUP_acc_ANPEQ_15_Top_Flashlight_OD_L)
-    class CUP_acc_ANPEQ_15_Top_Flashlight_OD_F: acc_pointer_IR {};
-    BETTIR_CUP_COMBO_FLASHLIGHT_IR(CUP_acc_ANPEQ_15_Top_Flashlight_OD_F)
-
-    class CUP_acc_ANPEQ_15_Top_Flashlight_Black_L: acc_pointer_IR {
-        class ItemInfo: ItemInfo { class Pointer: Pointer { irLaserEnd="laser dir"; irLaserPos="laser pos"; BETTIR_IR_LASER_PRESET_DBAL_A2 }; };
-    };
-    BETTIR_CUP_PEQ15_STATES(CUP_acc_ANPEQ_15_Top_Flashlight_Black_L)
-    class CUP_acc_ANPEQ_15_Top_Flashlight_Black_F: acc_pointer_IR {};
-    BETTIR_CUP_COMBO_FLASHLIGHT_IR(CUP_acc_ANPEQ_15_Top_Flashlight_Black_F)
-
     // ---- AN/PEQ-2 standalone (IR-only) ----
-    class CUP_acc_ANPEQ_2_grey: acc_pointer_IR {
-        class ItemInfo: ItemInfo { class Pointer: Pointer { irLaserEnd="laser dir"; irLaserPos="laser pos"; BETTIR_IR_LASER_PRESET_DBAL_A2 }; };
-    };
+    // Hidden real base; the colors inherit its (already patched) ItemInfo and
+    // nulled MRT through CUP's own chain, so plain truthful re-opens suffice —
+    // they exist only to give the state macros a resolvable local parent.
+    class CUP_acc_ANPEQ_2: CUP_acc_ANPEQ_15 {};
+    class CUP_acc_ANPEQ_2_grey: CUP_acc_ANPEQ_2 {};
     BETTIR_CUP_PEQ2_STATES(CUP_acc_ANPEQ_2_grey)
-    class CUP_acc_ANPEQ_2_desert: acc_pointer_IR {
-        class ItemInfo: ItemInfo { class Pointer: Pointer { irLaserEnd="laser dir"; irLaserPos="laser pos"; BETTIR_IR_LASER_PRESET_DBAL_A2 }; };
-    };
+    class CUP_acc_ANPEQ_2_desert: CUP_acc_ANPEQ_2 {};
     BETTIR_CUP_PEQ2_STATES(CUP_acc_ANPEQ_2_desert)
-    class CUP_acc_ANPEQ_2_camo: acc_pointer_IR {
-        class ItemInfo: ItemInfo { class Pointer: Pointer { irLaserEnd="laser dir"; irLaserPos="laser pos"; BETTIR_IR_LASER_PRESET_DBAL_A2 }; };
-    };
+    class CUP_acc_ANPEQ_2_camo: CUP_acc_ANPEQ_2 {};
     BETTIR_CUP_PEQ2_STATES(CUP_acc_ANPEQ_2_camo)
-    class CUP_acc_ANPEQ_2_Black_Top: acc_pointer_IR {
-        class ItemInfo: ItemInfo { class Pointer: Pointer { irLaserEnd="laser dir"; irLaserPos="laser pos"; BETTIR_IR_LASER_PRESET_DBAL_A2 }; };
-    };
+    class CUP_acc_ANPEQ_2_Black_Top: CUP_acc_ANPEQ_2 {};
     BETTIR_CUP_PEQ2_STATES(CUP_acc_ANPEQ_2_Black_Top)
-    class CUP_acc_ANPEQ_2_Coyote_Top: acc_pointer_IR {
-        class ItemInfo: ItemInfo { class Pointer: Pointer { irLaserEnd="laser dir"; irLaserPos="laser pos"; BETTIR_IR_LASER_PRESET_DBAL_A2 }; };
-    };
+    class CUP_acc_ANPEQ_2_Coyote_Top: CUP_acc_ANPEQ_2 {};
     BETTIR_CUP_PEQ2_STATES(CUP_acc_ANPEQ_2_Coyote_Top)
-    class CUP_acc_ANPEQ_2_OD_Top: acc_pointer_IR {
-        class ItemInfo: ItemInfo { class Pointer: Pointer { irLaserEnd="laser dir"; irLaserPos="laser pos"; BETTIR_IR_LASER_PRESET_DBAL_A2 }; };
-    };
+    class CUP_acc_ANPEQ_2_OD_Top: CUP_acc_ANPEQ_2 {};
     BETTIR_CUP_PEQ2_STATES(CUP_acc_ANPEQ_2_OD_Top)
 
-    // ---- AN/PEQ-2 + white-light combos ----
-    class CUP_acc_ANPEQ_2_Flashlight_Black_L: acc_pointer_IR {
-        class ItemInfo: ItemInfo { class Pointer: Pointer { irLaserEnd="laser dir"; irLaserPos="laser pos"; BETTIR_IR_LASER_PRESET_DBAL_A2 }; };
-    };
+    // ---- AN/PEQ-15 + white-light combos (side) ----
+    // _L = laser head (AH state), _F = real CUP white light, _F_ir = invented
+    // IR sibling. Every color _L redefines ItemInfo in CUP -> each is patched.
+    BETTIR_CUP_HEAD_PATCH(CUP_acc_ANPEQ_15_Flashlight_Tan_L, ItemCore)
+    BETTIR_CUP_PEQ15_STATES(CUP_acc_ANPEQ_15_Flashlight_Tan_L)
+    BETTIR_CUP_HEAD_TAKEOVER(CUP_acc_ANPEQ_15_Flashlight_Tan_F, CUP_acc_ANPEQ_15_Flashlight_Tan_L)
+    BETTIR_CUP_COMBO_FLASHLIGHT_IR(CUP_acc_ANPEQ_15_Flashlight_Tan_F)
+
+    BETTIR_CUP_HEAD_PATCH(CUP_acc_ANPEQ_15_Flashlight_OD_L, CUP_acc_ANPEQ_15_Flashlight_Tan_L)
+    BETTIR_CUP_PEQ15_STATES(CUP_acc_ANPEQ_15_Flashlight_OD_L)
+    BETTIR_CUP_HEAD_TAKEOVER(CUP_acc_ANPEQ_15_Flashlight_OD_F, CUP_acc_ANPEQ_15_Flashlight_OD_L)
+    BETTIR_CUP_COMBO_FLASHLIGHT_IR(CUP_acc_ANPEQ_15_Flashlight_OD_F)
+
+    BETTIR_CUP_HEAD_PATCH(CUP_acc_ANPEQ_15_Flashlight_Black_L, CUP_acc_ANPEQ_15_Flashlight_Tan_L)
+    BETTIR_CUP_PEQ15_STATES(CUP_acc_ANPEQ_15_Flashlight_Black_L)
+    BETTIR_CUP_HEAD_TAKEOVER(CUP_acc_ANPEQ_15_Flashlight_Black_F, CUP_acc_ANPEQ_15_Flashlight_Black_L)
+    BETTIR_CUP_COMBO_FLASHLIGHT_IR(CUP_acc_ANPEQ_15_Flashlight_Black_F)
+
+    // ---- AN/PEQ-15 + white-light combos (top) ----
+    // All three top _L variants really inherit the SIDE Tan _L in CUP.
+    BETTIR_CUP_HEAD_PATCH(CUP_acc_ANPEQ_15_Top_Flashlight_Tan_L, CUP_acc_ANPEQ_15_Flashlight_Tan_L)
+    BETTIR_CUP_PEQ15_STATES(CUP_acc_ANPEQ_15_Top_Flashlight_Tan_L)
+    BETTIR_CUP_HEAD_TAKEOVER(CUP_acc_ANPEQ_15_Top_Flashlight_Tan_F, CUP_acc_ANPEQ_15_Top_Flashlight_Tan_L)
+    BETTIR_CUP_COMBO_FLASHLIGHT_IR(CUP_acc_ANPEQ_15_Top_Flashlight_Tan_F)
+
+    BETTIR_CUP_HEAD_PATCH(CUP_acc_ANPEQ_15_Top_Flashlight_OD_L, CUP_acc_ANPEQ_15_Flashlight_Tan_L)
+    BETTIR_CUP_PEQ15_STATES(CUP_acc_ANPEQ_15_Top_Flashlight_OD_L)
+    BETTIR_CUP_HEAD_TAKEOVER(CUP_acc_ANPEQ_15_Top_Flashlight_OD_F, CUP_acc_ANPEQ_15_Top_Flashlight_OD_L)
+    BETTIR_CUP_COMBO_FLASHLIGHT_IR(CUP_acc_ANPEQ_15_Top_Flashlight_OD_F)
+
+    BETTIR_CUP_HEAD_PATCH(CUP_acc_ANPEQ_15_Top_Flashlight_Black_L, CUP_acc_ANPEQ_15_Flashlight_Tan_L)
+    BETTIR_CUP_PEQ15_STATES(CUP_acc_ANPEQ_15_Top_Flashlight_Black_L)
+    BETTIR_CUP_HEAD_TAKEOVER(CUP_acc_ANPEQ_15_Top_Flashlight_Black_F, CUP_acc_ANPEQ_15_Top_Flashlight_Black_L)
+    BETTIR_CUP_COMBO_FLASHLIGHT_IR(CUP_acc_ANPEQ_15_Top_Flashlight_Black_F)
+
+    // ---- AN/PEQ-2 + white-light combos (IR-only laser side) ----
+    BETTIR_CUP_HEAD_PATCH(CUP_acc_ANPEQ_2_Flashlight_Black_L, ItemCore)
     BETTIR_CUP_PEQ2_STATES(CUP_acc_ANPEQ_2_Flashlight_Black_L)
-    class CUP_acc_ANPEQ_2_Flashlight_Black_F: acc_pointer_IR {};
+    BETTIR_CUP_HEAD_TAKEOVER(CUP_acc_ANPEQ_2_Flashlight_Black_F, CUP_acc_ANPEQ_2_Flashlight_Black_L)
     BETTIR_CUP_COMBO_FLASHLIGHT_IR(CUP_acc_ANPEQ_2_Flashlight_Black_F)
-    class CUP_acc_ANPEQ_2_Flashlight_OD_L: acc_pointer_IR {
-        class ItemInfo: ItemInfo { class Pointer: Pointer { irLaserEnd="laser dir"; irLaserPos="laser pos"; BETTIR_IR_LASER_PRESET_DBAL_A2 }; };
-    };
-    BETTIR_CUP_PEQ2_STATES(CUP_acc_ANPEQ_2_Flashlight_OD_L)
-    class CUP_acc_ANPEQ_2_Flashlight_OD_F: acc_pointer_IR {};
-    BETTIR_CUP_COMBO_FLASHLIGHT_IR(CUP_acc_ANPEQ_2_Flashlight_OD_F)
-    class CUP_acc_ANPEQ_2_Flashlight_Coyote_L: acc_pointer_IR {
-        class ItemInfo: ItemInfo { class Pointer: Pointer { irLaserEnd="laser dir"; irLaserPos="laser pos"; BETTIR_IR_LASER_PRESET_DBAL_A2 }; };
-    };
+
+    BETTIR_CUP_HEAD_PATCH(CUP_acc_ANPEQ_2_Flashlight_Coyote_L, CUP_acc_ANPEQ_2_Flashlight_Black_L)
     BETTIR_CUP_PEQ2_STATES(CUP_acc_ANPEQ_2_Flashlight_Coyote_L)
-    class CUP_acc_ANPEQ_2_Flashlight_Coyote_F: acc_pointer_IR {};
+    BETTIR_CUP_HEAD_TAKEOVER(CUP_acc_ANPEQ_2_Flashlight_Coyote_F, CUP_acc_ANPEQ_2_Flashlight_Coyote_L)
     BETTIR_CUP_COMBO_FLASHLIGHT_IR(CUP_acc_ANPEQ_2_Flashlight_Coyote_F)
 
+    BETTIR_CUP_HEAD_PATCH(CUP_acc_ANPEQ_2_Flashlight_OD_L, CUP_acc_ANPEQ_2_Flashlight_Black_L)
+    BETTIR_CUP_PEQ2_STATES(CUP_acc_ANPEQ_2_Flashlight_OD_L)
+    BETTIR_CUP_HEAD_TAKEOVER(CUP_acc_ANPEQ_2_Flashlight_OD_F, CUP_acc_ANPEQ_2_Flashlight_OD_L)
+    BETTIR_CUP_COMBO_FLASHLIGHT_IR(CUP_acc_ANPEQ_2_Flashlight_OD_F)
+
     // ---- LLM01 laser+light combos (green VIS) ----
-    class CUP_acc_LLM01_L: acc_pointer_IR {
-        class ItemInfo: ItemInfo { class Pointer: Pointer { irLaserEnd="laser dir"; irLaserPos="laser pos"; BETTIR_IR_LASER_PRESET_DBAL_A2 }; };
-    };
+    // Colors inherit the _L root's ItemInfo (one patch) and the _F root's
+    // white light; both roots are ItemCore children in CUP.
+    BETTIR_CUP_HEAD_PATCH(CUP_acc_LLM01_L, ItemCore)
     BETTIR_CUP_LLM01_STATES(CUP_acc_LLM01_L)
-    class CUP_acc_LLM01_F: acc_pointer_IR {};
+    // White-light root: own ItemInfo, no Pointer — declared truthfully so the
+    // _ir generator can resolve ItemInfo locally. No laser patch here.
+    class CUP_acc_LLM01_F: ItemCore {
+        BETTIR_CUP_MRT_TAKEOVER
+        class ItemInfo: InventoryFlashLightItem_Base_F {};
+    };
     BETTIR_CUP_COMBO_FLASHLIGHT_IR(CUP_acc_LLM01_F)
 
-    class CUP_acc_LLM01_coyote_L: acc_pointer_IR {
-        class ItemInfo: ItemInfo { class Pointer: Pointer { irLaserEnd="laser dir"; irLaserPos="laser pos"; BETTIR_IR_LASER_PRESET_DBAL_A2 }; };
-    };
+    BETTIR_CUP_HEAD_TAKEOVER(CUP_acc_LLM01_coyote_L, CUP_acc_LLM01_L)
     BETTIR_CUP_LLM01_STATES(CUP_acc_LLM01_coyote_L)
-    class CUP_acc_LLM01_coyote_F: acc_pointer_IR {};
+    BETTIR_CUP_HEAD_TAKEOVER(CUP_acc_LLM01_coyote_F, CUP_acc_LLM01_F)
     BETTIR_CUP_COMBO_FLASHLIGHT_IR(CUP_acc_LLM01_coyote_F)
 
-    class CUP_acc_LLM01_desert_L: acc_pointer_IR {
-        class ItemInfo: ItemInfo { class Pointer: Pointer { irLaserEnd="laser dir"; irLaserPos="laser pos"; BETTIR_IR_LASER_PRESET_DBAL_A2 }; };
-    };
+    BETTIR_CUP_HEAD_TAKEOVER(CUP_acc_LLM01_desert_L, CUP_acc_LLM01_L)
     BETTIR_CUP_LLM01_STATES(CUP_acc_LLM01_desert_L)
-    class CUP_acc_LLM01_desert_F: acc_pointer_IR {};
+    BETTIR_CUP_HEAD_TAKEOVER(CUP_acc_LLM01_desert_F, CUP_acc_LLM01_F)
     BETTIR_CUP_COMBO_FLASHLIGHT_IR(CUP_acc_LLM01_desert_F)
 
-    class CUP_acc_LLM01_hex_L: acc_pointer_IR {
-        class ItemInfo: ItemInfo { class Pointer: Pointer { irLaserEnd="laser dir"; irLaserPos="laser pos"; BETTIR_IR_LASER_PRESET_DBAL_A2 }; };
-    };
+    BETTIR_CUP_HEAD_TAKEOVER(CUP_acc_LLM01_hex_L, CUP_acc_LLM01_L)
     BETTIR_CUP_LLM01_STATES(CUP_acc_LLM01_hex_L)
-    class CUP_acc_LLM01_hex_F: acc_pointer_IR {};
+    BETTIR_CUP_HEAD_TAKEOVER(CUP_acc_LLM01_hex_F, CUP_acc_LLM01_F)
     BETTIR_CUP_COMBO_FLASHLIGHT_IR(CUP_acc_LLM01_hex_F)
 
-    class CUP_acc_LLM01_od_L: acc_pointer_IR {
-        class ItemInfo: ItemInfo { class Pointer: Pointer { irLaserEnd="laser dir"; irLaserPos="laser pos"; BETTIR_IR_LASER_PRESET_DBAL_A2 }; };
-    };
+    BETTIR_CUP_HEAD_TAKEOVER(CUP_acc_LLM01_od_L, CUP_acc_LLM01_L)
     BETTIR_CUP_LLM01_STATES(CUP_acc_LLM01_od_L)
-    class CUP_acc_LLM01_od_F: acc_pointer_IR {};
+    BETTIR_CUP_HEAD_TAKEOVER(CUP_acc_LLM01_od_F, CUP_acc_LLM01_F)
     BETTIR_CUP_COMBO_FLASHLIGHT_IR(CUP_acc_LLM01_od_F)
 
     // ---- LLM MKIII laser+light combo (red VIS, white/IR light) ----
-    // CUP_acc_LLM is the bare IR-laser head (real, scope=2); CUP_acc_LLM_Flashlight
-    // is the real white light. Laser side gets the PEQ-15 grammar (red VIS); the
-    // light side reuses the real white class + an invented IR sibling. Invented
-    // states derive from the real CUP classes so each keeps its LLM.p3d model.
-    class CUP_acc_LLM: acc_pointer_IR {
-        class ItemInfo: ItemInfo { class Pointer: Pointer { irLaserEnd="laser dir"; irLaserPos="laser pos"; BETTIR_IR_LASER_PRESET_DBAL_A2 }; };
-    };
+    // CUP_acc_LLM is the bare IR-laser head; _Flashlight is the real white
+    // light (fresh ItemInfo without Pointer, so the root patch cannot leak
+    // into it). Colors inherit the roots' ItemInfo through CUP's own chain.
+    BETTIR_CUP_HEAD_PATCH(CUP_acc_LLM, ItemCore)
     BETTIR_CUP_PEQ15_STATES(CUP_acc_LLM)
-    class CUP_acc_LLM_Flashlight: acc_pointer_IR {};
+    BETTIR_CUP_HEAD_TAKEOVER(CUP_acc_LLM_Flashlight, CUP_acc_LLM)
     BETTIR_CUP_FLASHLIGHT_IR(CUP_acc_LLM_Flashlight)
 
-    class CUP_acc_LLM_black: acc_pointer_IR {
-        class ItemInfo: ItemInfo { class Pointer: Pointer { irLaserEnd="laser dir"; irLaserPos="laser pos"; BETTIR_IR_LASER_PRESET_DBAL_A2 }; };
-    };
+    BETTIR_CUP_HEAD_TAKEOVER(CUP_acc_LLM_black, CUP_acc_LLM)
     BETTIR_CUP_PEQ15_STATES(CUP_acc_LLM_black)
-    class CUP_acc_LLM_black_Flashlight: acc_pointer_IR {};
+    BETTIR_CUP_HEAD_TAKEOVER(CUP_acc_LLM_black_Flashlight, CUP_acc_LLM_Flashlight)
     BETTIR_CUP_FLASHLIGHT_IR(CUP_acc_LLM_black_Flashlight)
 
-    class CUP_acc_LLM_od: acc_pointer_IR {
-        class ItemInfo: ItemInfo { class Pointer: Pointer { irLaserEnd="laser dir"; irLaserPos="laser pos"; BETTIR_IR_LASER_PRESET_DBAL_A2 }; };
-    };
+    BETTIR_CUP_HEAD_TAKEOVER(CUP_acc_LLM_od, CUP_acc_LLM)
     BETTIR_CUP_PEQ15_STATES(CUP_acc_LLM_od)
-    class CUP_acc_LLM_od_Flashlight: acc_pointer_IR {};
+    BETTIR_CUP_HEAD_TAKEOVER(CUP_acc_LLM_od_Flashlight, CUP_acc_LLM_Flashlight)
     BETTIR_CUP_FLASHLIGHT_IR(CUP_acc_LLM_od_Flashlight)
 };
