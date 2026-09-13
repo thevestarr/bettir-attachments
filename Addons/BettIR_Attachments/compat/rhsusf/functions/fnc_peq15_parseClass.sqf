@@ -1,6 +1,8 @@
 params ["_className"];
 
-_upperClassName = toUpper _className;
+([_className] call BettIR_Compat_RHSUSF_fnc_getHeightVariant) params ["_baseClass", "_suffix"];
+
+_upperClassName = toUpper _baseClass;
 _map = createHashMap;
 
 _splitClassName = _upperClassName splitString "_";

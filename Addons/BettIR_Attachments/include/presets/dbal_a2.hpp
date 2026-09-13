@@ -3,8 +3,6 @@
 
 // Intensity in low mode, 50 MRAD
 #define DBAL_BASE_INTENSITY 300
-#define DBAL_SCRIPTED_LASER_PARAMS {{1000,1000,1000},0,0,0.05,1}
-#define DBAL_SCRIPTED_LASER_OFFSET {0,1,0}
 
 // TODO: tweak power settings
 #define BETTIR_ILLUMINATOR_PRESET_DBAL_A2(MRAD,POS,DIR,HIPWR) \
@@ -33,9 +31,9 @@
     };
 
 #define BETTIR_IR_LASER_PRESET_DBAL_A2 \
-    irDotSize=0.025; \
-    beamThickness=0.015; \
-    beamColor[]={50000000,50000000,50000000}; \
+    irDotSize=0.035; \
+    beamThickness=0.05; \
+    beamColor[]={1000,1000,1000}; \
     dotColor[]={1000,1000,1000};
 
 #define BETTIR_IR_LASER_PRESET_DBAL_A2_LO \

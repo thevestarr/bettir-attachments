@@ -1,4 +1,12 @@
 class CfgFunctions {
+     class BettIR_Compat_RHSUSF {
+        class Core {
+            class getHeightVariant {
+                file = "\BettIR_Attachments\compat\rhsusf\functions\fnc_getHeightVariant.sqf";
+            };
+        };
+    };
+
     class BettIR_Compat_RHSUSF_PEQ15 {
         class Core {
             class composeClass {
@@ -55,6 +63,14 @@ class CfgFunctions {
 
             class onDeactivate {
                 file = "\BettIR_Attachments\compat\rhsusf\functions\fnc_wmx_onDeactivate.sqf";
+            };
+        };
+    };
+
+    class RHS {
+        class functions {
+            class anpeq15_rail {
+                file = "\BettIR_Attachments\compat\rhsusf\functions\fnc_peq15_railfix.sqf";
             };
         };
     };

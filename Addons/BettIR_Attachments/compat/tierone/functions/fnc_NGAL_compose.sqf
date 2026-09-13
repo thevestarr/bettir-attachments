@@ -1,24 +1,21 @@
 params ["_composableMap"];
 
 _masterMode = _composableMap get "MasterMode";
-_focus = _composableMap getOrDefault ["Focus", "100MRAD"];
+_focus = _composableMap getOrDefault ["Focus", "105MRAD"];
 _macro = _composableMap get "__BETTIR_MACRO";
+_device = _composableMap get "Device";
+
+if (_device == "Flashlight") exitWith { (_macro + "_fl") };
 
 if (_masterMode == "AH") exitWith { _macro };
 
-([_macro] call BettIR_Compat_RHSUSF_fnc_getHeightVariant) params ["_baseMacro", "_suffix"];
-
 _finalClassNameArray = [
-    _baseMacro,
+    _macro,
     _masterMode
 ];
 
 if (_masterMode in ["IH", "DH", "DL"]) then {
     _finalClassNameArray pushBack _focus;
-};
-
-if (_suffix != "") then {
-    _finalClassNameArray pushBack _suffix;
 };
 
 _finalClassName = _finalClassNameArray joinString "_";

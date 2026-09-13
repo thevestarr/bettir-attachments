@@ -13,6 +13,9 @@ _keyDisplayName = getText (configFile >> "BettIR_Config" >> "CompatibleAttachmen
 _valueDisplayName = getText (configFile >> "BettIR_Config" >> "CompatibleAttachments" >> _macro >> "Configurable" >> _key >> _value >> "displayName");
 
 _currentPrimaryAttachment set [_key, _value];
+// store the value even if the setting will not trigger an attachment update
+// i.e. switching flashlight mode to IR while using the laser device in the combo
+_unit setVariable ["BettIR_primaryWeaponAttachment", toArray _currentPrimaryAttachment];
 // todo: consider caching composers by macro
 _newClass = [_currentPrimaryAttachment] call (call compile _composer);
 
