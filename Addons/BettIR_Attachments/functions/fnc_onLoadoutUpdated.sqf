@@ -84,14 +84,11 @@ if ((_currentCompatibleAttachment != "") && ((_currentCompatibleAttachment != _p
 	_unit setVariable ["BettIR_lastPrimaryDeviceActivate", 0];
     _unit setVariable ["BettIR_primaryDeviceActivationHeldOn", false];
 
-	// TODO: Fix the bug which causes errors switching from combo flashlights to lasers
-	// caused by the fact that the map only has whatever the parser spits out
-	// which is not enough (flashlight doesnt have the other settings,
-	// they should be loaded from the default values
 	_parser = getText (configFile >> "BettIR_Config" >> "CompatibleAttachments" >> _currentCompatibleAttachment >> "classParser");
 	_macro = [_currentCompatibleAttachment] call BettIR_Attachments_fnc_getMacro;
+	_macroChanged = (_oldMacro != _macro);
 
-	if (_oldMacro != _macro) then {
+	if (_macroChanged) then {
 		("Macros are different, old: " + _oldMacro + ", new: " + _macro) call BettIR_Attachments_fnc_printDebug;
 
 		// if it's a new device, prefill the settings with default values
@@ -119,8 +116,6 @@ if ((_currentCompatibleAttachment != "") && ((_currentCompatibleAttachment != _p
 			localNamespace setVariable ['BETTIR_PRIMARY_POWER_DEACTIVATE_SCRIPT', compile _deactivationScript];
 		};
 
-		[_unit] call BettIR_Attachments_fnc_removeInteractions;
-		[_unit] call BettIR_Attachments_fnc_generateInteractions;
 	} else {
 		_newPrimaryAttachment = (+_currentPrimaryAttachment);
 	};
@@ -130,6 +125,13 @@ if ((_currentCompatibleAttachment != "") && ((_currentCompatibleAttachment != _p
 	// merge default/current values with current settings
 	_newPrimaryAttachment merge [_parsedPrimaryAttachment, true];
 	_unit setVariable ["BettIR_primaryWeaponAttachment", toArray _newPrimaryAttachment];
+
+	// the ACE interactions are built from the stored map (fnc_generateInteractions reads the macro from it),
+	// so they can only be regenerated once the map holds the new macro
+	if (_macroChanged) then {
+		[_unit] call BettIR_Attachments_fnc_removeInteractions;
+		[_unit] call BettIR_Attachments_fnc_generateInteractions;
+	};
 };
 
 BETTIR_ATTACHMENTS_LOADOUTS_INITALIZED = true;

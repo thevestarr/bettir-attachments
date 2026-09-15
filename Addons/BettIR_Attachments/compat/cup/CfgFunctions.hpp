@@ -23,16 +23,11 @@ class CfgFunctions {
             class parseClass   { file = "\BettIR_Attachments\compat\cup\functions\fnc_peq2_combo_parseClass.sqf"; };
         };
     };
-    class BettIR_Compat_CUP_LLM01_Combo {
+    // shared by the LLM01 and the LLM MKIII
+    class BettIR_Compat_CUP_LLM {
         class Core {
-            class composeClass { file = "\BettIR_Attachments\compat\cup\functions\fnc_llm01_combo_composeClass.sqf"; };
-            class parseClass   { file = "\BettIR_Attachments\compat\cup\functions\fnc_llm01_combo_parseClass.sqf"; };
-        };
-    };
-    class BettIR_Compat_CUP_MKIII_Combo {
-        class Core {
-            class composeClass { file = "\BettIR_Attachments\compat\cup\functions\fnc_mkiii_combo_composeClass.sqf"; };
-            class parseClass   { file = "\BettIR_Attachments\compat\cup\functions\fnc_mkiii_combo_parseClass.sqf"; };
+            class composeClass { file = "\BettIR_Attachments\compat\cup\functions\fnc_llm_composeClass.sqf"; };
+            class parseClass   { file = "\BettIR_Attachments\compat\cup\functions\fnc_llm_parseClass.sqf"; };
         };
     };
 };

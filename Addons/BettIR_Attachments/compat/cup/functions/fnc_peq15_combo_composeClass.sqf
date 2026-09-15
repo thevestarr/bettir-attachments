@@ -1,23 +1,14 @@
 params ["_composableMap"];
 
-_device = _composableMap get "Device";
-_macro = _composableMap get "__BETTIR_MACRO";
-
-if (_device == "Laser") exitWith {
-    _masterMode = _composableMap get "MasterMode";
-    _focus = _composableMap getOrDefault ["Focus", "100MRAD"];
-
-    _laserBase = _macro + "_L";
-    if (_masterMode == "AH") exitWith { _laserBase };
-
-    _finalClassNameArray = [_laserBase, _masterMode];
-    if (_masterMode in ["IH", "DH", "DL"]) then {
-        _finalClassNameArray pushBack _focus;
-    };
-    _finalClassNameArray joinString "_";
+if ((_composableMap getOrDefault ["Device", "Laser"]) == "Laser") exitWith {
+    [_composableMap] call BettIR_Compat_CUP_PEQ15_fnc_composeClass
 };
 
-// Flashlight side
-_flashlightOutput = _composableMap getOrDefault ["FlashlightOutput", "White"];
-if (_flashlightOutput == "IR") exitWith { _macro + "_F_ir" };
-_macro + "_F";
+// flashlight side: the macro is the real _L laser head,
+// CUP's white light is the same name with _L swapped for _F
+_macro = _composableMap get "__BETTIR_MACRO";
+_splitMacro = _macro splitString "_";
+_splitMacro deleteAt ((count _splitMacro) - 1);
+_splitMacro pushBack "F";
+
+_splitMacro joinString "_";

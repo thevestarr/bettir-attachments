@@ -1,34 +1,17 @@
 params ["_className"];
 
-_upperClassName = toUpper _className;
-_splitClassName = _upperClassName splitString "_";
-_splitLength = count _splitClassName;
-_map = createHashMap;
+_splitClassName = (toUpper _className) splitString "_";
+_lastEntry = _splitClassName # ((count _splitClassName) - 1);
 
-// Flashlight side: classes look like ..._F or ..._F_IR
-_fIndex = _splitClassName find "F";
-_isFlashlight = (_fIndex != -1) && {_fIndex >= (_splitLength - 2)};
-
-if (_isFlashlight) then {
+// the flashlight side is CUP's real <head without _L>_F class,
+// everything else is a laser state of the _L head
+if (_lastEntry == "F") exitWith {
+    _map = createHashMap;
     _map set ["Device", "Flashlight"];
-    if ((_upperClassName find "_F_IR") != -1) then {
-        _map set ["FlashlightOutput", "IR"];
-    } else {
-        _map set ["FlashlightOutput", "White"];
-    };
-} else {
-    _map set ["Device", "Laser"];
-    _lastEntry = _splitClassName # (_splitLength - 1);
-    if ((_lastEntry find "MRAD") != -1) then {
-        _map set ["Focus", _lastEntry];
-        _map set ["MasterMode", _splitClassName # (_splitLength - 2)];
-    } else {
-        if (_lastEntry in ["VIS", "AL"]) then {
-            _map set ["MasterMode", _lastEntry];
-        } else {
-            _map set ["MasterMode", "AH"];
-        };
-    };
+    _map
 };
+
+_map = [_className] call BettIR_Compat_CUP_PEQ15_fnc_parseClass;
+_map set ["Device", "Laser"];
 
 _map;
