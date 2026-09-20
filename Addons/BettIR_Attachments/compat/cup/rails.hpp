@@ -45,3 +45,27 @@ class PointerSlot_Rail: PointerSlot {
         BETTIR_CUP_RAIL_ITEMS
     };
 };
+
+// Optics: CUP lists its own heads (and the real _V / _F / _DWN) in
+// asdg_OpticRail1913, which the CUP top mounts inherit from.
+class asdg_OpticRail;
+class asdg_OpticRail1913: asdg_OpticRail {
+    class compatibleItems {
+        BETTIR_CUP_RAILS_ISM(CUP_optic_ISM1400A7)
+        BETTIR_CUP_RAILS_ISM(CUP_optic_ISM1400A7_green)
+        BETTIR_CUP_RAILS_ISM(CUP_optic_ISM1400A7_OD)
+        BETTIR_CUP_RAILS_ISM(CUP_optic_ISM1400A7_tan)
+        // BETTIR_CUP_RAILS_AIMM(CUP_optic_AIMM_MARS_BLK)
+        // BETTIR_CUP_RAILS_AIMM(CUP_optic_AIMM_MARS_TAN)
+        // BETTIR_CUP_RAILS_AIMM(CUP_optic_AIMM_MARS_OD)
+    };
+};
+
+// CUP excludes the magnifiers from short top rails; the generated twins follow.
+class asdg_OpticRail1913_short: asdg_OpticRail1913 {
+    class compatibleItems: compatibleItems {
+        // BETTIR_CUP_RAILS_AIMM_OFF(CUP_optic_AIMM_MARS_BLK)
+        // BETTIR_CUP_RAILS_AIMM_OFF(CUP_optic_AIMM_MARS_TAN)
+        // BETTIR_CUP_RAILS_AIMM_OFF(CUP_optic_AIMM_MARS_OD)
+    };
+};

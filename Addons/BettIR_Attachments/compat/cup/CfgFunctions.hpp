@@ -30,4 +30,23 @@ class CfgFunctions {
             class parseClass   { file = "\BettIR_Attachments\compat\cup\functions\fnc_llm_parseClass.sqf"; };
         };
     };
+    // optics
+    class BettIR_Compat_CUP_ISM {
+        class Core {
+            class composeClass { file = "\BettIR_Attachments\compat\cup\functions\fnc_ism_composeClass.sqf"; };
+            class parseClass   { file = "\BettIR_Attachments\compat\cup\functions\fnc_ism_parseClass.sqf"; };
+        };
+    };
+    class BettIR_Compat_CUP_MARS {
+        class Core {
+            class composeClass { file = "\BettIR_Attachments\compat\cup\functions\fnc_mars_composeClass.sqf"; };
+            class parseClass   { file = "\BettIR_Attachments\compat\cup\functions\fnc_mars_parseClass.sqf"; };
+        };
+    };
+    class BettIR_Compat_CUP_AIMM_MARS {
+        class Core {
+            class composeClass { file = "\BettIR_Attachments\compat\cup\functions\fnc_aimm_mars_composeClass.sqf"; };
+            class parseClass   { file = "\BettIR_Attachments\compat\cup\functions\fnc_aimm_mars_parseClass.sqf"; };
+        };
+    };
 };

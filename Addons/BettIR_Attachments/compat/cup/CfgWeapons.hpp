@@ -1,8 +1,7 @@
 #include "macros.hpp"
 
 // ============================================================
-//  Mirror of CUP's real class tree, verified against the config dump of
-//  CUP_Weapons_West_Attachments (cup-original-config.cpp, kept out of git).
+//  Mirror of CUP's real class tree
 //
 //  Principle: NEVER re-parent a real CUP class. Every re-open below declares
 //  the class's REAL parent, so the engine merges additively (no "Updating
@@ -28,6 +27,7 @@ class CfgWeapons {
         class Flashlight;
         class Pointer;
     };
+    class InventoryOpticsItem_Base_F;
 
     // ---- AN/PEQ-15 standalone ----
     BETTIR_CUP_HEAD_ROOT(CUP_acc_ANPEQ_15, ItemCore, BETTIR_IR_LASER_PRESET_PEQ15)
@@ -139,4 +139,51 @@ class CfgWeapons {
 
     BETTIR_CUP_HEAD(CUP_acc_LLM_od, CUP_acc_LLM)
     BETTIR_CUP_CFGWEAPONS_MKIII(CUP_acc_LLM_od)
+
+    // ============================================================
+    //  Optics with an integrated laser. Only managed when the side rail is
+    //  empty (fnc_onLoadoutUpdated prefers the pointer slot).
+    // ============================================================
+
+    // ---- Insight ISM-IR (CUP_optic_ISM1400A7) ----
+    // Root, real _V (visible) and real _F (illuminator only) all define their
+    // own ItemInfo in CUP; the colour classes only inherit them.
+    BETTIR_CUP_OPTIC_ROOT(CUP_optic_ISM1400A7, ItemCore, BETTIR_IR_LASER_PRESET_PEQ15)
+    BETTIR_CUP_OPTIC_VIS(CUP_optic_ISM1400A7_V, CUP_optic_ISM1400A7, ISM_LASER_VIS)
+    BETTIR_CUP_OPTIC_ILLUM(CUP_optic_ISM1400A7_F, CUP_optic_ISM1400A7, ISM_ILLUM(100,1))
+    BETTIR_CUP_CFGWEAPONS_ISM(CUP_optic_ISM1400A7)
+
+    BETTIR_CUP_HEAD(CUP_optic_ISM1400A7_green, CUP_optic_ISM1400A7)
+    BETTIR_CUP_HEAD(CUP_optic_ISM1400A7_green_V, CUP_optic_ISM1400A7_V)
+    BETTIR_CUP_HEAD(CUP_optic_ISM1400A7_green_F, CUP_optic_ISM1400A7_F)
+    BETTIR_CUP_CFGWEAPONS_ISM(CUP_optic_ISM1400A7_green)
+
+    BETTIR_CUP_HEAD(CUP_optic_ISM1400A7_OD, CUP_optic_ISM1400A7)
+    BETTIR_CUP_HEAD(CUP_optic_ISM1400A7_OD_V, CUP_optic_ISM1400A7_V)
+    BETTIR_CUP_HEAD(CUP_optic_ISM1400A7_OD_F, CUP_optic_ISM1400A7_F)
+    BETTIR_CUP_CFGWEAPONS_ISM(CUP_optic_ISM1400A7_OD)
+
+    BETTIR_CUP_HEAD(CUP_optic_ISM1400A7_tan, CUP_optic_ISM1400A7)
+    BETTIR_CUP_HEAD(CUP_optic_ISM1400A7_tan_V, CUP_optic_ISM1400A7_V)
+    BETTIR_CUP_HEAD(CUP_optic_ISM1400A7_tan_F, CUP_optic_ISM1400A7_F)
+    BETTIR_CUP_CFGWEAPONS_ISM(CUP_optic_ISM1400A7_tan)
+
+    // ---- MARS (CUP_optic_MARS) ----
+    // Every colour's _V re-declares its own Pointer in CUP, so each gets OPTIC_VIS.
+    BETTIR_CUP_OPTIC_ROOT(CUP_optic_MARS, ItemCore, BETTIR_IR_LASER_PRESET_PEQ15)
+    BETTIR_CUP_OPTIC_VIS(CUP_optic_MARS_V, CUP_optic_MARS, MARS_LASER_VIS)
+
+    BETTIR_CUP_HEAD(CUP_optic_MARS_OD, CUP_optic_MARS)
+    BETTIR_CUP_OPTIC_VIS(CUP_optic_MARS_OD_V, CUP_optic_MARS_OD, MARS_LASER_VIS)
+
+    BETTIR_CUP_HEAD(CUP_optic_MARS_tan, CUP_optic_MARS)
+    BETTIR_CUP_OPTIC_VIS(CUP_optic_MARS_tan_V, CUP_optic_MARS_tan, MARS_LASER_VIS)
+
+    // ---- AIMM MARS magnifier (CUP_optic_AIMM_MARS_*) ----
+    // UNSUPPORTED: CUP is missing memory points for lasers in this variant
+    // Up and down are separate ItemCore roots in CUP. MRT stays on (magnifier flip).
+    // No spaces after the commas: the names are stringified for baseWeapon / MRT.
+    //BETTIR_CUP_CFGWEAPONS_AIMM(CUP_optic_AIMM_MARS_BLK,CUP_optic_AIMM_MARS_BLK_DWN,CUP_optic_AIMM_MARS_BLK_vis,CUP_optic_AIMM_MARS_BLK_DWN_vis)
+    //BETTIR_CUP_CFGWEAPONS_AIMM(CUP_optic_AIMM_MARS_TAN,CUP_optic_AIMM_MARS_TAN_DWN,CUP_optic_AIMM_MARS_TAN_vis,CUP_optic_AIMM_MARS_TAN_DWN_vis)
+    //BETTIR_CUP_CFGWEAPONS_AIMM(CUP_optic_AIMM_MARS_OD,CUP_optic_AIMM_MARS_OD_DWN,CUP_optic_AIMM_MARS_OD_vis,CUP_optic_AIMM_MARS_OD_DWN_vis)
 };

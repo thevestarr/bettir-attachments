@@ -109,6 +109,47 @@ class BettIR_Config {
             };
         };
 
+        // Insight ISM-IR optic: the real selector is RD / VA / AL / DL / AH / DH
+        // with a variable-focus illuminator, i.e. the AN/PEQ-15 groups. IH is
+        // kept on top because CUP ships an illuminator-only _F class.
+        class BettIR_CUP_ISM: BettIR_Base_PEQ15 {
+            classParser="BettIR_Compat_CUP_ISM_fnc_parseClass";
+            classComposer="BettIR_Compat_CUP_ISM_fnc_composeClass";
+        };
+
+        // MARS optic: IR or visible laser, nothing else (no Focus group)
+        class BettIR_CUP_MARS: BettIR_Base_PEQ15 {
+            classParser="BettIR_Compat_CUP_MARS_fnc_parseClass";
+            classComposer="BettIR_Compat_CUP_MARS_fnc_composeClass";
+
+            class Configurable {
+                class MasterMode {
+                    displayName="Master Mode";
+                    defaultValue="AH";
+                    class AH  { displayName="IR Laser"; };
+                    class VIS { displayName="Visible Laser"; };
+                };
+            };
+        };
+
+        // AIMM MARS magnifier: MARS laser + a Magnifier group. Ctrl+L flips the
+        // magnifier; CUP's own MRT keybind does the same and keeps the laser state.
+        class BettIR_CUP_AIMM_MARS: BettIR_CUP_MARS {
+            classParser="BettIR_Compat_CUP_AIMM_MARS_fnc_parseClass";
+            classComposer="BettIR_Compat_CUP_AIMM_MARS_fnc_composeClass";
+
+            onToggleModeSecondary="[_this select 0, 'Magnifier'] spawn BettIR_Attachments_fnc_defaultToggleMode";
+
+            class Configurable: Configurable {
+                class Magnifier {
+                    displayName="Magnifier";
+                    defaultValue="Up";
+                    class Up   { displayName="Up"; };
+                    class Down { displayName="Down"; };
+                };
+            };
+        };
+
         // ===== AN/PEQ-15 standalone =====
         BETTIR_CUP_CONFIG_PEQ15(CUP_acc_ANPEQ_15)
         BETTIR_CUP_CONFIG_PEQ15(CUP_acc_ANPEQ_15_Black)
@@ -149,5 +190,22 @@ class BettIR_Config {
         BETTIR_CUP_CONFIG_LLM(CUP_acc_LLM)
         BETTIR_CUP_CONFIG_LLM(CUP_acc_LLM_black)
         BETTIR_CUP_CONFIG_LLM(CUP_acc_LLM_od)
+
+        // ===== Insight ISM-IR (optic) =====
+        BETTIR_CUP_CONFIG_ISM(CUP_optic_ISM1400A7)
+        BETTIR_CUP_CONFIG_ISM(CUP_optic_ISM1400A7_green)
+        BETTIR_CUP_CONFIG_ISM(CUP_optic_ISM1400A7_OD)
+        BETTIR_CUP_CONFIG_ISM(CUP_optic_ISM1400A7_tan)
+
+        // ===== MARS (optic) =====
+        BETTIR_CUP_CONFIG_MARS(CUP_optic_MARS)
+        BETTIR_CUP_CONFIG_MARS(CUP_optic_MARS_OD)
+        BETTIR_CUP_CONFIG_MARS(CUP_optic_MARS_tan)
+
+        // ===== AIMM MARS magnifier (optic) =====
+        // Not supported: missing memory points
+        // BETTIR_CUP_CONFIG_AIMM(CUP_optic_AIMM_MARS_BLK)
+        // BETTIR_CUP_CONFIG_AIMM(CUP_optic_AIMM_MARS_TAN)
+        // BETTIR_CUP_CONFIG_AIMM(CUP_optic_AIMM_MARS_OD)
     };
 };

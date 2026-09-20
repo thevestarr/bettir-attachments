@@ -22,7 +22,7 @@ Addons/BettIR_Attachments/
     ace/      ACE green DBAL + ACE SPIR                  (BettIR_ACE_Compat_fnc_*)
     rhsusf/   PEQ-15 (side/top/combo/WMX), PEQ-16A, M952V, WMX (BettIR_Compat_RHSUSF_*_fnc_*)
     tierone/  Tier1 NGAL + LA5 (many handguard variants, macro-generated) (BettIR_tierOne_Compat_fnc_*)
-    cup/      PEQ-15 (+flashlight combo), PEQ-2 (+combo), LLM01, LLM MKIII (BettIR_Compat_CUP_*_fnc_*), see bottom
+    cup/      PEQ-15 (+flashlight combo), PEQ-2 (+combo), LLM01, LLM MKIII, optics ISM-IR / MARS / AIMM MARS (BettIR_Compat_CUP_*_fnc_*), see bottom
 ```
 
 Each compat `config.cpp` has its own `CfgPatches` with `skipWhenMissingDependencies = 1`, so it only loads when the target mod is present. The standard compat file set is `config.cpp`, `CfgWeapons.hpp`, `CfgFunctions.hpp`, `rails.hpp`, `macros.hpp` and `functions/`.
@@ -88,7 +88,7 @@ Then:
 ## SQF / config gotchas used throughout
 - String `==` is **case-insensitive**, but `in`, `find`, `isEqualTo` and HashMap keys are **case-sensitive**. That's why parsers call `toUpper`/`toLower` before `in [...]` checks. Config class lookups are case-insensitive.
 - Code uses non-`private` `_vars` at the top level of functions. Match the surrounding style.
-- Preprocessor: `##` for token pasting, `QUOTE()` is defined locally in tierone macros. Multi-line macros need a trailing `\` on every line.
+- Preprocessor: `##` for token pasting, `QUOTE()` is defined locally in tierone macros. Multi-line macros need a trailing `\` on every line. `##` is only applied in the macro body itself, NOT inside the argument list of a nested macro call (`INNER(BASE##_vis)` leaves a literal `#` and the parser fails with "'#' encountered instead of '{'", usually with a misleading line number). Pass such names as explicit parameters instead. Also, `#param` stringification keeps the whitespace after the comma in the call (`M(a, b)` gives `" b"`), so any argument that ends up in `QUOTE()` (`baseWeapon`, `macroClass`, MRT targets) must be written without a space after the comma.
 - Height/handguard suffixes: RHS uses `_h`/`_sc` at the *end* of the classname (`fnc_getHeightVariant`), and PEQ-16A adds `_top` before them. Composers have to strip these and re-append them.
 - `rhsusf/functions/fnc_peq15_railfix.sqf` overrides RHS's own `RHS_fnc_anpeq15_rail` so RHS stops swapping the item back to the base class.
 
@@ -108,8 +108,8 @@ Rules that came out of earlier fixes (keep new code consistent with them):
 - Illuminator memory points: use the laser's points (`"laser pos","laser dir"`) unless the model has real flashlight points that CUP/RHS themselves use (LLM01/MKIII use `"flash dir","flash"`). Points that don't exist on the p3d give an invisible light.
 
 ## CUP compat (`compat/cup/`)
-Branch `feat/cup-compat`. Mirrors CUP's real class tree: every real class is re-opened with its REAL parent (`BETTIR_CUP_HEAD*` in `macros.hpp`), never re-parented; the reference dump `cup-original-config.cpp` is git-ignored and only exists locally. Families and their `BettIR_Config` bases (all in `config.cpp`):
 - `BettIR_CUP_PEQ15` / `BettIR_CUP_PEQ15_Combo`: standard PEQ-15 grammar; combos use the real `_L` head as macro and CUP's real `_F` white light as the Flashlight device (composer swaps the trailing `_L` for `_F`). No IR flashlight.
 - `BettIR_CUP_PEQ2` / `_Combo`: IR only, MasterMode AL/AH/DL/DLH/DH (DLH = laser low + illuminator high), no illuminator-only mode.
 - `BettIR_CUP_LLM`: LLM01 and LLM MKIII, standalone. MasterMode AH (IR laser, bare class), DH (+ IR light), VIS, DVIS (visible laser + CUP's white light). The light is one lamp with a white or IR diode: the IR preset is CUP's flashlight preset plus `irLight=1`, and there is no divergence, so the family shadows `Configurable` (no `: Configurable`) to drop the inherited Focus group. No Device group, secondary toggle unused.
+- Optics (only managed while the side rail is empty): `BettIR_CUP_ISM` (Insight ISM-IR, `CUP_optic_ISM1400A7*`, AN/PEQ-15 groups and presets; VIS composes to CUP's real `_V`, CUP's real `_F` parses as IH 100MRAD), `BettIR_CUP_MARS` (AH / VIS, VIS = real `_V`, no Focus), `BettIR_CUP_AIMM_MARS` (adds a `Magnifier` Up/Down group on Ctrl+L; classes `<head>[_DWN][_vis]`). The AIMM heads keep MRT on purpose: it is CUP's magnifier flip, and every generated twin points MRT at its own up/down counterpart. The AIMM laser memory points are assumed, not verified.
 Per device there is one macro per file kind (`BETTIR_CUP_CFGWEAPONS_*`, `BETTIR_CUP_CONFIG_*`, `BETTIR_CUP_RAILS_*`) with the suffix list written out explicitly; keep the three lists identical. `_check_consistency.sh` is a rough static checker, not proof of correctness.
