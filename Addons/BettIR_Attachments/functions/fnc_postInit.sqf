@@ -41,3 +41,4 @@ addUserActionEventHandler ["headlights", "Activate", {
         };
     };
 }];
+
