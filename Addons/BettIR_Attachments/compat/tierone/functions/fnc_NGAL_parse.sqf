@@ -15,7 +15,7 @@ if (_lastEntry == "FL") then {
         _map set ["Focus", _lastEntry];
         _map set ["MasterMode", _splitClassName # (_splitClassNameLength - 2)];
     } else {
-        if (_lastEntry in ["VIS", "AL"]) then {
+        if (_lastEntry in ["VISAH", "VISAL", "AL"]) then {
             _map set ["MasterMode", _lastEntry];
         } else {
             _map set ["MasterMode", "AH"];

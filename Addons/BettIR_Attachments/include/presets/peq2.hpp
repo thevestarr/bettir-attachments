@@ -1,10 +1,14 @@
 #include "..\core.hpp"
 
-// Intensity in low mode, 50 MRAD
-#define PEQ15_ILLUMINATOR_BASE_INTENSITY 500
+// AN/PEQ-2: IR aiming laser + IR illuminator only, no visible laser — hence no
+// BETTIR_VIS_LASER_PRESET_PEQ2_*.
+//
+// TODO: tweak all settings, right now they are a copy of the AN/PEQ-15
 
-// TODO: tweak power settings, right now they are a copy of DBAL A2
-#define BETTIR_ILLUMINATOR_PRESET_PEQ15(MRAD,POS,DIR,HIPWR) \
+// Intensity in low mode, 50 MRAD
+#define PEQ2_ILLUMINATOR_BASE_INTENSITY 500
+
+#define BETTIR_ILLUMINATOR_PRESET_PEQ2(MRAD,POS,DIR,HIPWR) \
     ambient[] = {1,1,1}; \
     color[] = {1,1,1}; \
     coneFadeCoef = 64 * (1 - (MRAD / 200)); \
@@ -13,7 +17,7 @@
     direction = DIR ; \
     flareMaxDistance = 800 + (HIPWR * 400); \
     flareSize = 1.4; \
-    intensity =  ((1.4 * HIPWR) + 1) * (PEQ15_ILLUMINATOR_BASE_INTENSITY * (50 / MRAD) * (50 / MRAD)) ; \
+    intensity =  ((1.4 * HIPWR) + 1) * (PEQ2_ILLUMINATOR_BASE_INTENSITY * (50 / MRAD) * (50 / MRAD)) ; \
     innerAngle = MRADTODEG(MRAD) ; \
     outerAngle = (MRADTODEG(MRAD) / 0.85); \
     irLight=1; \
@@ -29,23 +33,15 @@
         hardLimitEnd = 400 + (HIPWR * 120); \
     };
 
-// TODO: tweak beam settings, right now they are a copy of DBAL A2
-#define BETTIR_IR_LASER_PRESET_PEQ15 \
+#define BETTIR_IR_LASER_PRESET_PEQ2 \
     irDotSize=0.035; \
     beamThickness=0.05; \
     beamColor[]={1000,1000,1000}; \
     dotColor[]={1000,1000,1000};
 
-#define BETTIR_IR_LASER_PRESET_PEQ15_LO \
+#define BETTIR_IR_LASER_PRESET_PEQ2_LO \
     isIR=1; \
     irDotSize=0.005; \
     beamThickness=0.0; \
     beamColor[]={0,0,0}; \
     dotColor[]={100,100,100};
-
-#define BETTIR_VIS_LASER_PRESET_PEQ15_RED \
-    isIR=0; \
-    irDotSize=0.005; \
-    beamThickness=0.00005; \
-    beamColor[]={5000000,0,0}; \
-    dotColor[]={3000,0,0};

@@ -19,7 +19,7 @@ _unit setVariable ["BettIR_primaryWeaponAttachment", toArray _currentPrimaryAtta
 // todo: consider caching composers by macro
 _newClass = [_currentPrimaryAttachment] call (call compile _composer);
 
-if (_announce) then {
+if (_announce && BETTIR_ATTACHMENTS_SETTINGS_DISPLAY_CHANGE_DIALOG) then {
     // todo: add CBA setting
     hint ("Switched\n" + _keyDisplayName + "\nto\n" + _valueDisplayName);
 

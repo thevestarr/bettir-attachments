@@ -5,7 +5,7 @@ class CfgPatches {
         units[]={};
         weapons[]={"acc_pointer_IR"};
         requiredVersion=2.14;
-        requiredAddons[]={"rhsusf_main_loadorder"};
+        requiredAddons[]={"BettIR_Attachments", "rhsusf_main_loadorder"};
         skipWhenMissingDependencies = 1;
     };
 };
@@ -442,7 +442,7 @@ class BettIR_Config {
             class Configurable {
                 class Output {
                     displayName="Output";
-                    defaultValue="VIS";
+                    defaultValue="White";
 
                     class White {
                         displayName="White";
@@ -513,42 +513,42 @@ class BettIR_Config {
         class rhsusf_acc_anpeq15_wmx_h: rhsusf_acc_anpeq15_wmx {
             macroClass="rhsusf_acc_anpeq15_wmx_h";
         };
-        class rhsusf_acc_anpeq15_wmx_vis_h: rhsusf_acc_anpeq15_wmx {};
-        class rhsusf_acc_anpeq15_wmx_al_h: rhsusf_acc_anpeq15_wmx {};
-        class rhsusf_acc_anpeq15_wmx_ih_25MRAD_h: rhsusf_acc_anpeq15_wmx {};
-        class rhsusf_acc_anpeq15_wmx_ih_50MRAD_h: rhsusf_acc_anpeq15_wmx {};
-        class rhsusf_acc_anpeq15_wmx_ih_75MRAD_h: rhsusf_acc_anpeq15_wmx {};
-        class rhsusf_acc_anpeq15_wmx_ih_100MRAD_h: rhsusf_acc_anpeq15_wmx {};
-        class rhsusf_acc_anpeq15_wmx_dh_25MRAD_h: rhsusf_acc_anpeq15_wmx {};
-        class rhsusf_acc_anpeq15_wmx_dh_50MRAD_h: rhsusf_acc_anpeq15_wmx {};
-        class rhsusf_acc_anpeq15_wmx_dh_75MRAD_h: rhsusf_acc_anpeq15_wmx {};
-        class rhsusf_acc_anpeq15_wmx_dh_100MRAD_h: rhsusf_acc_anpeq15_wmx {};
-        class rhsusf_acc_anpeq15_wmx_dl_25MRAD_h: rhsusf_acc_anpeq15_wmx {};
-        class rhsusf_acc_anpeq15_wmx_dl_50MRAD_h: rhsusf_acc_anpeq15_wmx {};
-        class rhsusf_acc_anpeq15_wmx_dl_75MRAD_h: rhsusf_acc_anpeq15_wmx {};
-        class rhsusf_acc_anpeq15_wmx_dl_100MRAD_h: rhsusf_acc_anpeq15_wmx {};
-        class rhsusf_acc_anpeq15_wmx_light_h: rhsusf_acc_anpeq15_wmx {};
-        class rhsusf_acc_anpeq15_wmx_light_ir_h: rhsusf_acc_anpeq15_wmx {};
+        class rhsusf_acc_anpeq15_wmx_vis_h: rhsusf_acc_anpeq15_wmx_h {};
+        class rhsusf_acc_anpeq15_wmx_al_h: rhsusf_acc_anpeq15_wmx_h {};
+        class rhsusf_acc_anpeq15_wmx_ih_25MRAD_h: rhsusf_acc_anpeq15_wmx_h {};
+        class rhsusf_acc_anpeq15_wmx_ih_50MRAD_h: rhsusf_acc_anpeq15_wmx_h {};
+        class rhsusf_acc_anpeq15_wmx_ih_75MRAD_h: rhsusf_acc_anpeq15_wmx_h {};
+        class rhsusf_acc_anpeq15_wmx_ih_100MRAD_h: rhsusf_acc_anpeq15_wmx_h {};
+        class rhsusf_acc_anpeq15_wmx_dh_25MRAD_h: rhsusf_acc_anpeq15_wmx_h {};
+        class rhsusf_acc_anpeq15_wmx_dh_50MRAD_h: rhsusf_acc_anpeq15_wmx_h {};
+        class rhsusf_acc_anpeq15_wmx_dh_75MRAD_h: rhsusf_acc_anpeq15_wmx_h {};
+        class rhsusf_acc_anpeq15_wmx_dh_100MRAD_h: rhsusf_acc_anpeq15_wmx_h {};
+        class rhsusf_acc_anpeq15_wmx_dl_25MRAD_h: rhsusf_acc_anpeq15_wmx_h {};
+        class rhsusf_acc_anpeq15_wmx_dl_50MRAD_h: rhsusf_acc_anpeq15_wmx_h {};
+        class rhsusf_acc_anpeq15_wmx_dl_75MRAD_h: rhsusf_acc_anpeq15_wmx_h {};
+        class rhsusf_acc_anpeq15_wmx_dl_100MRAD_h: rhsusf_acc_anpeq15_wmx_h {};
+        class rhsusf_acc_anpeq15_wmx_light_h: rhsusf_acc_anpeq15_wmx_h {};
+        class rhsusf_acc_anpeq15_wmx_light_ir_h: rhsusf_acc_anpeq15_wmx_h {};
 
 
         class rhsusf_acc_anpeq15_wmx_sc: rhsusf_acc_anpeq15_wmx {
             macroClass="rhsusf_acc_anpeq15_wmx_sc";
         };
-        class rhsusf_acc_anpeq15_wmx_vis_sc: rhsusf_acc_anpeq15_wmx {};
-        class rhsusf_acc_anpeq15_wmx_al_sc: rhsusf_acc_anpeq15_wmx {};
-        class rhsusf_acc_anpeq15_wmx_ih_25MRAD_sc: rhsusf_acc_anpeq15_wmx {};
-        class rhsusf_acc_anpeq15_wmx_ih_50MRAD_sc: rhsusf_acc_anpeq15_wmx {};
-        class rhsusf_acc_anpeq15_wmx_ih_75MRAD_sc: rhsusf_acc_anpeq15_wmx {};
-        class rhsusf_acc_anpeq15_wmx_ih_100MRAD_sc: rhsusf_acc_anpeq15_wmx {};
-        class rhsusf_acc_anpeq15_wmx_dh_25MRAD_sc: rhsusf_acc_anpeq15_wmx {};
-        class rhsusf_acc_anpeq15_wmx_dh_50MRAD_sc: rhsusf_acc_anpeq15_wmx {};
-        class rhsusf_acc_anpeq15_wmx_dh_75MRAD_sc: rhsusf_acc_anpeq15_wmx {};
-        class rhsusf_acc_anpeq15_wmx_dh_100MRAD_sc: rhsusf_acc_anpeq15_wmx {};
-        class rhsusf_acc_anpeq15_wmx_dl_25MRAD_sc: rhsusf_acc_anpeq15_wmx {};
-        class rhsusf_acc_anpeq15_wmx_dl_50MRAD_sc: rhsusf_acc_anpeq15_wmx {};
-        class rhsusf_acc_anpeq15_wmx_dl_75MRAD_sc: rhsusf_acc_anpeq15_wmx {};
-        class rhsusf_acc_anpeq15_wmx_dl_100MRAD_sc: rhsusf_acc_anpeq15_wmx {};
-        class rhsusf_acc_anpeq15_wmx_light_sc: rhsusf_acc_anpeq15_wmx {};
-        class rhsusf_acc_anpeq15_wmx_light_ir_sc: rhsusf_acc_anpeq15_wmx {};
+        class rhsusf_acc_anpeq15_wmx_vis_sc: rhsusf_acc_anpeq15_wmx_sc {};
+        class rhsusf_acc_anpeq15_wmx_al_sc: rhsusf_acc_anpeq15_wmx_sc {};
+        class rhsusf_acc_anpeq15_wmx_ih_25MRAD_sc: rhsusf_acc_anpeq15_wmx_sc {};
+        class rhsusf_acc_anpeq15_wmx_ih_50MRAD_sc: rhsusf_acc_anpeq15_wmx_sc {};
+        class rhsusf_acc_anpeq15_wmx_ih_75MRAD_sc: rhsusf_acc_anpeq15_wmx_sc {};
+        class rhsusf_acc_anpeq15_wmx_ih_100MRAD_sc: rhsusf_acc_anpeq15_wmx_sc {};
+        class rhsusf_acc_anpeq15_wmx_dh_25MRAD_sc: rhsusf_acc_anpeq15_wmx_sc {};
+        class rhsusf_acc_anpeq15_wmx_dh_50MRAD_sc: rhsusf_acc_anpeq15_wmx_sc {};
+        class rhsusf_acc_anpeq15_wmx_dh_75MRAD_sc: rhsusf_acc_anpeq15_wmx_sc {};
+        class rhsusf_acc_anpeq15_wmx_dh_100MRAD_sc: rhsusf_acc_anpeq15_wmx_sc {};
+        class rhsusf_acc_anpeq15_wmx_dl_25MRAD_sc: rhsusf_acc_anpeq15_wmx_sc {};
+        class rhsusf_acc_anpeq15_wmx_dl_50MRAD_sc: rhsusf_acc_anpeq15_wmx_sc {};
+        class rhsusf_acc_anpeq15_wmx_dl_75MRAD_sc: rhsusf_acc_anpeq15_wmx_sc {};
+        class rhsusf_acc_anpeq15_wmx_dl_100MRAD_sc: rhsusf_acc_anpeq15_wmx_sc {};
+        class rhsusf_acc_anpeq15_wmx_light_sc: rhsusf_acc_anpeq15_wmx_sc {};
+        class rhsusf_acc_anpeq15_wmx_light_ir_sc: rhsusf_acc_anpeq15_wmx_sc {};
     };
 };

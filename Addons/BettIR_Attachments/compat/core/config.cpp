@@ -7,7 +7,7 @@ class CfgPatches {
         units[]={};
         weapons[]={"acc_pointer_IR"};
         requiredVersion=2.14;
-        requiredAddons[]={"A3_Weapons_F_Acc"};
+        requiredAddons[]={"A3_Weapons_F_Acc", "BettIR_Attachments"};
         skipWhenMissingDependencies = 1;
     };
 };

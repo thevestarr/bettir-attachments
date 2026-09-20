@@ -71,7 +71,12 @@ class CfgFunctions {
                 file = "\BettIR_Attachments\functions\fnc_postInit.sqf";
                 postInit=1;
             };
-            
+
+            class preInit {
+                file = "\BettIR_Attachments\functions\fnc_preInit.sqf";
+                preInit=1;
+            };
+
             class printDebug {
                 file = "\BettIR_Attachments\functions\fnc_printDebug.sqf";
             };
