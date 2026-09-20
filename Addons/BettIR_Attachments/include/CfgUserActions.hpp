@@ -33,28 +33,28 @@ class CfgUserActions {
     class BettIR_WeaponAttachments_Stepper_1_Up {
         displayName="Stepper #1 Up";
         tooltip="";
-        onActivate="[] spawn { systemChat '[BettIR] Stepper Up #1 not implemented yet' }";
+        onActivate="if (!is3DEN && (alive player)) then { [] spawn { systemChat '[BettIR] Stepper Up #1 not implemented yet' }}";
         onDeactivate="";
     };
 
     class BettIR_WeaponAttachments_Stepper_1_Down {
         displayName="Stepper #1 Down";
         tooltip=")";
-        onActivate="[] spawn { systemChat '[BettIR] Stepper Down #1 not implemented yet' }";
+        onActivate="if (!is3DEN && (alive player)) then { [] spawn { systemChat '[BettIR] Stepper Down #1 not implemented yet' }}";
         onDeactivate="";
     };
 
      class BettIR_WeaponAttachments_Stepper_2_Up {
         displayName="Stepper #2 Up";
         tooltip="";
-        onActivate="[] spawn { systemChat '[BettIR] Stepper Up #2 not implemented yet' }";
+        onActivate="if (!is3DEN && (alive player)) then { [] spawn { systemChat '[BettIR] Stepper Up #2 not implemented yet' }}";
         onDeactivate="";
     };
 
     class BettIR_WeaponAttachments_Stepper_2_Down {
         displayName="Stepper #2 Down";
         tooltip="";
-        onActivate="[] spawn { systemChat '[BettIR] Stepper Down #2 not implemented yet' }";
+        onActivate="if (!is3DEN && (alive player)) then { [] spawn { systemChat '[BettIR] Stepper Down #2 not implemented yet' }}";
         onDeactivate="";
     };
 };
